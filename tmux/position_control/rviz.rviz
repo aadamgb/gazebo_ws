@@ -10,7 +10,6 @@ Panels:
         - /MpcTracker1
         - /EstimationManager1
         - /ControlManager1
-        - /ControlManager1/control_reference1/Topic1
         - /ControlManager1/trajectory_original1
         - /TrajectoryGeneration1
         - /TrajectoryGeneration1/path_final1
@@ -184,45 +183,6 @@ Visualization Manager:
       Name: EstimationManager
     - Class: rviz_common/Group
       Displays:
-        - Angle Tolerance: 0.009999999776482582
-          Class: rviz_default_plugins/Odometry
-          Covariance:
-            Orientation:
-              Alpha: 0.5
-              Color: 255; 255; 127
-              Color Style: Unique
-              Frame: Local
-              Offset: 1
-              Scale: 1
-              Value: true
-            Position:
-              Alpha: 0.30000001192092896
-              Color: 204; 51; 204
-              Scale: 1
-              Value: true
-            Value: true
-          Enabled: true
-          Keep: 1
-          Name: control_reference
-          Position Tolerance: 0.009999999776482582
-          Shape:
-            Alpha: 1
-            Axes Length: 1
-            Axes Radius: 0.10000000149011612
-            Color: 255; 25; 0
-            Head Length: 0.30000001192092896
-            Head Radius: 0.10000000149011612
-            Shaft Length: 1
-            Shaft Radius: 0.05000000074505806
-            Value: Axes
-          Topic:
-            Depth: 5
-            Durability Policy: Volatile
-            Filter size: 10
-            History Policy: Keep Last
-            Reliability Policy: Reliable
-            Value: /uav1/control_manager/control_reference
-          Value: true
         - Class: rviz_default_plugins/MarkerArray
           Enabled: true
           Name: safety_area_markers
@@ -318,6 +278,19 @@ Visualization Manager:
           Value: true
       Enabled: true
       Name: TrajectoryGeneration
+    - Class: rviz_default_plugins/Marker
+      Enabled: true
+      Name: random_goto_goal
+      Namespaces:
+        random_goto: true
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /uav1/random_goto/goal_marker
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 255; 255; 255

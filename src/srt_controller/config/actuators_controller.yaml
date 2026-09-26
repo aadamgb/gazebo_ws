@@ -8,3 +8,5 @@ mrs_uav_controllers:
       velocity: 4.0
       attitude: 5.0
       attitude_rate: 2.0
+      integral: 1.0       # [1/s^2] position error integral gain
+      integral_limit: 3.0 # [m/s^2] max acceleration from the integral term (anti-windup)

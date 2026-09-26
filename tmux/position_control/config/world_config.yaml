@@ -15,8 +15,10 @@ mrs_uav_managers:
 
       horizontal:
 
+        # fixed_origin (UAV start position) instead of world_origin: in sim, world_origin comes from the
+        # simulated GNSS/baro and drifts meters away from the Gazebo world, making the check reject valid goals
         # the frame of reference in which the points are expressed
-        frame_name: "world_origin"
+        frame_name: "fixed_origin"
 
         # polygon
         #
@@ -32,7 +34,7 @@ mrs_uav_managers:
       vertical:
 
         # the frame of reference in which the max&min z is expressed
-        frame_name: "world_origin"
+        frame_name: "fixed_origin"
 
         max_z: 15.0
         min_z: 0.5

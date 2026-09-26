@@ -45,18 +45,23 @@ windows:
       layout: tiled
       panes:
         - ros2 run mrs_uav_status status.sh
+  - random_goto:
+      layout: tiled
+      panes:
+        - waitForCore; ./random_goto.py
   - autostart:
       layout: tiled
       panes:
         - ros2 launch mrs_uav_autostart automatic_start.launch.py custom_config:=./config/automatic_start.yaml
-  - takeoff:
-      layout: tiled
-      panes:
         - waitForCore; sleep 10; ./takeoff.sh
   - rviz:
       layout: tiled
       panes:
         - waitForCore; ros2 run rviz2 rviz2 -d ./rviz.rviz --ros-args -p use_sim_time:=true
+  # - plotjuggler:
+  #     layout: tiled
+  #     panes:
+  #       - waitForCore; ros2 run plotjuggler plotjuggler --ros-args -p use_sim_time:=true
   - layout:
       layout: tiled
       panes:

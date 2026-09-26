@@ -26,6 +26,8 @@ struct DrsParams_t
   double gain_velocity;
   double gain_attitude;
   double gain_attitude_rate;
+  double gain_integral;
+  double integral_limit;
 };
 
 //}
@@ -103,6 +105,11 @@ private:
 
   double _uav_mass_;
 
+  // | ------------------- position integrator ------------------ |
+
+  // removes steady-state position error from unmodeled forces (thrust model, mass, drag)
+  Eigen::Vector3d position_integral_ = Eigen::Vector3d::Zero();
+
   // | ------------------ activation and output ----------------- |
 
   ControlOutput last_control_output_;
@@ -152,6 +159,8 @@ bool ActuatorsController::initialize(const rclcpp::Node::SharedPtr &node, std::s
   dynparam_mgr_->register_param("gains/velocity", &drs_params_.gain_velocity, mrs_lib::DynparamMgr::range_t<double>(0.0, 100.0));
   dynparam_mgr_->register_param("gains/attitude", &drs_params_.gain_attitude, mrs_lib::DynparamMgr::range_t<double>(0.0, 100.0));
   dynparam_mgr_->register_param("gains/attitude_rate", &drs_params_.gain_attitude_rate, mrs_lib::DynparamMgr::range_t<double>(0.0, 100.0));
+  dynparam_mgr_->register_param("gains/integral", &drs_params_.gain_integral, mrs_lib::DynparamMgr::range_t<double>(0.0, 100.0));
+  dynparam_mgr_->register_param("gains/integral_limit", &drs_params_.integral_limit, mrs_lib::DynparamMgr::range_t<double>(0.0, 20.0));
 
   // | ------------------ finish loading params ----------------- |
 
@@ -176,6 +185,8 @@ bool ActuatorsController::initialize(const rclcpp::Node::SharedPtr &node, std::s
 bool ActuatorsController::activate(const ControlOutput &last_control_output) {
 
   activation_control_output_ = last_control_output;
+
+  position_integral_.setZero();
 
   first_iteration_ = true;
   is_active_       = true;
@@ -312,9 +323,20 @@ ActuatorsController::ControlOutput ActuatorsController::updateActive(const mrs_m
   ev << tracker_command.velocity.x - uav_state.velocity.linear.x, tracker_command.velocity.y - uav_state.velocity.linear.y,
       tracker_command.velocity.z - uav_state.velocity.linear.z;
 
+  // | ------------------- position integrator ------------------ |
+
+  position_integral_ += ep * dt;
+
+  // anti-windup: limit the integral's contribution to integral_limit [m/s^2] per axis
+  if (drs_params.gain_integral > 1e-6) {
+    const double max_integral = drs_params.integral_limit / drs_params.gain_integral;
+    position_integral_        = position_integral_.cwiseMax(-max_integral).cwiseMin(max_integral);
+  }
+
   // | ------------- position and velocity feedback ------------- |
 
-  Eigen::Vector3d desired_a = ep * drs_params.gain_position * _uav_mass_ + ev * drs_params.gain_velocity * _uav_mass_;
+  // desired acceleration [m/s^2]; mass is applied once below when converting to force
+  Eigen::Vector3d desired_a = ep * drs_params.gain_position + ev * drs_params.gain_velocity + position_integral_ * drs_params.gain_integral;
 
   // | --------------------- add feedforward -------------------- |
 
@@ -328,8 +350,7 @@ ActuatorsController::ControlOutput ActuatorsController::updateActive(const mrs_m
 
   Eigen::Vector3d desired_f = (desired_a + Eigen::Vector3d(0, 0, common_handlers_->g)) * _uav_mass_;
 
-  Eigen::Vector3d desired_f_normed = desired_f;
-  desired_f_normed.normalized();
+  Eigen::Vector3d desired_f_normed = desired_f.normalized();
 
   // | ----------------------- so3 control ---------------------- |
 
@@ -413,7 +434,6 @@ ActuatorsController::ControlOutput ActuatorsController::updateActive(const mrs_m
   // ------------------------------------------------------
 
   last_control_output_.control_output = actuator_cmd;
-  // last_control_output_.control_output = attitude_cmd;
 
   // --------------------------------------------------------------
   // |                 fill in the optional parts                 |
@@ -488,6 +508,8 @@ void ActuatorsController::switchOdometrySource([[maybe_unused]] const mrs_msgs::
 /* resetDisturbanceEstimators() //{ */
 
 void ActuatorsController::resetDisturbanceEstimators(void) {
+
+  position_integral_.setZero();
 }
 
 //}

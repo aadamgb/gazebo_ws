@@ -1,0 +1,253 @@
+#!/usr/bin/env python3
+"""
+Send the UAV to random positions inside a box. When the UAV gets within
+`radius` of the current goal (or `timeout` expires), a new goal is sampled.
+
+Run (from a shell with the same env as the tmux panes):
+  ./random_goto.py
+  ./random_goto.py --ros-args -p radius:=0.5 -p x_min:=-5.0 -p x_max:=5.0
+
+The goal and threshold radius are shown as a green sphere (visual only, no
+collisions) in RViz (/<uav>/random_goto/goal_marker) and in Gazebo.
+"""
+
+import math
+import os
+import random
+
+import rclpy
+import rclpy.duration
+from rclpy.executors import ExternalShutdownException
+from rclpy.node import Node
+from rclpy.parameter import Parameter
+from rclpy.qos import qos_profile_sensor_data
+
+from nav_msgs.msg import Odometry
+from visualization_msgs.msg import Marker
+from mrs_msgs.srv import ReferenceStampedSrv
+
+try:
+    from gz.msgs10.boolean_pb2 import Boolean
+    from gz.msgs10.entity_factory_pb2 import EntityFactory
+    from gz.msgs10.entity_pb2 import Entity
+    from gz.msgs10.pose_pb2 import Pose
+    from gz.transport13 import Node as GzNode
+except ImportError:
+    GzNode = None
+
+# static, visual-only model: no collision element, so nothing can hit it
+GZ_SPHERE_SDF = """<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="{name}">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <cast_shadows>true</cast_shadows>
+        <geometry><sphere><radius>{radius}</radius></sphere></geometry>
+        <material>
+          <ambient>0.2 1.0 0.2 1</ambient>
+          <diffuse>0.3 1.0 0.3 1</diffuse>
+          <specular>0.8 0.8 0.8 1</specular>
+          <emissive>0.1 0.5 0.1 1</emissive>
+        </material>
+        <transparency>0.0</transparency>
+      </visual>
+    </link>
+  </model>
+</sdf>"""
+
+
+class RandomGoto(Node):
+
+    def __init__(self):
+        super().__init__("random_goto")
+
+        # follow the simulation clock like the rest of the stack (USE_SIM_TIME is exported in session.yaml)
+        if os.environ.get("USE_SIM_TIME", "").lower() == "true":
+            self.set_parameters([Parameter("use_sim_time", Parameter.Type.BOOL, True)])
+
+        self.uav_name = self.declare_parameter("uav_name", "uav1").value
+
+        # sampling bounds [m], must lie inside the safety area in world_config.yaml
+        self.x_bounds = (self.declare_parameter("x_min", -10.0).value, self.declare_parameter("x_max", 10.0).value)
+        self.y_bounds = (self.declare_parameter("y_min", -10.0).value, self.declare_parameter("y_max", 10.0).value)
+        self.z_bounds = (self.declare_parameter("z_min", 1.0).value, self.declare_parameter("z_max", 5.0).value)
+
+        self.radius = self.declare_parameter("radius", 0.225).value            # [m] goal reached threshold
+        self.timeout = self.declare_parameter("timeout", 10.0).value         # [s] resample if goal not reached
+        self.random_heading = self.declare_parameter("random_heading", False).value
+        # position used for the "goal reached" check (simulator ground truth, not the estimator)
+        self.odom_topic = self.declare_parameter("odom_topic", f"/{self.uav_name}/hw_api/ground_truth").value
+        # frame of the goal. The Gazebo ground truth is stamped "<uav>/world_origin", but that is the
+        # Gazebo world, NOT MRS's GNSS-based world_origin (they differ by a drifting offset).
+        # MRS's ground_truth_origin coincides with the Gazebo world, so goals sent there match odom_topic.
+        self.frame_id = self.declare_parameter("frame_id", f"{self.uav_name}/ground_truth_origin").value
+
+        # visualization of the goal sphere
+        self.gz_marker = self.declare_parameter("gz_marker", True).value
+        self.gz_world = self.declare_parameter("gz_world", "default").value
+        self.gz_model = f"{self.uav_name}_goto_goal"
+
+        seed = self.declare_parameter("seed", -1).value
+        if seed >= 0:
+            random.seed(seed)
+
+        self.odom = None
+        self.goal = None
+        self.goal_time = None
+        self.pending = False
+        self.retry_time = None
+
+        self.create_subscription(
+            Odometry, self.odom_topic, self.odom_cb, qos_profile_sensor_data)
+        self.client = self.create_client(ReferenceStampedSrv, f"/{self.uav_name}/control_manager/reference")
+        self.marker_pub = self.create_publisher(Marker, f"/{self.uav_name}/random_goto/goal_marker", 1)
+        # republish so RViz picks up the marker even if it starts after this node
+        self.create_timer(1.0, self.publish_marker)
+
+        self.gz = None
+        self.gz_spawned = False
+        if self.gz_marker:
+            if GzNode is None:
+                self.get_logger().warn("gz python bindings not found, goal sphere only shown in RViz")
+            else:
+                self.gz = GzNode()
+
+        self.create_timer(0.1, self.loop)
+        self.get_logger().info(
+            f"bounds x{self.x_bounds} y{self.y_bounds} z{self.z_bounds}, radius {self.radius} m, "
+            f"position from {self.odom_topic}")
+
+    def odom_cb(self, msg):
+        if self.odom is None:
+            self.get_logger().info(f"receiving {self.odom_topic} in frame '{msg.header.frame_id}'")
+        self.odom = msg
+
+    def loop(self):
+        if self.odom is None:
+            self.get_logger().info(f"waiting for {self.odom_topic}", throttle_duration_sec=5.0)
+            return
+        if self.pending:
+            return
+        if not self.client.service_is_ready():
+            self.get_logger().info("waiting for control_manager/reference", throttle_duration_sec=5.0)
+            return
+
+        if self.goal is None:
+            # back off after a rejected goal (e.g. UAV still on the ground)
+            if self.retry_time is None or self.get_clock().now() > self.retry_time:
+                self.send_new_goal()
+            return
+
+        p = self.odom.pose.pose.position
+        dist = math.dist((p.x, p.y, p.z), self.goal)
+        elapsed = (self.get_clock().now() - self.goal_time).nanoseconds * 1e-9
+        self.get_logger().info(
+            f"pos [{p.x:.2f}, {p.y:.2f}, {p.z:.2f}] dist to goal {dist:.2f} m", throttle_duration_sec=2.0)
+
+        if dist < self.radius:
+            self.get_logger().info(f"[random_goto] ✅ Reached goal in {elapsed:.1f} s")
+            self.send_new_goal()
+        elif elapsed > self.timeout:
+            self.get_logger().warn(f"[random_goto] ❌ Goal not reached after {self.timeout:.0f} s (dist {dist:.2f} m), resampling")
+            self.send_new_goal()
+
+    def send_new_goal(self):
+        goal = tuple(random.uniform(*b) for b in (self.x_bounds, self.y_bounds, self.z_bounds))
+        p = self.odom.pose.pose.position
+        # heading of the current odometry would need a quaternion->yaw conversion; 0 keeps it simple
+        heading = random.uniform(-math.pi, math.pi) if self.random_heading else 0.0
+
+        req = ReferenceStampedSrv.Request()
+        req.header.frame_id = self.frame_id or self.odom.header.frame_id
+        req.header.stamp = self.get_clock().now().to_msg()
+        req.reference.position.x, req.reference.position.y, req.reference.position.z = goal
+        req.reference.heading = heading
+
+        self.get_logger().info(
+            f"new goal [{goal[0]:.2f}, {goal[1]:.2f}, {goal[2]:.2f}] hdg {heading:.2f} in '{req.header.frame_id}' "
+            f"({math.dist((p.x, p.y, p.z), goal):.2f} m away)")
+
+        self.pending = True
+        self.client.call_async(req).add_done_callback(lambda f: self.response_cb(f, goal))
+
+    def response_cb(self, future, goal):
+        self.pending = False
+        res = future.result()
+        if res is not None and res.success:
+            self.goal = goal
+            self.goal_frame = self.frame_id or self.odom.header.frame_id
+            self.goal_time = self.get_clock().now()
+            self.publish_marker()
+            self.move_gz_marker()
+        else:
+            # e.g. outside safety area or UAV not flying yet; loop() retries with a fresh sample
+            self.get_logger().warn(f"goal rejected: {res.message if res else 'no response'}")
+            self.goal = None
+            self.retry_time = self.get_clock().now() + rclpy.duration.Duration(seconds=2.0)
+
+    def publish_marker(self):
+        if self.goal is None:
+            return
+        m = Marker()
+        m.header.frame_id = self.goal_frame
+        # stamp 0 = RViz uses the latest available transform
+        m.ns = "random_goto"
+        m.id = 0
+        m.type = Marker.SPHERE
+        m.action = Marker.ADD
+        m.pose.position.x, m.pose.position.y, m.pose.position.z = self.goal
+        m.pose.orientation.w = 1.0
+        m.scale.x = m.scale.y = m.scale.z = 2.0 * self.radius
+        m.color.g = 1.0
+        m.color.a = 0.4
+        self.marker_pub.publish(m)
+
+    def move_gz_marker(self):
+        # the ground truth frame (world_origin) coincides with the Gazebo world frame
+        if self.gz is None:
+            return
+        timeout_ms = 500
+        if not self.gz_spawned:
+            req = EntityFactory()
+            req.sdf = GZ_SPHERE_SDF.format(name=self.gz_model, radius=self.radius)
+            req.pose.position.x, req.pose.position.y, req.pose.position.z = self.goal
+            ok, rep = self.gz.request(f"/world/{self.gz_world}/create", req, EntityFactory, Boolean, timeout_ms)
+            if ok and rep.data:
+                self.gz_spawned = True
+                return
+            # already exists from a previous run, or gazebo unreachable: fall through to set_pose
+            self.gz_spawned = True
+        req = Pose()
+        req.name = self.gz_model
+        req.position.x, req.position.y, req.position.z = self.goal
+        req.orientation.w = 1.0
+        ok, rep = self.gz.request(f"/world/{self.gz_world}/set_pose", req, Pose, Boolean, timeout_ms)
+        if not (ok and rep.data):
+            self.get_logger().warn(
+                f"could not place goal sphere in gazebo world '{self.gz_world}'", throttle_duration_sec=10.0)
+
+    def remove_gz_marker(self):
+        if self.gz is None or not self.gz_spawned:
+            return
+        req = Entity()
+        req.name = self.gz_model
+        req.type = Entity.MODEL
+        self.gz.request(f"/world/{self.gz_world}/remove", req, Entity, Boolean, 500)
+
+
+def main():
+    rclpy.init()
+    node = RandomGoto()
+    try:
+        rclpy.spin(node)
+    except (KeyboardInterrupt, ExternalShutdownException):
+        pass
+    finally:
+        node.remove_gz_marker()
+        node.destroy_node()
+        rclpy.try_shutdown()
+
+
+if __name__ == "__main__":
+    main()
