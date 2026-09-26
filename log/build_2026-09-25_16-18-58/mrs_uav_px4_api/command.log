@@ -1,0 +1,3 @@
+Invoking command in '/home/adamgb/phd/gazebo_ws/build/mrs_uav_px4_api': /usr/bin/cmake /home/adamgb/phd/gazebo_ws/src/mrs_uav_px4_api -DCMAKE_INSTALL_PREFIX=/home/adamgb/phd/gazebo_ws/install/mrs_uav_px4_api
+Invoked command in '/home/adamgb/phd/gazebo_ws/build/mrs_uav_px4_api' returned '0': /usr/bin/cmake /home/adamgb/phd/gazebo_ws/src/mrs_uav_px4_api -DCMAKE_INSTALL_PREFIX=/home/adamgb/phd/gazebo_ws/install/mrs_uav_px4_api
+Invoking command in '/home/adamgb/phd/gazebo_ws/build/mrs_uav_px4_api': /usr/bin/cmake --build /home/adamgb/phd/gazebo_ws/build/mrs_uav_px4_api -- -j32 -l32

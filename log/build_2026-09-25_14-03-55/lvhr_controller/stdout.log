@@ -1,0 +1,63 @@
+-- The C compiler identification is GNU 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found rclcpp: 28.1.22 (/opt/ros/jazzy/share/rclcpp/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Found rosidl_generator_c: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+-- Found rosidl_generator_cpp: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 8.4.4 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+-- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found pluginlib: 5.4.6 (/opt/ros/jazzy/share/pluginlib/cmake)
+-- Found mrs_lib: 2.0.0 (/opt/ros/jazzy/share/mrs_lib/cmake)
+-- Found eigen3_cmake_module: 0.3.1 (/opt/ros/jazzy/share/eigen3_cmake_module/cmake)
+-- Found Eigen3: TRUE (found version "3.4.0") 
+-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+-- Found mrs_uav_managers: 2.0.0 (/opt/ros/jazzy/share/mrs_uav_managers/cmake)
+-- [lvhr_controller]: using libtorch from /home/adamgb/miniconda3/envs/rl/lib/python3.10/site-packages/torch
+-- Configuring done (1.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/adamgb/phd/gazebo_ws/build/lvhr_controller
+[ 50%] [32mBuilding CXX object CMakeFiles/LvhrController_VelocityController.dir/src/velocity_controller.cpp.o[0m
+[100%] [32m[1mLinking CXX shared library libLvhrController_VelocityController.so[0m
+[100%] Built target LvhrController_VelocityController
+-- Install configuration: ""
+-- Installing: /home/adamgb/phd/gazebo_ws/install/lvhr_controller/share/lvhr_controller/plugins.xml
+-- Installing: /home/adamgb/phd/gazebo_ws/install/lvhr_controller/lib/libLvhrController_VelocityController.so
+-- Set non-toolchain portion of runtime path of "/home/adamgb/phd/gazebo_ws/install/lvhr_controller/lib/libLvhrController_VelocityController.so" to "/home/adamgb/miniconda3/envs/rl/lib/python3.10/site-packages/torch/lib"
+-- Installing: /home/adamgb/phd/gazebo_ws/install/lvhr_controller/share/lvhr_controller/config
+-- Installing: /home/adamgb/phd/gazebo_ws/install/lvhr_controller/share/lvhr_controller/config/velocity_controller.yaml
+-- Installing: /home/adamgb/phd/gazebo_ws/install/lvhr_controller/share/lvhr_controller/environment/library_path.sh
+-- Installing: /home/adamgb/phd/gazebo_ws/install/lvhr_controller/share/lvhr_controller/environment/library_path.dsv
+-- Installing: /home/adamgb/phd/gazebo_ws/install/lvhr_controller/share/ament_index/resource_index/package_run_dependencies/lvhr_controller
+-- Installing: /home/adamgb/phd/gazebo_ws/install/lvhr_controller/share/ament_index/resource_index/parent_prefix_path/lvhr_controller
+-- Installing: /home/adamgb/phd/gazebo_ws/install/lvhr_controller/share/lvhr_controller/environment/ament_prefix_path.sh
+-- Installing: /home/adamgb/phd/gazebo_ws/install/lvhr_controller/share/lvhr_controller/environment/ament_prefix_path.dsv
+-- Installing: /home/adamgb/phd/gazebo_ws/install/lvhr_controller/share/lvhr_controller/environment/path.sh
+-- Installing: /home/adamgb/phd/gazebo_ws/install/lvhr_controller/share/lvhr_controller/environment/path.dsv
+-- Installing: /home/adamgb/phd/gazebo_ws/install/lvhr_controller/share/lvhr_controller/local_setup.bash
+-- Installing: /home/adamgb/phd/gazebo_ws/install/lvhr_controller/share/lvhr_controller/local_setup.sh
+-- Installing: /home/adamgb/phd/gazebo_ws/install/lvhr_controller/share/lvhr_controller/local_setup.zsh
+-- Installing: /home/adamgb/phd/gazebo_ws/install/lvhr_controller/share/lvhr_controller/local_setup.dsv
+-- Installing: /home/adamgb/phd/gazebo_ws/install/lvhr_controller/share/lvhr_controller/package.dsv
+-- Installing: /home/adamgb/phd/gazebo_ws/install/lvhr_controller/share/ament_index/resource_index/packages/lvhr_controller
+-- Installing: /home/adamgb/phd/gazebo_ws/install/lvhr_controller/share/ament_index/resource_index/mrs_uav_managers__pluginlib__plugin/lvhr_controller
+-- Installing: /home/adamgb/phd/gazebo_ws/install/lvhr_controller/share/lvhr_controller/cmake/export_lvhr_controllerExport.cmake
+-- Installing: /home/adamgb/phd/gazebo_ws/install/lvhr_controller/share/lvhr_controller/cmake/export_lvhr_controllerExport-noconfig.cmake
+-- Installing: /home/adamgb/phd/gazebo_ws/install/lvhr_controller/share/lvhr_controller/cmake/ament_cmake_export_targets-extras.cmake
+-- Installing: /home/adamgb/phd/gazebo_ws/install/lvhr_controller/share/lvhr_controller/cmake/lvhr_controllerConfig.cmake
+-- Installing: /home/adamgb/phd/gazebo_ws/install/lvhr_controller/share/lvhr_controller/cmake/lvhr_controllerConfig-version.cmake
+-- Installing: /home/adamgb/phd/gazebo_ws/install/lvhr_controller/share/lvhr_controller/package.xml

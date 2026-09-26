@@ -1,0 +1,2 @@
+/usr/bin/ar qc libfailsafe.a CMakeFiles/failsafe.dir/failsafe.cpp.o CMakeFiles/failsafe.dir/framework.cpp.o
+/usr/bin/ranlib libfailsafe.a

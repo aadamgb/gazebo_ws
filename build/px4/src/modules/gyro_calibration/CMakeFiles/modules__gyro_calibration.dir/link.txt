@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmodules__gyro_calibration.a CMakeFiles/modules__gyro_calibration.dir/GyroCalibration.cpp.o
+/usr/bin/ranlib libmodules__gyro_calibration.a

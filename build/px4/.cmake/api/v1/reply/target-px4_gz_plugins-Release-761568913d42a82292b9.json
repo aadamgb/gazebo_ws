@@ -1,0 +1,84 @@
+{
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_custom_target"
+		],
+		"files" : 
+		[
+			"src/modules/simulation/gz_plugins/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 80,
+				"parent" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"id" : "TemplatePlugin::@8c1ee973ba0d411e459a"
+		},
+		{
+			"id" : "MovingPlatformController::@27efdd060d958934985c"
+		},
+		{
+			"id" : "GenericMotorModelPlugin::@db0b98ce578f8674b4ea"
+		},
+		{
+			"id" : "BuoyancySystemPlugin::@ca0ed517249fff8a1b3c"
+		},
+		{
+			"id" : "SpacecraftThrusterModelPlugin::@fe8264d84da1340a0d8b"
+		}
+	],
+	"id" : "px4_gz_plugins::@e7e15276b030a27e757f",
+	"name" : "px4_gz_plugins",
+	"paths" : 
+	{
+		"build" : "src/modules/simulation/gz_plugins",
+		"source" : "src/modules/simulation/gz_plugins"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				1
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"isGenerated" : true,
+			"path" : "/home/adamgb/phd/gazebo_ws/build/px4/src/modules/simulation/gz_plugins/CMakeFiles/px4_gz_plugins",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/home/adamgb/phd/gazebo_ws/build/px4/src/modules/simulation/gz_plugins/CMakeFiles/px4_gz_plugins.rule",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "UTILITY"
+}

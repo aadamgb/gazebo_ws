@@ -1,0 +1,787 @@
+[0.011s] Invoking command in '/home/adamgb/phd/gazebo_ws/build/px4': /usr/bin/cmake --build /home/adamgb/phd/gazebo_ws/build/px4 -- -j32 -l32
+[0.164s] [  0%] Built target actuators_json
+[0.164s] [  0%] Built target git_gps_devices
+[0.164s] [  0%] Built target flighttasks_generated
+[0.165s] [  0%] Built target events_header
+[0.166s] [  0%] Built target ver_gen
+[0.168s] [  0%] Built target parameters_xml
+[0.168s] [  0%] Built target git_mavlink_v2
+[0.168s] [  0%] Built target git_micro_xrce_dds_client
+[0.169s] [  1%] Built target drivers_board
+[0.169s] [  1%] Built target output_functions_header
+[0.169s] [  1%] Built target uorb_ucdr_headers
+[0.169s] [  1%] Built target uorb_headers
+[0.169s] [  1%] Built target px4_gz_msgs
+[0.169s] [  1%] Built target topic_bridge_files
+[0.183s] [  1%] Built target mavlink_c_generate_uavionix
+[0.185s] [  1%] Built target version
+[0.185s] [  1%] Built target world_magnetic_model
+[0.186s] [  1%] Built target yaw_estimator
+[0.186s] [  1%] Built target lat_lon_alt
+[0.187s] [  1%] Built target bias_estimator
+[0.187s] [  1%] Built target mode_util
+[0.187s] [  1%] Built target TemplatePlugin
+[0.188s] [  3%] Built target work_queue
+[0.188s] [  3%] Built target tinybson
+[0.189s] [  3%] Built target perf
+[0.189s] [  3%] Built target geo
+[0.189s] [  3%] Built target wind_estimator
+[0.189s] [  3%] Built target libmicroxrceddsclient_project
+[0.192s] [  3%] Built target MovingPlatformController
+[0.192s] [  3%] Built target BuoyancySystemPlugin
+[0.192s] [  3%] Built target SpacecraftThrusterModelPlugin
+[0.193s] [  3%] Built target events_json
+[0.197s] [  3%] Built target GenericMotorModelPlugin
+[0.198s] [  3%] Built target mavlink_c_generate
+[0.204s] [  3%] Built target output_predictor
+[0.210s] [  3%] [34m[1mGenerating component_general.json and checksums.h[0m
+[0.213s] [  3%] Built target parameters
+[0.213s] [  3%] Built target px4_gz_plugins
+[0.230s] [  3%] Built target px4_work_queue
+[0.242s] [  7%] Built target ecl_EKF
+[0.251s] [  8%] Built target px4_platform
+[0.262s] [  8%] Built target ecl_test_helper
+[0.269s] [  8%] Built target lockstep_scheduler
+[0.292s] [  8%] Built target px4_daemon
+[0.314s] [ 10%] Built target px4_layer
+[0.315s] [ 10%] Built target component_general_json
+[0.335s] [ 10%] Built target atmosphere
+[0.336s] [ 12%] Built target systemlib
+[0.336s] [ 10%] Built target adsb
+[0.336s] [ 12%] Built target events
+[0.336s] [ 12%] Built target battery
+[0.336s] [ 12%] Built target circuit_breaker
+[0.336s] [ 12%] Built target heatshrink
+[0.338s] [ 12%] Built target dataman_client
+[0.338s] [ 12%] Built target motion_planning
+[0.338s] [ 12%] Built target conversion
+[0.338s] [ 12%] Built target hysteresis
+[0.338s] [ 12%] Built target mixer_module
+[0.338s] [ 12%] Built target npfg
+[0.338s] [ 12%] Built target PID
+[0.338s] [ 12%] Built target cdev
+[0.338s] [ 12%] Built target mathlib
+[0.338s] [ 12%] Built target SystemIdentification
+[0.338s] [ 12%] Built target performance_model
+[0.339s] [ 12%] Built target rtl_time_estimator
+[0.339s] [ 12%] Built target WeatherVane
+[0.339s] [ 12%] Built target Sticks
+[0.339s] [ 12%] Built target tecs
+[0.340s] [ 12%] Built target ringbuffer
+[0.340s] [ 12%] Built target pure_pursuit
+[0.340s] [ 12%] Built target StickYaw
+[0.340s] [ 14%] Built target rc
+[0.340s] [ 14%] Built target timesync
+[0.343s] [ 16%] Built target controllib
+[0.343s] [ 16%] Built target arch_tone_alarm
+[0.345s] [ 16%] Built target message_display
+[0.348s] [ 16%] Built target ArmAuthorization
+[0.354s] [ 16%] Built target failsafe
+[0.358s] [ 17%] Built target failure_detector
+[0.360s] [ 39%] Built target uorb_msgs
+[0.361s] [ 39%] Built target FlightTask
+[0.361s] [ 39%] Built target figure_eight
+[0.361s] [ 39%] Built target runway_takeoff
+[0.361s] [ 39%] Built target launchdetection
+[0.362s] [ 41%] Built target PositionControl
+[0.362s] [ 41%] Built target MulticopterThrowLaunch
+[0.362s] [ 42%] Built target AttitudeControl
+[0.362s] [ 42%] Built target Takeoff
+[0.362s] [ 42%] Built target AckermannSpeedControl
+[0.363s] [ 42%] Built target DifferentialActControl
+[0.363s] [ 42%] Built target AckermannManualMode
+[0.363s] [ 42%] Built target geofence_breach_avoidance
+[0.363s] [ 44%] Built target DifferentialPosControl
+[0.363s] [ 42%] Built target AckermannAttControl
+[0.364s] [ 44%] Built target AckermannPosControl
+[0.364s] [ 44%] Built target DifferentialRateControl
+[0.364s] [ 44%] Built target DifferentialAttControl
+[0.364s] [ 44%] Built target AckermannActControl
+[0.364s] [ 46%] Built target zero_order_hover_thrust_ekf
+[0.365s] [ 46%] Built target AckermannRateControl
+[0.365s] [ 46%] Built target GotoControl
+[0.366s] [ 46%] Built target AckermannOffboardMode
+[0.366s] [ 46%] Built target DifferentialSpeedControl
+[0.371s] [ 46%] Built target DifferentialAutoMode
+[0.372s] [ 46%] Built target MecanumActControl
+[0.373s] [ 46%] Built target DifferentialOffboardMode
+[0.373s] [ 46%] Built target AckermannAutoMode
+[0.375s] [ 46%] Built target DifferentialManualMode
+[0.383s] [ 46%] Built target MecanumOffboardMode
+[0.383s] [ 46%] Built target MecanumRateControl
+[0.383s] [ 46%] Built target MecanumAutoMode
+[0.383s] [ 46%] Built target MecanumSpeedControl
+[0.383s] [ 46%] Built target data_validator
+[0.384s] [ 48%] Built target MecanumAttControl
+[0.387s] [ 48%] [34m[1mROMFS: copying extras[0m
+[0.388s] [ 48%] Built target MecanumManualMode
+[0.388s] [ 48%] Built target vehicle_gps_position
+[0.388s] [ 50%] Built target airspeed
+[0.388s] [ 50%] Built target drivers_gyroscope
+[0.389s] [ 50%] Built target drivers_accelerometer
+[0.389s] [ 53%] Built target health_and_arming_checks
+[0.389s] [ 53%] Built target MecanumPosControl
+[0.389s] [ 53%] Built target SlewRate
+[0.391s] [ 53%] Built target CollisionPrevention
+[0.391s] [ 53%] Built target drivers_magnetometer
+[0.391s] [ 53%] Built target ControlAllocation
+[0.391s] [ 53%] Built target rover_control
+[0.392s] [ 53%] Built target RateControl
+[0.392s] [ 55%] Built target uORB
+[0.393s] [ 55%] Built target variable_length_ringbuffer
+[0.394s] [ 55%] Built target tunes
+[0.396s] [ 55%] Built target vehicle_optical_flow
+[0.396s] [ 55%] Built target FlightTaskFailsafe
+[0.396s] [ 57%] Built target follow_target_estimator
+[0.397s] [ 57%] Built target sensor_calibration
+[0.399s] [ 57%] Built target ActuatorEffectiveness
+[0.399s] [ 58%] Built target ecl_sensor_sim
+[0.419s] [ 58%] Built target modules__uORB__uORB_tests
+[0.419s] [ 58%] Built target lib__cdev__test__cdev_test
+[0.419s] [ 58%] Built target drivers__osd__msp_osd
+[0.420s] [ 58%] Built target lib__controllib__controllib_test
+[0.420s] [ 58%] Built target lib__rc__rc_tests
+[0.422s] [ 60%] Built target driver__septentrio
+[0.422s] [ 60%] Built target modules__attitude_estimator_q
+[0.422s] [ 62%] Built target lib__work_queue__test__wqueue_test
+[0.422s] [ 62%] Built target modules__airship_att_control
+[0.422s] [ 62%] Built target modules__airspeed_selector
+[0.422s] [ 62%] Built target modules__camera_feedback
+[0.422s] [ 64%] Built target modules__fw_lateral_longitudinal_control
+[0.422s] [ 64%] Built target drivers__camera_trigger
+[0.422s] [ 64%] Built target modules__fw_rate_control
+[0.422s] [ 64%] Built target drivers__gps
+[0.422s] [ 64%] Built target FlightTaskUtility
+[0.422s] [ 64%] Built target modules__dataman
+[0.422s] [ 64%] Built target modules__fw_mode_manager
+[0.422s] [ 64%] Built target modules__events
+[0.424s] [ 64%] Built target modules__gyro_calibration
+[0.426s] [ 64%] Built target modules__load_mon
+[0.427s] [ 64%] Built target modules__landing_target_estimator
+[0.427s] [ 66%] Built target drivers__gimbal
+[0.428s] [ 67%] Built target modules__land_detector
+[0.429s] [ 67%] Built target fw_autotune_attitude_control
+[0.430s] [ 67%] Built target drivers__tone_alarm
+[0.433s] [ 67%] Built target modules__fw_att_control
+[0.436s] [ 67%] Built target modules__gyro_fft
+[0.436s] [ 69%] Built target modules__local_position_estimator
+[0.436s] [ 69%] Built target romfs_gen_files_target
+[0.444s] [ 69%] [32mBuilding CXX object src/modules/logger/CMakeFiles/modules__logger.dir/logger.cpp.o[0m
+[0.447s] [ 69%] Built target modules__mc_rate_control
+[0.448s] [ 69%] Built target modules__mag_bias_estimator
+[0.448s] [ 69%] Built target modules__mc_att_control
+[0.448s] [ 69%] Built target modules__rc_update
+[0.448s] [ 69%] Built target mission_feasibility_checker
+[0.448s] [ 69%] Built target modules__payload_deliverer
+[0.449s] [ 69%] Built target modules__rover_differential
+[0.449s] [ 69%] Built target modules__rover_ackermann
+[0.449s] [ 69%] Built target modules__mc_pos_control
+[0.449s] [ 71%] Built target modules__mc_hover_thrust_estimator
+[0.450s] [ 71%] Built target modules__rover_mecanum
+[0.451s] [ 71%] Built target vehicle_air_data
+[0.453s] [ 71%] Built target vehicle_acceleration
+[0.454s] [ 73%] Built target modules__simulation__battery_simulator
+[0.454s] [ 75%] Built target vehicle_angular_velocity
+[0.454s] [ 75%] Built target vehicle_imu
+[0.454s] [ 75%] Built target mc_autotune_attitude_control
+[0.454s] [ 75%] Built target modules__simulation__sensor_agp_sim
+[0.454s] [ 75%] Built target modules__simulation__pwm_out_sim
+[0.454s] [ 75%] Built target vehicle_magnetometer
+[0.454s] [ 75%] Built target modules__manual_control
+[0.459s] [ 75%] Built target modules__simulation__sensor_airspeed_sim
+[0.460s] [ 75%] Built target modules__replay
+[0.463s] [ 75%] Built target modules__simulation__sensor_baro_sim
+[0.463s] [ 75%] Built target modules__simulation__sensor_gps_sim
+[0.477s] [ 80%] Built target modules__ekf2
+[0.478s] [ 80%] Built target modules__simulation__system_power_simulator
+[0.478s] [ 80%] Built target modules__simulation__senosr_mag_sim
+[0.478s] [ 82%] Built target modules__simulation__simulator_sih
+[0.478s] [ 82%] Built target modules__uuv_pos_control
+[0.478s] [ 82%] Built target modules__simulation__simulator_mavlink
+[0.478s] [ 82%] Built target modules__uuv_att_control
+[0.478s] [ 83%] Built target modules__uxrce_dds_client
+[0.478s] [ 83%] Built target systemcmds__actuator_test
+[0.478s] [ 83%] Built target systemcmds__param
+[0.479s] [ 83%] Built target modules__temperature_compensation
+[0.479s] [ 85%] Built target systemcmds__bsondump
+[0.480s] [ 85%] [32mBuilding CXX object src/modules/simulation/gz_bridge/CMakeFiles/modules__simulation__gz_bridge.dir/GZBridge.cpp.o[0m
+[0.481s] [ 85%] Built target systemcmds__led_control
+[0.481s] [ 85%] Built target systemcmds__dyn
+[0.481s] [ 85%] Built target modules__vtol_att_control
+[0.481s] [ 85%] Built target systemcmds__perf
+[0.481s] [ 85%] Built target systemcmds__sd_bench
+[0.481s] [ 85%] Built target systemcmds__failure
+[0.483s] [ 85%] [32mBuilding CXX object src/modules/simulation/gz_bridge/CMakeFiles/modules__simulation__gz_bridge.dir/GZMixingInterfaceESC.cpp.o[0m
+[0.485s] [ 85%] [32mBuilding CXX object src/modules/simulation/gz_bridge/CMakeFiles/modules__simulation__gz_bridge.dir/GZMixingInterfaceServo.cpp.o[0m
+[0.485s] [ 85%] Built target systemcmds__topic_listener
+[0.486s] [ 85%] [32mBuilding CXX object src/modules/simulation/gz_bridge/CMakeFiles/modules__simulation__gz_bridge.dir/GZMixingInterfaceWheel.cpp.o[0m
+[0.486s] [ 85%] Built target systemcmds__tune_control
+[0.486s] [ 85%] Built target systemcmds__system_time
+[0.486s] [ 85%] Built target systemcmds__uorb
+[0.486s] [ 85%] Built target systemcmds__shutdown
+[0.486s] [ 85%] Built target systemcmds__tests__hrt_test
+[0.487s] [ 85%] [32mBuilding CXX object src/modules/mavlink/CMakeFiles/modules__mavlink.dir/mavlink_messages.cpp.o[0m
+[0.487s] [ 85%] [32mBuilding CXX object src/modules/simulation/gz_bridge/CMakeFiles/modules__simulation__gz_bridge.dir/GZGimbal.cpp.o[0m
+[0.487s] [ 85%] Built target modules__fake_gps
+[0.487s] [ 85%] Built target systemcmds__work_queue
+[0.490s] [ 85%] Built target systemcmds__ver
+[0.498s] [ 89%] Built target systemcmds__tests
+[0.502s] [ 89%] Built target examples__hello
+[0.502s] [ 89%] Built target modules__fake_imu
+[0.502s] [ 89%] Built target examples__fake_magnetometer
+[0.502s] [ 89%] Built target examples__px4_mavlink_debug
+[0.503s] [ 89%] Built target examples__work_item
+[0.503s] [ 89%] Built target examples__px4_simple_app
+[0.505s] [ 89%] Built target modules__sensors
+[0.505s] [ 89%] Built target FlightTaskAuto
+[0.506s] [ 89%] Built target FlightTaskDescend
+[0.507s] [ 89%] Built target FlightTaskTransition
+[0.507s] [ 89%] Built target FlightTaskManualAltitude
+[0.517s] [ 91%] Built target VehicleActuatorEffectiveness
+[0.520s] [ 92%] Built target modules__commander
+[0.524s] [ 92%] Built target FlightTaskManualAltitudeSmoothVel
+[0.524s] [ 92%] Built target FlightTaskManualPosition
+[0.529s] [ 92%] Built target FlightTaskAutoFollowTarget
+[0.533s] [ 92%] Built target modules__control_allocator
+[0.539s] [ 92%] Built target FlightTaskAltitudeCruise
+[0.539s] [ 92%] Built target FlightTaskManualAcceleration
+[0.539s] [ 92%] Built target FlightTaskOrbit
+[0.555s] [ 94%] Built target modules__navigator
+[0.564s] [ 96%] Built target FlightTaskManualAccelerationSlow
+[0.589s] [ 96%] Built target modules__flight_mode_manager
+[1.207s] [ 96%] [32m[1mLinking CXX static library libmodules__logger.a[0m
+[1.249s] [ 96%] Built target modules__logger
+[3.601s] [ 96%] [32m[1mLinking CXX static library libmodules__mavlink.a[0m
+[3.658s] [ 98%] Built target modules__mavlink
+[5.437s] [ 98%] [32m[1mLinking CXX static library libmodules__simulation__gz_bridge.a[0m
+[5.490s] [ 98%] Built target modules__simulation__gz_bridge
+[5.513s] [ 98%] [32mBuilding CXX object platforms/posix/CMakeFiles/px4.dir/apps.cpp.o[0m
+[5.513s] [ 98%] [32mBuilding CXX object platforms/posix/CMakeFiles/px4.dir/src/px4/common/main.cpp.o[0m
+[5.971s] [ 98%] [32m[1mLinking CXX executable ../../bin/px4[0m
+[6.991s] [ 98%] Built target px4
+[7.009s] [100%] Built target examples__dyn_hello
+[7.018s] Invoked command in '/home/adamgb/phd/gazebo_ws/build/px4' returned '0': /usr/bin/cmake --build /home/adamgb/phd/gazebo_ws/build/px4 -- -j32 -l32
+[7.028s] Invoking command in '/home/adamgb/phd/gazebo_ws/build/px4': /usr/bin/cmake --install /home/adamgb/phd/gazebo_ws/build/px4
+[7.035s] -- Install configuration: "Release"
+[7.035s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/ament_index/resource_index/package_run_dependencies/px4
+[7.035s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/ament_index/resource_index/parent_prefix_path/px4
+[7.035s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/environment/ament_prefix_path.sh
+[7.035s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/environment/ament_prefix_path.dsv
+[7.035s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/environment/path.sh
+[7.035s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/environment/path.dsv
+[7.035s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/local_setup.bash
+[7.035s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/local_setup.sh
+[7.036s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/local_setup.zsh
+[7.036s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/local_setup.dsv
+[7.036s] -- Installing: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/package.dsv
+[7.036s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/ament_index/resource_index/packages/px4
+[7.036s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/cmake/px4Config.cmake
+[7.036s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/cmake/px4Config-version.cmake
+[7.036s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/package.xml
+[7.042s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc
+[7.042s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix
+[7.042s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/rc.replay
+[7.042s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes
+[7.042s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/10017_jmavsim_iris
+[7.042s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/51000_gz_rover_ackermann
+[7.042s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/3011_jsbsim_hexarotor_x
+[7.042s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/10040_sihsim_quadx
+[7.042s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/10016_none_iris
+[7.043s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/1036_jsbsim_malolo
+[7.043s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/1013_gazebo-classic_iris_vision.post
+[7.043s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/10015_gazebo-classic_iris
+[7.043s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/1016_gazebo-classic_iris_downward_depth_camera
+[7.043s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/1033_jsbsim_rascal
+[7.043s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/52000_gz_rover_mecanum
+[7.043s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/1042_gazebo-classic_tiltrotor
+[7.043s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/1022_gazebo-classic_uuv_bluerov2_heavy
+[7.043s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/4010_gz_x500_mono_cam
+[7.043s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/10045_sihsim_rover_ackermann
+[7.043s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/6011_gazebo-classic_typhoon_h480
+[7.043s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/1037_gazebo-classic_believer
+[7.043s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/8011_gz_omnicopter
+[7.043s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/1010_gazebo-classic_iris_opt_flow.post
+[7.043s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/4011_gz_lawnmower
+[7.043s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/1032_gazebo-classic_plane_catapult
+[7.043s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/17001_flightgear_tf-g1
+[7.043s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/1040_gazebo-classic_standard_vtol
+[7.043s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/6011_gazebo-classic_typhoon_h480.post
+[7.043s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/4013_gz_x500_lidar_2d
+[7.043s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/1013_gazebo-classic_iris_vision
+[7.044s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/1034_flightgear_rascal-electric
+[7.044s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/1031_gazebo-classic_plane_cam.post
+[7.044s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/1010_gazebo-classic_iris_opt_flow
+[7.044s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/4020_gz_tiltrotor
+[7.044s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/50000_gz_rover_differential
+[7.044s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/1031_gazebo-classic_plane_cam
+[7.044s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/4005_gz_x500_vision
+[7.044s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/4001_gz_x500
+[7.044s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/4004_gz_standard_vtol
+[7.044s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/1041_gazebo-classic_tailsitter
+[7.044s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/1039_gazebo-classic_advanced_plane
+[7.044s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/10044_sihsim_hex
+[7.044s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/4014_gz_x500_mono_cam_down
+[7.044s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/1035_gazebo-classic_techpod
+[7.044s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/10043_sihsim_standard_vtol
+[7.044s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/1011_gazebo-classic_iris_irlock
+[7.044s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/2507_gazebo-classic_cloudship
+[7.044s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/1044_gazebo-classic_plane_lidar
+[7.044s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/4002_gz_x500_depth
+[7.044s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/1043_gazebo-classic_standard_vtol_drop
+[7.044s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/10041_sihsim_airplane
+[7.044s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/4019_gz_x500_gimbal
+[7.044s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/10019_gazebo-classic_omnicopter
+[7.044s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/4008_gz_advanced_plane
+[7.044s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/1038_gazebo-classic_glider
+[7.044s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/70000_gz_atmos
+[7.044s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/4009_gz_r1_rover
+[7.044s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/10018_gazebo-classic_iris_foggy_lidar
+[7.044s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/4017_gz_x500_lidar_front
+[7.044s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/17002_flightgear_tf-g2
+[7.044s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/1021_gazebo-classic_uuv_hippocampus
+[7.045s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/1030_gazebo-classic_plane
+[7.045s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/60002_gz_uuv_bluerov2_heavy
+[7.045s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/4018_gz_quadtailsitter
+[7.045s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/1019_gazebo-classic_iris_dual_gps
+[7.045s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/4016_gz_x500_lidar_down
+[7.045s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/4021_gz_x500_flow
+[7.045s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/1017_gazebo-classic_iris_opt_flow_mockup
+[7.045s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/4003_gz_rc_cessna
+[7.045s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/3010_jsbsim_quadrotor_x
+[7.045s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/1015_gazebo-classic_iris_depth_camera
+[7.045s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/1070_gazebo-classic_boat
+[7.045s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/1012_gazebo-classic_iris_rplidar
+[7.045s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/1045_gazebo-classic_quadtailsitter
+[7.045s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/4006_gz_px4vision
+[7.045s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/10030_gazebo-classic_px4vision
+[7.045s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/1062_flightgear_tf-r1
+[7.045s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/airframes/10042_sihsim_xvert
+[7.045s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/px4-rc.gzsim
+[7.045s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/px4-rc.mavlink
+[7.045s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/px4-rc.simulator
+[7.045s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/rcS
+[7.045s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/px4-rc.mavlinksim
+[7.045s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/px4-rc.jmavsim
+[7.045s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d-posix/px4-rc.sihsim
+[7.045s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/extras
+[7.045s] -- Installing: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/extras/component_general.json.xz
+[7.045s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/extras/parameters.json.xz
+[7.045s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/extras/actuators.json.xz
+[7.045s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/extras/all_events.json.xz
+[7.045s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d
+[7.045s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/rc.uuv_defaults
+[7.045s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/rc.serial
+[7.045s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/rc.airship_apps
+[7.045s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/rc.mc_apps
+[7.045s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/rc.balloon_apps
+[7.046s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/rc.rover_mecanum_defaults
+[7.046s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes
+[7.046s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/4001_quad_x
+[7.046s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/1100_rc_quad_x_sih.hil
+[7.046s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/14001_generic_mc_with_tilt
+[7.046s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/4019_x500_v2
+[7.046s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/16001_helicopter
+[7.046s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/13200_generic_vtol_tailsitter
+[7.046s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/2106_albatross
+[7.046s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/12001_octo_cox
+[7.046s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/2100_standard_plane
+[7.046s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/4050_generic_250
+[7.046s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/52000_generic_rover_mecanum
+[7.046s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/4053_holybro_kopis2
+[7.046s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/1002_standard_vtol.hil
+[7.046s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/4041_beta75x
+[7.046s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/17003_TF-G2
+[7.046s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/4061_atl_mantis_edu
+[7.046s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/51002_nxp_b3rb
+[7.046s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/3000_generic_wing
+[7.046s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/51001_axial_scx10_2_trail_honcho
+[7.046s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/60002_uuv_bluerov2_heavy
+[7.046s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/1103_standard_vtol_sih.hil
+[7.046s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/13000_generic_vtol_standard
+[7.046s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/60000_uuv_generic
+[7.046s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/1104_standard_ackermann_sih.hil
+[7.046s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/51000_generic_rover_ackermann
+[7.046s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/1102_tailsitter_duo_sih.hil
+[7.046s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/5001_quad_+
+[7.046s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/18001_TF-B1
+[7.046s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/4601_droneblocks_dexi_5
+[7.046s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/6002_draco_r
+[7.046s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/8001_octo_x
+[7.046s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/17002_TF-AutoG2
+[7.046s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/7001_hexa_+
+[7.046s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/4901_crazyflie21
+[7.046s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/4052_holybro_qav250
+[7.046s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/11001_hexa_cox
+[7.047s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/24001_dodeca_cox
+[7.047s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/4020_holybro_px4vision_v1_5
+[7.047s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/1101_rc_plane_sih.hil
+[7.047s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/9001_octo_+
+[7.047s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/4015_holybro_s500
+[7.047s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/50001_aion_robotics_r1_rover
+[7.047s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/50000_generic_rover_differential
+[7.047s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/4017_nxp_hovergames
+[7.047s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/4500_clover4
+[7.047s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/4073_ifo-s
+[7.047s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/1001_rc_quad_x.hil
+[7.047s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/4016_holybro_px4vision
+[7.047s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/4071_ifo
+[7.047s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/13030_generic_vtol_quad_tiltrotor
+[7.047s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/13100_generic_vtol_tiltrotor
+[7.047s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/60001_uuv_hippocampus
+[7.047s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/6001_hexa_x
+[7.047s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/2507_cloudship
+[7.047s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/airframes/4014_s500
+[7.047s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/rc.sensors
+[7.047s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/rc.vtol_defaults
+[7.047s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/rc.thermal_cal
+[7.047s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/rc.rover_ackermann_defaults
+[7.047s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/rc.rover_differential_apps
+[7.047s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/rc.rover_differential_defaults
+[7.047s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/rc.mc_defaults
+[7.047s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/rc.sysinit
+[7.047s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/rc.autostart.post
+[7.047s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/rc.filepaths
+[7.047s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/rc.autostart_ext
+[7.047s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/rcS
+[7.047s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/rc.autostart
+[7.047s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/rc.fw_defaults
+[7.047s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/rc.uuv_apps
+[7.047s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/rc.balloon_defaults
+[7.047s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/rc.rover_ackermann_apps
+[7.047s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/rc.vtol_apps
+[7.048s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/rc.airship_defaults
+[7.048s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/rc.logging
+[7.048s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/rc.fw_apps
+[7.048s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/rc.vehicle_setup
+[7.048s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/rc.rover_mecanum_apps
+[7.048s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/etc/init.d/rc.heli_defaults
+[7.048s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4
+[7.048s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-rover_mecanum
+[7.048s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-rover_differential
+[7.048s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-airship_att_control
+[7.048s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-tests
+[7.048s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-hello
+[7.048s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-airspeed_selector
+[7.048s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-failure
+[7.048s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-fw_autotune_attitude_control
+[7.048s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-flight_mode_manager
+[7.048s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-gyro_calibration
+[7.048s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-dataman
+[7.048s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-sensors
+[7.048s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-fake_gps
+[7.048s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-sd_bench
+[7.048s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-mc_hover_thrust_estimator
+[7.048s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-battery_simulator
+[7.048s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-vtol_att_control
+[7.048s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-mag_bias_estimator
+[7.048s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-mc_pos_control
+[7.048s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-sensor_mag_sim
+[7.048s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-camera_trigger
+[7.048s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-uuv_pos_control
+[7.048s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-sensor_airspeed_sim
+[7.048s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-work_item_example
+[7.048s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-work_queue
+[7.048s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-rc_update
+[7.048s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-landing_target_estimator
+[7.048s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-navigator
+[7.048s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-actuator_test
+[7.049s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-land_detector
+[7.049s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-msp_osd
+[7.049s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-px4_mavlink_debug
+[7.049s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-load_mon
+[7.049s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-controllib_test
+[7.049s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-rc_tests
+[7.049s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-send_event
+[7.049s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-led_control
+[7.049s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-temperature_compensation
+[7.049s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-fw_lat_lon_control
+[7.049s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-wqueue_test
+[7.049s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-logger
+[7.049s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-septentrio
+[7.049s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-tune_control
+[7.049s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-cdev_test
+[7.049s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-commander
+[7.049s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-tone_alarm
+[7.049s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-fake_imu
+[7.049s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-simulator_sih
+[7.049s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-sensor_baro_sim
+[7.049s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-camera_feedback
+[7.049s] -- Installing: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4
+[7.069s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-system_time
+[7.069s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-replay
+[7.069s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-gyro_fft
+[7.069s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-pwm_out_sim
+[7.069s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-gimbal
+[7.069s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-uorb_tests
+[7.069s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-fw_mode_manager
+[7.069s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-fw_att_control
+[7.069s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-perf
+[7.069s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-px4_simple_app
+[7.069s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-local_position_estimator
+[7.069s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-gps
+[7.069s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-sensor_gps_sim
+[7.069s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-shutdown
+[7.069s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-payload_deliverer
+[7.069s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-system_power_simulator
+[7.069s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-dyn
+[7.069s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-attitude_estimator_q
+[7.069s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-listener
+[7.069s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-fw_rate_control
+[7.069s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-rover_ackermann
+[7.070s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-ekf2
+[7.070s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-uorb
+[7.070s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-mavlink
+[7.070s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-fake_magnetometer
+[7.070s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-alias.sh
+[7.070s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-mc_att_control
+[7.070s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-uuv_att_control
+[7.070s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-uxrce_dds_client
+[7.070s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-sensor_agp_sim
+[7.070s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-bsondump
+[7.070s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-ver
+[7.070s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-gz_bridge
+[7.070s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-mc_autotune_attitude_control
+[7.070s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-hrt_test
+[7.070s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-control_allocator
+[7.070s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-manual_control
+[7.070s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-param
+[7.070s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-mc_rate_control
+[7.070s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/lib/px4/px4-simulator_mavlink
+[7.070s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models
+[7.070s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_vision
+[7.070s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_vision/model.sdf
+[7.070s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_vision/model.config
+[7.070s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/px4vision
+[7.070s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/px4vision/model.sdf
+[7.070s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/px4vision/thumbnails
+[7.071s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/px4vision/thumbnails/px4_vision_top.png
+[7.071s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/px4vision/thumbnails/px4vision_diagonal.png
+[7.071s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/px4vision/thumbnails/px4_vision_front.png
+[7.071s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/px4vision/meshes
+[7.071s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/px4vision/meshes/body.dae
+[7.071s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/px4vision/meshes/iris_prop_ccw.dae
+[7.071s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/px4vision/meshes/iris_prop_cw.dae
+[7.071s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/px4vision/model.config
+[7.071s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/rc_cessna
+[7.071s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/rc_cessna/model.sdf
+[7.071s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/rc_cessna/meshes
+[7.071s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/rc_cessna/meshes/propeller_cw.dae
+[7.071s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/rc_cessna/meshes/right_flap.dae
+[7.071s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/rc_cessna/meshes/body.dae
+[7.071s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/rc_cessna/meshes/left_flap.dae
+[7.071s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/rc_cessna/meshes/elevators.dae
+[7.071s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/rc_cessna/meshes/propeller_ccw.dae
+[7.071s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/rc_cessna/meshes/rudder.dae
+[7.071s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/rc_cessna/meshes/iris_prop_ccw.dae
+[7.071s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/rc_cessna/meshes/right_aileron.dae
+[7.071s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/rc_cessna/meshes/left_aileron.dae
+[7.071s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/rc_cessna/meshes/iris_prop_cw.dae
+[7.071s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/rc_cessna/model.config
+[7.071s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/standard_vtol
+[7.071s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/standard_vtol/model.sdf
+[7.071s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/standard_vtol/meshes
+[7.071s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/standard_vtol/meshes/x8_elevon_right.dae
+[7.072s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/standard_vtol/meshes/x8_wing.dae
+[7.072s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/standard_vtol/meshes/x8_elevon_left.dae
+[7.072s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/standard_vtol/meshes/iris_prop_ccw.dae
+[7.072s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/standard_vtol/meshes/iris_prop_cw.dae
+[7.072s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/standard_vtol/model.config
+[7.072s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/arucotag
+[7.072s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/arucotag/arucotag.png
+[7.072s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/arucotag/model.sdf
+[7.072s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/arucotag/model.config
+[7.072s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_lidar_down
+[7.072s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_lidar_down/model.sdf
+[7.072s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_lidar_down/model.config
+[7.072s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_lidar_2d
+[7.072s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_lidar_2d/model.sdf
+[7.072s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_lidar_2d/model.config
+[7.072s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/rover_ackermann
+[7.072s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/rover_ackermann/model.sdf
+[7.072s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/rover_ackermann/meshes
+[7.072s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/rover_ackermann/meshes/rover_ackermann_base.dae
+[7.072s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/rover_ackermann/meshes/rover_ackermann_wheel.dae
+[7.072s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/rover_ackermann/model.config
+[7.072s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/airspeed
+[7.072s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/airspeed/model.sdf
+[7.072s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/airspeed/model.config
+[7.072s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/lidar_2d_v2
+[7.072s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/lidar_2d_v2/model.sdf
+[7.072s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/lidar_2d_v2/thumbnails
+[7.072s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/lidar_2d_v2/thumbnails/5.jpg
+[7.072s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/lidar_2d_v2/thumbnails/2.jpg
+[7.072s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/lidar_2d_v2/thumbnails/4.jpg
+[7.072s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/lidar_2d_v2/thumbnails/1.jpg
+[7.073s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/lidar_2d_v2/thumbnails/3.jpg
+[7.073s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/lidar_2d_v2/meshes
+[7.073s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/lidar_2d_v2/meshes/lidar_2d_v2.jpg
+[7.073s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/lidar_2d_v2/meshes/lidar_2d_v2.dae
+[7.073s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/lidar_2d_v2/model.config
+[7.073s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/rover_differential
+[7.073s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/rover_differential/model.sdf
+[7.073s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/rover_differential/meshes
+[7.073s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/rover_differential/meshes/rover_differential_wheel.dae
+[7.073s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/rover_differential/meshes/rover_differential_base.dae
+[7.073s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/rover_differential/model.config
+[7.073s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_mono_cam
+[7.073s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_mono_cam/model.sdf
+[7.073s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_mono_cam/model.config
+[7.073s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_gimbal
+[7.073s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_gimbal/model.sdf
+[7.073s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_gimbal/model.config
+[7.073s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/rover_mecanum
+[7.073s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/rover_mecanum/model.sdf
+[7.073s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/rover_mecanum/meshes
+[7.073s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/rover_mecanum/meshes/rover_mec_base.dae
+[7.073s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/rover_mecanum/model.config
+[7.073s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/advanced_plane
+[7.073s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/advanced_plane/model.sdf
+[7.073s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/advanced_plane/model.config
+[7.073s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/mono_cam
+[7.073s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/mono_cam/model.sdf
+[7.073s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/mono_cam/model.config
+[7.074s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_mono_cam_down
+[7.074s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_mono_cam_down/model.sdf
+[7.074s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_mono_cam_down/model.config
+[7.074s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/lawnmower
+[7.074s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/lawnmower/model.sdf
+[7.074s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/lawnmower/meshes
+[7.074s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/lawnmower/meshes/wheel_link.STL
+[7.074s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/lawnmower/model.config
+[7.074s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_depth
+[7.074s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_depth/LICENSE
+[7.074s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_depth/model.sdf
+[7.074s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_depth/thumbnails
+[7.074s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_depth/thumbnails/4.png
+[7.074s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_depth/thumbnails/5.png
+[7.074s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_depth/thumbnails/3.png
+[7.074s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_depth/thumbnails/2.png
+[7.074s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_depth/thumbnails/1.png
+[7.074s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_depth/model.config
+[7.074s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/atmos
+[7.074s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/atmos/model.sdf
+[7.074s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/omnicopter
+[7.074s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/omnicopter/model.sdf
+[7.074s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/omnicopter/thumbnails
+[7.074s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/omnicopter/thumbnails/omnicopter.png
+[7.074s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/omnicopter/meshes
+[7.074s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/omnicopter/meshes/omnicopter.stl
+[7.074s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/omnicopter/meshes/iris_prop_ccw.dae
+[7.074s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/omnicopter/meshes/iris_prop_cw.dae
+[7.075s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/omnicopter/model.config
+[7.075s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/tiltrotor
+[7.075s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/tiltrotor/model.sdf
+[7.075s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/tiltrotor/model.config
+[7.075s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_lidar_front
+[7.075s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_lidar_front/model.sdf
+[7.075s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_lidar_front/model.config
+[7.075s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_base
+[7.075s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_base/LICENSE
+[7.075s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_base/model.sdf
+[7.075s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_base/thumbnails
+[7.075s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_base/thumbnails/4.png
+[7.075s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_base/thumbnails/5.png
+[7.075s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_base/thumbnails/3.png
+[7.075s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_base/thumbnails/2.png
+[7.075s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_base/thumbnails/1.png
+[7.075s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_base/materials
+[7.075s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_base/materials/textures
+[7.075s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_base/materials/textures/nxp.png
+[7.075s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_base/materials/textures/rd.png
+[7.076s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_base/materials/textures/CF.png
+[7.076s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_base/meshes
+[7.076s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_base/meshes/1345_prop_cw.stl
+[7.076s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_base/meshes/1345_prop_ccw.stl
+[7.076s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_base/meshes/NXP-HGD-CF.dae
+[7.076s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_base/meshes/5010Bell.dae
+[7.076s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_base/meshes/5010Base.dae
+[7.076s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_base/meshes/CF.png
+[7.076s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_base/model.config
+[7.076s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/gimbal
+[7.076s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/gimbal/model.sdf
+[7.076s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/gimbal/meshes
+[7.076s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/gimbal/meshes/cgo3_camera_remeshed_v1.stl
+[7.076s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/gimbal/meshes/cgo3_vertical_arm_remeshed_v1.stl
+[7.076s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/gimbal/meshes/cgo3_horizontal_arm_remeshed_v1.stl
+[7.076s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/gimbal/meshes/cgo3_mount_remeshed_v1.stl
+[7.076s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/gimbal/model.config
+[7.076s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/moving_platform
+[7.076s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/moving_platform/model.sdf
+[7.076s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/moving_platform/model.config
+[7.076s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/uuv_bluerov2_heavy
+[7.076s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/uuv_bluerov2_heavy/model.sdf
+[7.076s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/uuv_bluerov2_heavy/meshes
+[7.076s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/uuv_bluerov2_heavy/meshes/prop.dae
+[7.076s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/uuv_bluerov2_heavy/meshes/BlueROV2heavy.dae
+[7.076s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/uuv_bluerov2_heavy/model.config
+[7.076s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/OakD-Lite
+[7.076s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/OakD-Lite/LICENSE
+[7.077s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/OakD-Lite/model.sdf
+[7.077s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/OakD-Lite/thumbnails
+[7.077s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/OakD-Lite/thumbnails/4.png
+[7.077s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/OakD-Lite/thumbnails/5.png
+[7.077s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/OakD-Lite/thumbnails/3.png
+[7.077s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/OakD-Lite/thumbnails/2.png
+[7.077s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/OakD-Lite/thumbnails/1.png
+[7.077s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/OakD-Lite/meshes
+[7.077s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/OakD-Lite/meshes/OakDLite.dae
+[7.077s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/OakD-Lite/model.config
+[7.077s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/LW20
+[7.077s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/LW20/model.sdf
+[7.077s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/LW20/meshes
+[7.077s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/LW20/meshes/LW20.dae
+[7.077s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/LW20/model.config
+[7.077s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/helipad
+[7.077s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/helipad/model.sdf
+[7.077s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/helipad/helipad.jpg
+[7.077s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/helipad/model.config
+[7.077s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/r1_rover
+[7.077s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/r1_rover/model.sdf
+[7.077s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/r1_rover/meshes
+[7.077s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/r1_rover/meshes/wheel_link_simple.STL
+[7.077s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/r1_rover/meshes/top_link.STL
+[7.077s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/r1_rover/meshes/antenna_link.STL
+[7.077s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/r1_rover/meshes/battery_link.STL
+[7.077s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/r1_rover/meshes/wheel_link.STL
+[7.077s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/r1_rover/meshes/housing_link.STL
+[7.077s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/r1_rover/meshes/chassis_link.STL
+[7.077s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/r1_rover/model.config
+[7.077s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/spacecraft_2d
+[7.077s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/spacecraft_2d/model.sdf
+[7.078s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_flow
+[7.078s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_flow/model.sdf
+[7.078s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500_flow/model.config
+[7.078s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500
+[7.078s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500/LICENSE
+[7.078s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500/model.sdf
+[7.078s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500/thumbnails
+[7.078s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500/thumbnails/4.png
+[7.078s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500/thumbnails/5.png
+[7.078s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500/thumbnails/3.png
+[7.078s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500/thumbnails/2.png
+[7.078s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500/thumbnails/1.png
+[7.078s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/x500/model.config
+[7.078s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/optical_flow
+[7.078s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/optical_flow/model.sdf
+[7.078s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/optical_flow/model.config
+[7.078s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/quadtailsitter
+[7.078s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/quadtailsitter/model.sdf
+[7.078s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/quadtailsitter/meshes
+[7.078s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/quadtailsitter/meshes/body.dae
+[7.078s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/quadtailsitter/meshes/iris_prop_ccw.dae
+[7.078s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/quadtailsitter/meshes/iris_prop_cw.dae
+[7.078s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/models/quadtailsitter/model.config
+[7.078s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/worlds
+[7.078s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/worlds/forest.sdf
+[7.078s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/worlds/windy.sdf
+[7.078s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/worlds/kthspacelab.sdf
+[7.078s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/worlds/lawn.sdf
+[7.078s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/worlds/moving_platform.sdf
+[7.078s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/worlds/rover.sdf
+[7.078s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/worlds/walls.sdf
+[7.079s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/worlds/aruco.sdf
+[7.079s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/worlds/default.sdf
+[7.079s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/worlds/frictionless.sdf
+[7.079s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/worlds/baylands.sdf
+[7.079s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/px4/share/px4/Tools/simulation/gz/worlds/underwater.sdf
+[7.079s] Invoked command in '/home/adamgb/phd/gazebo_ws/build/px4' returned '0': /usr/bin/cmake --install /home/adamgb/phd/gazebo_ws/build/px4

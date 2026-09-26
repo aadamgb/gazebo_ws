@@ -1,0 +1,51 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"INSTALL",
+			"absl_cc_library"
+		],
+		"files" : 
+		[
+			"/home/adamgb/phd/gazebo_ws/build/px4/_deps/abseil-cpp-src/CMake/AbseilHelpers.cmake",
+			"/home/adamgb/phd/gazebo_ws/build/px4/_deps/abseil-cpp-src/absl/utility/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 17,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 224,
+				"parent" : 1
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "lib/pkgconfig",
+			"paths" : 
+			[
+				"/home/adamgb/phd/gazebo_ws/build/px4/lib/pkgconfig/absl_utility.pc"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "_deps/abseil-cpp-build/absl/utility",
+		"source" : "/home/adamgb/phd/gazebo_ws/build/px4/_deps/abseil-cpp-src/absl/utility"
+	}
+}

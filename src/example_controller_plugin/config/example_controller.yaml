@@ -1,0 +1,10 @@
+mrs_uav_controllers:
+
+  example_controller:
+
+    gains:
+
+      position: 7.0
+      velocity: 4.0
+      attitude: 5.0
+      attitude_rate: 2.0

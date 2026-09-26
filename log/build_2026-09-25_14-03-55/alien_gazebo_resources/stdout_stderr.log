@@ -1,0 +1,110 @@
+-- The C compiler identification is GNU 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Configuring done (0.5s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/adamgb/phd/gazebo_ws/build/alien_gazebo_resources
+-- Install configuration: ""
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models/gate
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models/gate/model.sdf
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models/gate/meshes
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models/gate/meshes/gate.dae
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models/gate/meshes/MRSGate.png
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models/gate/model.config
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models/a300_resources
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models/a300_resources/sdf
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models/a300_resources/sdf/a300.sdf.jinja
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models/a300_resources/meshes
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models/a300_resources/meshes/a300
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models/a300_resources/meshes/a300/battery_mount_mesh_file.stl
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models/a300_resources/meshes/a300/prop_mesh_file.dae
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models/a300_resources/meshes/a300/motor_middle_mesh_file_orig.stl
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models/a300_resources/meshes/a300/motor_top_mesh_file.stl
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models/a300_resources/meshes/a300/leg_3d_print_mesh_file.stl
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models/a300_resources/meshes/a300/motor_middle_mesh_file.stl
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models/a300_resources/meshes/a300/carbon_light.jpg
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models/a300_resources/meshes/a300/motor_bottom_mesh_file.stl
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models/a300_resources/meshes/a300/frame_mesh_file.stl
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models/a300_resources/meshes/sensors
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models/a300_resources/meshes/sensors/realsense_glass.stl
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models/a300_resources/meshes/sensors/realsense_body.stl
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models/a300_resources/meshes/sensors/garmin_lidar_v3.stl
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models/a300_resources/model.config
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models/warehouse
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models/warehouse/model.sdf
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models/warehouse/meshes
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models/warehouse/meshes/wall.png
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models/warehouse/meshes/pathway.png
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models/warehouse/meshes/floor.png
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models/warehouse/meshes/ceiling.png.001.png
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models/warehouse/meshes/warehouse.dae
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models/warehouse/model.config
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models/checkerboard_plane
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models/checkerboard_plane/model.sdf
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models/checkerboard_plane/materials
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models/checkerboard_plane/materials/textures
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models/checkerboard_plane/materials/textures/checker.png
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/models/checkerboard_plane/model.config
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/worlds
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/worlds/racetrack.world
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/worlds/kladno.world
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/worlds/mrs_racetrack1.world
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/worlds/dcl_finals.world
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/worlds/forest.world
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/worlds/dcl_quali_week2.world
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/worlds/checkerboard.sdf
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/worlds/quali_january_1.world
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/worlds/grass_plane.world
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/worlds/racetrack_warehouse.world
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/worlds/kladno_outside.world
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/worlds/8-track.world
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/worlds/a_few_trees.world
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/ROMFS
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/ROMFS/px4fmu_common
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/ROMFS/px4fmu_common/init.d-posix
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/ROMFS/px4fmu_common/init.d-posix/rc.replay
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/ROMFS/px4fmu_common/init.d-posix/airframes
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/ROMFS/px4fmu_common/init.d-posix/airframes/4001_a300
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/ROMFS/px4fmu_common/init.d-posix/px4-rc.gzsim
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/ROMFS/px4fmu_common/init.d-posix/px4-rc.mavlink
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/ROMFS/px4fmu_common/init.d-posix/px4-rc.simulator
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/ROMFS/px4fmu_common/init.d-posix/px4-rc.mavlink_qgc
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/ROMFS/px4fmu_common/init.d-posix/rcS
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/ROMFS/px4fmu_common/init.d-posix/px4-rc.params
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/ROMFS/px4fmu_common/mixers
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/ROMFS/px4fmu_common/mixers/quad_x.main.mix
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/ROMFS/px4fmu_common/init.d
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/ROMFS/px4fmu_common/init.d/rc.mc_apps
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/ROMFS/px4fmu_common/init.d/rc.mc_defaults
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/ROMFS/px4fmu_common/init.d/rc.logging
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/ROMFS/px4fmu_common/init.d/rc.vehicle_setup
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/config
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/config/mrs_uav_system
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/config/mrs_uav_system/a300.yaml
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/ament_index/resource_index/package_run_dependencies/alien_gazebo_resources
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/ament_index/resource_index/parent_prefix_path/alien_gazebo_resources
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/environment/ament_prefix_path.sh
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/environment/ament_prefix_path.dsv
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/environment/path.sh
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/environment/path.dsv
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/local_setup.bash
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/local_setup.sh
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/local_setup.zsh
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/local_setup.dsv
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/package.dsv
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/ament_index/resource_index/packages/alien_gazebo_resources
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/cmake/alien_gazebo_resourcesConfig.cmake
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/cmake/alien_gazebo_resourcesConfig-version.cmake
+-- Installing: /home/adamgb/phd/gazebo_ws/install/alien_gazebo_resources/share/alien_gazebo_resources/package.xml

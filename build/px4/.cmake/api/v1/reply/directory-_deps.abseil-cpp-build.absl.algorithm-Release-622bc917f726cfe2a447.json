@@ -1,0 +1,73 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"INSTALL",
+			"absl_cc_library"
+		],
+		"files" : 
+		[
+			"/home/adamgb/phd/gazebo_ws/build/px4/_deps/abseil-cpp-src/CMake/AbseilHelpers.cmake",
+			"/home/adamgb/phd/gazebo_ws/build/px4/_deps/abseil-cpp-src/absl/algorithm/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 17,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 224,
+				"parent" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 42,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 224,
+				"parent" : 3
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "lib/pkgconfig",
+			"paths" : 
+			[
+				"/home/adamgb/phd/gazebo_ws/build/px4/lib/pkgconfig/absl_algorithm.pc"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "lib/pkgconfig",
+			"paths" : 
+			[
+				"/home/adamgb/phd/gazebo_ws/build/px4/lib/pkgconfig/absl_algorithm_container.pc"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "_deps/abseil-cpp-build/absl/algorithm",
+		"source" : "/home/adamgb/phd/gazebo_ws/build/px4/_deps/abseil-cpp-src/absl/algorithm"
+	}
+}

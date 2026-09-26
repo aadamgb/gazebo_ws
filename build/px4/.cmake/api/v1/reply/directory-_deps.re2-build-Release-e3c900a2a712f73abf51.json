@@ -1,0 +1,115 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"/home/adamgb/phd/gazebo_ws/build/px4/_deps/re2-src/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 240,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 248,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 259,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 267,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"_deps/re2-build/libre2.a"
+			],
+			"targetId" : "re2::@8091ef369240a0bad874",
+			"targetIndex" : 683,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "include/re2",
+			"paths" : 
+			[
+				"/home/adamgb/phd/gazebo_ws/build/px4/_deps/re2-src/re2/filtered_re2.h",
+				"/home/adamgb/phd/gazebo_ws/build/px4/_deps/re2-src/re2/re2.h",
+				"/home/adamgb/phd/gazebo_ws/build/px4/_deps/re2-src/re2/set.h",
+				"/home/adamgb/phd/gazebo_ws/build/px4/_deps/re2-src/re2/stringpiece.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/re2",
+			"exportName" : "re2Targets",
+			"exportTargets" : 
+			[
+				{
+					"id" : "re2::@8091ef369240a0bad874",
+					"index" : 683
+				}
+			],
+			"paths" : 
+			[
+				"_deps/re2-build/CMakeFiles/Export/2163157bb4e691faa63e00f4fb3aeb7d/re2Targets.cmake"
+			],
+			"type" : "export"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/re2",
+			"paths" : 
+			[
+				"/home/adamgb/phd/gazebo_ws/build/px4/_deps/re2-build/re2Config.cmake",
+				"/home/adamgb/phd/gazebo_ws/build/px4/_deps/re2-build/re2ConfigVersion.cmake"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "lib/pkgconfig",
+			"paths" : 
+			[
+				"/home/adamgb/phd/gazebo_ws/build/px4/_deps/re2-build/re2.pc"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "_deps/re2-build",
+		"source" : "/home/adamgb/phd/gazebo_ws/build/px4/_deps/re2-src"
+	}
+}

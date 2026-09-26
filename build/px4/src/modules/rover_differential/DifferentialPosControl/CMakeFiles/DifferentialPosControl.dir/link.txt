@@ -1,0 +1,2 @@
+/usr/bin/ar qc libDifferentialPosControl.a CMakeFiles/DifferentialPosControl.dir/DifferentialPosControl.cpp.o
+/usr/bin/ranlib libDifferentialPosControl.a

@@ -1,0 +1,23 @@
+-- PX4_GIT_TAG: v1.17.0-dev
+CMake Warning (dev) at CMakeLists.txt:176 (find_package):
+  Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules
+  are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use
+  the cmake_policy command to set the policy and suppress this warning.
+
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.12.3", minimum required is "3") 
+-- PX4 config file: /home/adamgb/phd/gazebo_ws/src/px4_firmware/boards/px4/sitl/default.px4board
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'menuconfig'
+CMake Error at cmake/kconfig.cmake:6 (message):
+  kconfiglib is not installed or not in PATH
+
+  please install using "pip3 install kconfiglib"
+
+Call Stack (most recent call first):
+  CMakeLists.txt:191 (include)
+
+
+-- Configuring incomplete, errors occurred!

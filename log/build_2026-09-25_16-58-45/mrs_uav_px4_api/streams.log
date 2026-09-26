@@ -1,0 +1,39 @@
+[0.015s] Invoking command in '/home/adamgb/phd/gazebo_ws/build/mrs_uav_px4_api': /usr/bin/cmake --build /home/adamgb/phd/gazebo_ws/build/mrs_uav_px4_api -- -j32 -l32
+[0.069s] [100%] Built target MrsUavPx4Api_Api
+[0.082s] Invoked command in '/home/adamgb/phd/gazebo_ws/build/mrs_uav_px4_api' returned '0': /usr/bin/cmake --build /home/adamgb/phd/gazebo_ws/build/mrs_uav_px4_api -- -j32 -l32
+[0.083s] Invoking command in '/home/adamgb/phd/gazebo_ws/build/mrs_uav_px4_api': /usr/bin/cmake --install /home/adamgb/phd/gazebo_ws/build/mrs_uav_px4_api
+[0.089s] -- Install configuration: ""
+[0.089s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/mrs_uav_px4_api/share/mrs_uav_px4_api/plugins.xml
+[0.089s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/mrs_uav_px4_api/share/mrs_uav_px4_api/environment/library_path.sh
+[0.090s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/mrs_uav_px4_api/share/mrs_uav_px4_api/environment/library_path.dsv
+[0.090s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/mrs_uav_px4_api/lib/libMrsUavPx4Api_Api.so
+[0.090s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/mrs_uav_px4_api/share/mrs_uav_px4_api/launch
+[0.090s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/mrs_uav_px4_api/share/mrs_uav_px4_api/launch/mavros.launch.py
+[0.090s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/mrs_uav_px4_api/share/mrs_uav_px4_api/launch/api.launch.py
+[0.090s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/mrs_uav_px4_api/share/mrs_uav_px4_api/config
+[0.090s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/mrs_uav_px4_api/share/mrs_uav_px4_api/config/mavros_plugins.yaml
+[0.090s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/mrs_uav_px4_api/share/mrs_uav_px4_api/config/px4_api.yaml
+[0.090s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/mrs_uav_px4_api/share/mrs_uav_px4_api/config/mavros_px4_config.yaml
+[0.090s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/mrs_uav_px4_api/share/ament_index/resource_index/package_run_dependencies/mrs_uav_px4_api
+[0.090s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/mrs_uav_px4_api/share/ament_index/resource_index/parent_prefix_path/mrs_uav_px4_api
+[0.090s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/mrs_uav_px4_api/share/mrs_uav_px4_api/environment/ament_prefix_path.sh
+[0.091s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/mrs_uav_px4_api/share/mrs_uav_px4_api/environment/ament_prefix_path.dsv
+[0.091s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/mrs_uav_px4_api/share/mrs_uav_px4_api/environment/path.sh
+[0.091s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/mrs_uav_px4_api/share/mrs_uav_px4_api/environment/path.dsv
+[0.092s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/mrs_uav_px4_api/share/mrs_uav_px4_api/local_setup.bash
+[0.092s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/mrs_uav_px4_api/share/mrs_uav_px4_api/local_setup.sh
+[0.092s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/mrs_uav_px4_api/share/mrs_uav_px4_api/local_setup.zsh
+[0.092s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/mrs_uav_px4_api/share/mrs_uav_px4_api/local_setup.dsv
+[0.092s] -- Installing: /home/adamgb/phd/gazebo_ws/install/mrs_uav_px4_api/share/mrs_uav_px4_api/package.dsv
+[0.092s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/mrs_uav_px4_api/share/ament_index/resource_index/packages/mrs_uav_px4_api
+[0.092s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/mrs_uav_px4_api/share/ament_index/resource_index/mrs_uav_hw_api__pluginlib__plugin/mrs_uav_px4_api
+[0.092s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/mrs_uav_px4_api/share/mrs_uav_px4_api/cmake/export_mrs_uav_px4_apiExport.cmake
+[0.093s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/mrs_uav_px4_api/share/mrs_uav_px4_api/cmake/export_mrs_uav_px4_apiExport-noconfig.cmake
+[0.093s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/mrs_uav_px4_api/share/mrs_uav_px4_api/cmake/ament_cmake_export_libraries-extras.cmake
+[0.093s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/mrs_uav_px4_api/share/mrs_uav_px4_api/cmake/ament_cmake_export_include_directories-extras.cmake
+[0.093s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/mrs_uav_px4_api/share/mrs_uav_px4_api/cmake/ament_cmake_export_targets-extras.cmake
+[0.093s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/mrs_uav_px4_api/share/mrs_uav_px4_api/cmake/ament_cmake_export_dependencies-extras.cmake
+[0.093s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/mrs_uav_px4_api/share/mrs_uav_px4_api/cmake/mrs_uav_px4_apiConfig.cmake
+[0.093s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/mrs_uav_px4_api/share/mrs_uav_px4_api/cmake/mrs_uav_px4_apiConfig-version.cmake
+[0.093s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/mrs_uav_px4_api/share/mrs_uav_px4_api/package.xml
+[0.094s] Invoked command in '/home/adamgb/phd/gazebo_ws/build/mrs_uav_px4_api' returned '0': /usr/bin/cmake --install /home/adamgb/phd/gazebo_ws/build/mrs_uav_px4_api

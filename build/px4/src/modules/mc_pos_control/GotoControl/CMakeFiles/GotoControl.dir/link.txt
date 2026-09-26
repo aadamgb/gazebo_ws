@@ -1,0 +1,2 @@
+/usr/bin/ar qc libGotoControl.a CMakeFiles/GotoControl.dir/GotoControl.cpp.o
+/usr/bin/ranlib libGotoControl.a

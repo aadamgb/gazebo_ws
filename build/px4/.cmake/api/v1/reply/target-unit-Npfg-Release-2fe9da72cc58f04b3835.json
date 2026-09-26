@@ -1,0 +1,2442 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "unit-Npfg"
+		}
+	],
+	"backtrace" : 2,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"px4_add_unit_gtest",
+			"link_directories",
+			"target_link_libraries",
+			"link_fuzztest",
+			"px4_os_prebuild_targets",
+			"include",
+			"fuzztest_cc_library",
+			"absl_cc_library",
+			"add_dependencies",
+			"add_compile_options",
+			"px4_add_common_flags",
+			"add_definitions",
+			"px4_os_add_flags",
+			"include_directories"
+		],
+		"files" : 
+		[
+			"cmake/px4_add_gtest.cmake",
+			"src/lib/npfg/CMakeLists.txt",
+			"CMakeLists.txt",
+			"test/fuzztest/cmake/AddFuzzTest.cmake",
+			"platforms/posix/cmake/px4_impl_os.cmake",
+			"cmake/kconfig.cmake",
+			"platforms/posix/src/px4/common/CMakeLists.txt",
+			"test/fuzztest/cmake/FuzzTestHelpers.cmake",
+			"test/fuzztest/fuzztest/internal/domains/CMakeLists.txt",
+			"test/fuzztest/fuzztest/CMakeLists.txt",
+			"test/fuzztest/fuzztest/internal/CMakeLists.txt",
+			"/home/adamgb/phd/gazebo_ws/build/px4/_deps/abseil-cpp-src/CMake/AbseilHelpers.cmake",
+			"/home/adamgb/phd/gazebo_ws/build/px4/_deps/abseil-cpp-src/absl/random/CMakeLists.txt",
+			"test/fuzztest/common/CMakeLists.txt",
+			"/home/adamgb/phd/gazebo_ws/build/px4/_deps/googletest-src/googletest/CMakeLists.txt",
+			"/home/adamgb/phd/gazebo_ws/build/px4/_deps/abseil-cpp-src/absl/flags/CMakeLists.txt",
+			"/home/adamgb/phd/gazebo_ws/build/px4/_deps/abseil-cpp-src/absl/container/CMakeLists.txt",
+			"/home/adamgb/phd/gazebo_ws/build/px4/_deps/abseil-cpp-src/absl/status/CMakeLists.txt",
+			"/home/adamgb/phd/gazebo_ws/build/px4/_deps/abseil-cpp-src/absl/strings/CMakeLists.txt",
+			"/home/adamgb/phd/gazebo_ws/build/px4/_deps/abseil-cpp-src/absl/crc/CMakeLists.txt",
+			"/home/adamgb/phd/gazebo_ws/build/px4/_deps/abseil-cpp-src/absl/log/CMakeLists.txt",
+			"/home/adamgb/phd/gazebo_ws/build/px4/_deps/abseil-cpp-src/absl/debugging/CMakeLists.txt",
+			"/home/adamgb/phd/gazebo_ws/build/px4/_deps/abseil-cpp-src/absl/hash/CMakeLists.txt",
+			"/home/adamgb/phd/gazebo_ws/build/px4/_deps/abseil-cpp-src/absl/synchronization/CMakeLists.txt",
+			"/home/adamgb/phd/gazebo_ws/build/px4/_deps/abseil-cpp-src/absl/time/CMakeLists.txt",
+			"/home/adamgb/phd/gazebo_ws/build/px4/_deps/abseil-cpp-src/absl/base/CMakeLists.txt",
+			"src/modules/flight_mode_manager/CMakeLists.txt",
+			"src/lib/events/CMakeLists.txt",
+			"cmake/px4_add_common_flags.cmake",
+			"cmake/px4_config.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 44,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 57,
+				"parent" : 1
+			},
+			{
+				"file" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 398,
+				"parent" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 60,
+				"parent" : 1
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 69,
+				"parent" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 3,
+				"line" : 16,
+				"parent" : 6
+			},
+			{
+				"command" : 6,
+				"file" : 2,
+				"line" : 191,
+				"parent" : 3
+			},
+			{
+				"file" : 5,
+				"parent" : 8
+			},
+			{
+				"command" : 5,
+				"file" : 5,
+				"line" : 411,
+				"parent" : 9
+			},
+			{
+				"command" : 3,
+				"file" : 4,
+				"line" : 291,
+				"parent" : 10
+			},
+			{
+				"file" : 6
+			},
+			{
+				"command" : 3,
+				"file" : 6,
+				"line" : 54,
+				"parent" : 12
+			},
+			{
+				"command" : 3,
+				"file" : 6,
+				"line" : 55,
+				"parent" : 12
+			},
+			{
+				"command" : 3,
+				"file" : 6,
+				"line" : 58,
+				"parent" : 12
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 43,
+				"parent" : 0
+			},
+			{
+				"file" : 8
+			},
+			{
+				"command" : 7,
+				"file" : 8,
+				"line" : 85,
+				"parent" : 17
+			},
+			{
+				"command" : 3,
+				"file" : 7,
+				"line" : 157,
+				"parent" : 18
+			},
+			{
+				"file" : 9
+			},
+			{
+				"command" : 7,
+				"file" : 9,
+				"line" : 20,
+				"parent" : 20
+			},
+			{
+				"command" : 3,
+				"file" : 7,
+				"line" : 157,
+				"parent" : 21
+			},
+			{
+				"command" : 7,
+				"file" : 8,
+				"line" : 144,
+				"parent" : 17
+			},
+			{
+				"command" : 3,
+				"file" : 7,
+				"line" : 109,
+				"parent" : 23
+			},
+			{
+				"command" : 7,
+				"file" : 9,
+				"line" : 71,
+				"parent" : 20
+			},
+			{
+				"command" : 3,
+				"file" : 7,
+				"line" : 157,
+				"parent" : 25
+			},
+			{
+				"command" : 7,
+				"file" : 9,
+				"line" : 91,
+				"parent" : 20
+			},
+			{
+				"command" : 3,
+				"file" : 7,
+				"line" : 109,
+				"parent" : 27
+			},
+			{
+				"command" : 7,
+				"file" : 9,
+				"line" : 143,
+				"parent" : 20
+			},
+			{
+				"command" : 3,
+				"file" : 7,
+				"line" : 109,
+				"parent" : 29
+			},
+			{
+				"command" : 7,
+				"file" : 9,
+				"line" : 101,
+				"parent" : 20
+			},
+			{
+				"command" : 3,
+				"file" : 7,
+				"line" : 109,
+				"parent" : 31
+			},
+			{
+				"file" : 10
+			},
+			{
+				"command" : 7,
+				"file" : 10,
+				"line" : 299,
+				"parent" : 33
+			},
+			{
+				"command" : 3,
+				"file" : 7,
+				"line" : 109,
+				"parent" : 34
+			},
+			{
+				"command" : 7,
+				"file" : 9,
+				"line" : 32,
+				"parent" : 20
+			},
+			{
+				"command" : 3,
+				"file" : 7,
+				"line" : 157,
+				"parent" : 36
+			},
+			{
+				"command" : 7,
+				"file" : 10,
+				"line" : 316,
+				"parent" : 33
+			},
+			{
+				"command" : 3,
+				"file" : 7,
+				"line" : 109,
+				"parent" : 38
+			},
+			{
+				"command" : 7,
+				"file" : 8,
+				"line" : 30,
+				"parent" : 17
+			},
+			{
+				"command" : 3,
+				"file" : 7,
+				"line" : 157,
+				"parent" : 40
+			},
+			{
+				"command" : 7,
+				"file" : 9,
+				"line" : 53,
+				"parent" : 20
+			},
+			{
+				"command" : 3,
+				"file" : 7,
+				"line" : 109,
+				"parent" : 42
+			},
+			{
+				"file" : 12
+			},
+			{
+				"command" : 8,
+				"file" : 12,
+				"line" : 17,
+				"parent" : 44
+			},
+			{
+				"command" : 3,
+				"file" : 11,
+				"line" : 332,
+				"parent" : 45
+			},
+			{
+				"command" : 8,
+				"file" : 12,
+				"line" : 731,
+				"parent" : 44
+			},
+			{
+				"command" : 3,
+				"file" : 11,
+				"line" : 332,
+				"parent" : 47
+			},
+			{
+				"command" : 8,
+				"file" : 12,
+				"line" : 768,
+				"parent" : 44
+			},
+			{
+				"command" : 3,
+				"file" : 11,
+				"line" : 332,
+				"parent" : 49
+			},
+			{
+				"command" : 8,
+				"file" : 12,
+				"line" : 803,
+				"parent" : 44
+			},
+			{
+				"command" : 3,
+				"file" : 11,
+				"line" : 268,
+				"parent" : 51
+			},
+			{
+				"command" : 8,
+				"file" : 12,
+				"line" : 838,
+				"parent" : 44
+			},
+			{
+				"command" : 3,
+				"file" : 11,
+				"line" : 268,
+				"parent" : 53
+			},
+			{
+				"command" : 8,
+				"file" : 12,
+				"line" : 595,
+				"parent" : 44
+			},
+			{
+				"command" : 3,
+				"file" : 11,
+				"line" : 268,
+				"parent" : 55
+			},
+			{
+				"command" : 8,
+				"file" : 12,
+				"line" : 218,
+				"parent" : 44
+			},
+			{
+				"command" : 3,
+				"file" : 11,
+				"line" : 268,
+				"parent" : 57
+			},
+			{
+				"command" : 7,
+				"file" : 10,
+				"line" : 196,
+				"parent" : 33
+			},
+			{
+				"command" : 3,
+				"file" : 7,
+				"line" : 109,
+				"parent" : 59
+			},
+			{
+				"file" : 13
+			},
+			{
+				"command" : 7,
+				"file" : 13,
+				"line" : 36,
+				"parent" : 61
+			},
+			{
+				"command" : 3,
+				"file" : 7,
+				"line" : 109,
+				"parent" : 62
+			},
+			{
+				"command" : 7,
+				"file" : 13,
+				"line" : 73,
+				"parent" : 61
+			},
+			{
+				"command" : 3,
+				"file" : 7,
+				"line" : 109,
+				"parent" : 64
+			},
+			{
+				"file" : 14
+			},
+			{
+				"command" : 3,
+				"file" : 14,
+				"line" : 127,
+				"parent" : 66
+			},
+			{
+				"file" : 15
+			},
+			{
+				"command" : 8,
+				"file" : 15,
+				"line" : 253,
+				"parent" : 68
+			},
+			{
+				"command" : 3,
+				"file" : 11,
+				"line" : 268,
+				"parent" : 69
+			},
+			{
+				"command" : 8,
+				"file" : 15,
+				"line" : 274,
+				"parent" : 68
+			},
+			{
+				"command" : 3,
+				"file" : 11,
+				"line" : 268,
+				"parent" : 71
+			},
+			{
+				"command" : 8,
+				"file" : 15,
+				"line" : 206,
+				"parent" : 68
+			},
+			{
+				"command" : 3,
+				"file" : 11,
+				"line" : 332,
+				"parent" : 73
+			},
+			{
+				"command" : 8,
+				"file" : 15,
+				"line" : 179,
+				"parent" : 68
+			},
+			{
+				"command" : 3,
+				"file" : 11,
+				"line" : 268,
+				"parent" : 75
+			},
+			{
+				"file" : 16
+			},
+			{
+				"command" : 8,
+				"file" : 16,
+				"line" : 324,
+				"parent" : 77
+			},
+			{
+				"command" : 3,
+				"file" : 11,
+				"line" : 332,
+				"parent" : 78
+			},
+			{
+				"file" : 17
+			},
+			{
+				"command" : 8,
+				"file" : 17,
+				"line" : 16,
+				"parent" : 80
+			},
+			{
+				"command" : 3,
+				"file" : 11,
+				"line" : 268,
+				"parent" : 81
+			},
+			{
+				"file" : 18
+			},
+			{
+				"command" : 8,
+				"file" : 18,
+				"line" : 969,
+				"parent" : 83
+			},
+			{
+				"command" : 3,
+				"file" : 11,
+				"line" : 268,
+				"parent" : 84
+			},
+			{
+				"command" : 8,
+				"file" : 18,
+				"line" : 827,
+				"parent" : 83
+			},
+			{
+				"command" : 3,
+				"file" : 11,
+				"line" : 268,
+				"parent" : 86
+			},
+			{
+				"file" : 19
+			},
+			{
+				"command" : 8,
+				"file" : 19,
+				"line" : 55,
+				"parent" : 88
+			},
+			{
+				"command" : 3,
+				"file" : 11,
+				"line" : 268,
+				"parent" : 89
+			},
+			{
+				"command" : 8,
+				"file" : 16,
+				"line" : 760,
+				"parent" : 77
+			},
+			{
+				"command" : 3,
+				"file" : 11,
+				"line" : 268,
+				"parent" : 91
+			},
+			{
+				"command" : 8,
+				"file" : 18,
+				"line" : 748,
+				"parent" : 83
+			},
+			{
+				"command" : 3,
+				"file" : 11,
+				"line" : 268,
+				"parent" : 93
+			},
+			{
+				"file" : 20
+			},
+			{
+				"command" : 8,
+				"file" : 20,
+				"line" : 17,
+				"parent" : 95
+			},
+			{
+				"command" : 3,
+				"file" : 11,
+				"line" : 332,
+				"parent" : 96
+			},
+			{
+				"file" : 21
+			},
+			{
+				"command" : 8,
+				"file" : 21,
+				"line" : 136,
+				"parent" : 98
+			},
+			{
+				"command" : 3,
+				"file" : 11,
+				"line" : 268,
+				"parent" : 99
+			},
+			{
+				"command" : 8,
+				"file" : 20,
+				"line" : 35,
+				"parent" : 95
+			},
+			{
+				"command" : 3,
+				"file" : 11,
+				"line" : 268,
+				"parent" : 101
+			},
+			{
+				"command" : 8,
+				"file" : 20,
+				"line" : 185,
+				"parent" : 95
+			},
+			{
+				"command" : 3,
+				"file" : 11,
+				"line" : 268,
+				"parent" : 103
+			},
+			{
+				"command" : 8,
+				"file" : 18,
+				"line" : 470,
+				"parent" : 83
+			},
+			{
+				"command" : 3,
+				"file" : 11,
+				"line" : 332,
+				"parent" : 105
+			},
+			{
+				"file" : 22
+			},
+			{
+				"command" : 8,
+				"file" : 22,
+				"line" : 17,
+				"parent" : 107
+			},
+			{
+				"command" : 3,
+				"file" : 11,
+				"line" : 268,
+				"parent" : 108
+			},
+			{
+				"command" : 8,
+				"file" : 20,
+				"line" : 756,
+				"parent" : 95
+			},
+			{
+				"command" : 3,
+				"file" : 11,
+				"line" : 332,
+				"parent" : 110
+			},
+			{
+				"command" : 8,
+				"file" : 21,
+				"line" : 19,
+				"parent" : 98
+			},
+			{
+				"command" : 3,
+				"file" : 11,
+				"line" : 268,
+				"parent" : 112
+			},
+			{
+				"command" : 8,
+				"file" : 21,
+				"line" : 64,
+				"parent" : 98
+			},
+			{
+				"command" : 3,
+				"file" : 11,
+				"line" : 268,
+				"parent" : 114
+			},
+			{
+				"command" : 8,
+				"file" : 21,
+				"line" : 197,
+				"parent" : 98
+			},
+			{
+				"command" : 3,
+				"file" : 11,
+				"line" : 268,
+				"parent" : 116
+			},
+			{
+				"command" : 8,
+				"file" : 21,
+				"line" : 286,
+				"parent" : 98
+			},
+			{
+				"command" : 3,
+				"file" : 11,
+				"line" : 268,
+				"parent" : 118
+			},
+			{
+				"command" : 8,
+				"file" : 21,
+				"line" : 256,
+				"parent" : 98
+			},
+			{
+				"command" : 3,
+				"file" : 11,
+				"line" : 268,
+				"parent" : 120
+			},
+			{
+				"file" : 23
+			},
+			{
+				"command" : 8,
+				"file" : 23,
+				"line" : 69,
+				"parent" : 122
+			},
+			{
+				"command" : 3,
+				"file" : 11,
+				"line" : 268,
+				"parent" : 123
+			},
+			{
+				"file" : 24
+			},
+			{
+				"command" : 8,
+				"file" : 24,
+				"line" : 17,
+				"parent" : 125
+			},
+			{
+				"command" : 3,
+				"file" : 11,
+				"line" : 268,
+				"parent" : 126
+			},
+			{
+				"command" : 8,
+				"file" : 20,
+				"line" : 732,
+				"parent" : 95
+			},
+			{
+				"command" : 3,
+				"file" : 11,
+				"line" : 268,
+				"parent" : 128
+			},
+			{
+				"command" : 8,
+				"file" : 18,
+				"line" : 35,
+				"parent" : 83
+			},
+			{
+				"command" : 3,
+				"file" : 11,
+				"line" : 268,
+				"parent" : 130
+			},
+			{
+				"command" : 8,
+				"file" : 17,
+				"line" : 67,
+				"parent" : 80
+			},
+			{
+				"command" : 3,
+				"file" : 11,
+				"line" : 268,
+				"parent" : 132
+			},
+			{
+				"file" : 25
+			},
+			{
+				"command" : 8,
+				"file" : 25,
+				"line" : 227,
+				"parent" : 134
+			},
+			{
+				"command" : 3,
+				"file" : 11,
+				"line" : 268,
+				"parent" : 135
+			},
+			{
+				"command" : 8,
+				"file" : 25,
+				"line" : 111,
+				"parent" : 134
+			},
+			{
+				"command" : 3,
+				"file" : 11,
+				"line" : 268,
+				"parent" : 137
+			},
+			{
+				"command" : 9,
+				"file" : 4,
+				"line" : 292,
+				"parent" : 10
+			},
+			{
+				"file" : 26
+			},
+			{
+				"command" : 9,
+				"file" : 26,
+				"line" : 90,
+				"parent" : 140
+			},
+			{
+				"file" : 27
+			},
+			{
+				"command" : 9,
+				"file" : 27,
+				"line" : 120,
+				"parent" : 142
+			},
+			{
+				"command" : 11,
+				"file" : 2,
+				"line" : 368,
+				"parent" : 3
+			},
+			{
+				"command" : 10,
+				"file" : 28,
+				"line" : 45,
+				"parent" : 144
+			},
+			{
+				"command" : 10,
+				"file" : 28,
+				"line" : 115,
+				"parent" : 144
+			},
+			{
+				"command" : 10,
+				"file" : 28,
+				"line" : 119,
+				"parent" : 144
+			},
+			{
+				"command" : 10,
+				"file" : 28,
+				"line" : 122,
+				"parent" : 144
+			},
+			{
+				"command" : 10,
+				"file" : 28,
+				"line" : 135,
+				"parent" : 144
+			},
+			{
+				"command" : 10,
+				"file" : 28,
+				"line" : 172,
+				"parent" : 144
+			},
+			{
+				"command" : 10,
+				"file" : 28,
+				"line" : 172,
+				"parent" : 144
+			},
+			{
+				"command" : 12,
+				"file" : 28,
+				"line" : 195,
+				"parent" : 144
+			},
+			{
+				"command" : 12,
+				"file" : 2,
+				"line" : 204,
+				"parent" : 3
+			},
+			{
+				"command" : 13,
+				"file" : 2,
+				"line" : 369,
+				"parent" : 3
+			},
+			{
+				"command" : 12,
+				"file" : 4,
+				"line" : 236,
+				"parent" : 154
+			},
+			{
+				"command" : 12,
+				"file" : 4,
+				"line" : 216,
+				"parent" : 154
+			},
+			{
+				"command" : 6,
+				"file" : 2,
+				"line" : 190,
+				"parent" : 3
+			},
+			{
+				"file" : 29,
+				"parent" : 157
+			},
+			{
+				"command" : 14,
+				"file" : 29,
+				"line" : 94,
+				"parent" : 158
+			},
+			{
+				"command" : 14,
+				"file" : 5,
+				"line" : 253,
+				"parent" : 9
+			},
+			{
+				"command" : 14,
+				"file" : 28,
+				"line" : 176,
+				"parent" : 144
+			},
+			{
+				"command" : 14,
+				"file" : 4,
+				"line" : 221,
+				"parent" : 154
+			},
+			{
+				"command" : 14,
+				"file" : 2,
+				"line" : 400,
+				"parent" : 3
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-O3 -DNDEBUG -std=gnu++17 -fPIE"
+				},
+				{
+					"backtrace" : 145,
+					"fragment" : "-g"
+				},
+				{
+					"backtrace" : 145,
+					"fragment" : "-fdata-sections"
+				},
+				{
+					"backtrace" : 145,
+					"fragment" : "-ffunction-sections"
+				},
+				{
+					"backtrace" : 145,
+					"fragment" : "-fomit-frame-pointer"
+				},
+				{
+					"backtrace" : 145,
+					"fragment" : "-fmerge-all-constants"
+				},
+				{
+					"backtrace" : 145,
+					"fragment" : "-fno-signed-zeros"
+				},
+				{
+					"backtrace" : 145,
+					"fragment" : "-fno-trapping-math"
+				},
+				{
+					"backtrace" : 145,
+					"fragment" : "-freciprocal-math"
+				},
+				{
+					"backtrace" : 145,
+					"fragment" : "-fno-math-errno"
+				},
+				{
+					"backtrace" : 145,
+					"fragment" : "-fno-strict-aliasing"
+				},
+				{
+					"backtrace" : 145,
+					"fragment" : "-fvisibility=hidden"
+				},
+				{
+					"backtrace" : 145,
+					"fragment" : "-include"
+				},
+				{
+					"backtrace" : 145,
+					"fragment" : "visibility.h"
+				},
+				{
+					"backtrace" : 145,
+					"fragment" : "-Wall"
+				},
+				{
+					"backtrace" : 145,
+					"fragment" : "-Wextra"
+				},
+				{
+					"backtrace" : 145,
+					"fragment" : "-Werror"
+				},
+				{
+					"backtrace" : 145,
+					"fragment" : "-Warray-bounds"
+				},
+				{
+					"backtrace" : 145,
+					"fragment" : "-Wcast-align"
+				},
+				{
+					"backtrace" : 145,
+					"fragment" : "-Wdisabled-optimization"
+				},
+				{
+					"backtrace" : 145,
+					"fragment" : "-Wdouble-promotion"
+				},
+				{
+					"backtrace" : 145,
+					"fragment" : "-Wfatal-errors"
+				},
+				{
+					"backtrace" : 145,
+					"fragment" : "-Wfloat-equal"
+				},
+				{
+					"backtrace" : 145,
+					"fragment" : "-Wformat-security"
+				},
+				{
+					"backtrace" : 145,
+					"fragment" : "-Winit-self"
+				},
+				{
+					"backtrace" : 145,
+					"fragment" : "-Wlogical-op"
+				},
+				{
+					"backtrace" : 145,
+					"fragment" : "-Wpointer-arith"
+				},
+				{
+					"backtrace" : 145,
+					"fragment" : "-Wshadow"
+				},
+				{
+					"backtrace" : 145,
+					"fragment" : "-Wuninitialized"
+				},
+				{
+					"backtrace" : 145,
+					"fragment" : "-Wunknown-pragmas"
+				},
+				{
+					"backtrace" : 145,
+					"fragment" : "-Wunused-variable"
+				},
+				{
+					"backtrace" : 145,
+					"fragment" : "-Wno-missing-field-initializers"
+				},
+				{
+					"backtrace" : 145,
+					"fragment" : "-Wno-missing-include-dirs"
+				},
+				{
+					"backtrace" : 145,
+					"fragment" : "-Wno-unused-parameter"
+				},
+				{
+					"backtrace" : 146,
+					"fragment" : "-fdiagnostics-color=always"
+				},
+				{
+					"backtrace" : 147,
+					"fragment" : "-Wno-stringop-truncation"
+				},
+				{
+					"backtrace" : 148,
+					"fragment" : "-fno-builtin-printf"
+				},
+				{
+					"backtrace" : 148,
+					"fragment" : "-fno-strength-reduce"
+				},
+				{
+					"backtrace" : 148,
+					"fragment" : "-Wformat=1"
+				},
+				{
+					"backtrace" : 148,
+					"fragment" : "-Wunused-but-set-variable"
+				},
+				{
+					"backtrace" : 148,
+					"fragment" : "-Wno-format-truncation"
+				},
+				{
+					"backtrace" : 149,
+					"fragment" : "-fcheck-new"
+				},
+				{
+					"backtrace" : 150,
+					"fragment" : "-Wreorder"
+				},
+				{
+					"backtrace" : 151,
+					"fragment" : "-Wno-overloaded-virtual"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 7,
+					"define" : "CENTIPEDE_DISABLE_RIEGELI"
+				},
+				{
+					"backtrace" : 152,
+					"define" : "CONFIG_ARCH_BOARD_PX4_SITL"
+				},
+				{
+					"backtrace" : 153,
+					"define" : "ENABLE_LOCKSTEP_SCHEDULER"
+				},
+				{
+					"backtrace" : 7,
+					"define" : "GTEST_HAS_ABSL=1"
+				},
+				{
+					"backtrace" : 152,
+					"define" : "__CUSTOM_FILE_IO__"
+				},
+				{
+					"backtrace" : 155,
+					"define" : "__PX4_LINUX"
+				},
+				{
+					"backtrace" : 156,
+					"define" : "__PX4_POSIX"
+				},
+				{
+					"backtrace" : 152,
+					"define" : "__STDC_FORMAT_MACROS"
+				},
+				{
+					"backtrace" : 156,
+					"define" : "noreturn_function=__attribute__((noreturn))"
+				},
+				{
+					"define" : "unit_Npfg_EXPORTS"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 159,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/boards/px4/sitl/src"
+				},
+				{
+					"backtrace" : 160,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/platforms/posix/src/px4/common/include"
+				},
+				{
+					"backtrace" : 161,
+					"path" : "/home/adamgb/phd/gazebo_ws/build/px4"
+				},
+				{
+					"backtrace" : 161,
+					"path" : "/home/adamgb/phd/gazebo_ws/build/px4/src/lib"
+				},
+				{
+					"backtrace" : 161,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/platforms/posix/src/px4/generic/generic/include"
+				},
+				{
+					"backtrace" : 161,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/platforms/common"
+				},
+				{
+					"backtrace" : 161,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/platforms/common/include"
+				},
+				{
+					"backtrace" : 161,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/src"
+				},
+				{
+					"backtrace" : 161,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/src/include"
+				},
+				{
+					"backtrace" : 161,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/src/lib"
+				},
+				{
+					"backtrace" : 161,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/src/lib/matrix"
+				},
+				{
+					"backtrace" : 161,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules"
+				},
+				{
+					"backtrace" : 162,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/platforms/posix/include"
+				},
+				{
+					"backtrace" : 163,
+					"path" : "/home/adamgb/phd/gazebo_ws/build/px4/external/Install/include"
+				},
+				{
+					"backtrace" : 7,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/test/fuzztest"
+				},
+				{
+					"backtrace" : 7,
+					"path" : "/home/adamgb/phd/gazebo_ws/build/px4/_deps/abseil-cpp-src"
+				},
+				{
+					"backtrace" : 7,
+					"path" : "/home/adamgb/phd/gazebo_ws/build/px4/_deps/re2-src"
+				},
+				{
+					"backtrace" : 7,
+					"isSystem" : true,
+					"path" : "/home/adamgb/phd/gazebo_ws/build/px4/_deps/googletest-src/googletest/include"
+				},
+				{
+					"backtrace" : 7,
+					"isSystem" : true,
+					"path" : "/home/adamgb/phd/gazebo_ws/build/px4/_deps/googletest-src/googletest"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					7,
+					7
+				],
+				"standard" : "17"
+			},
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 7,
+			"id" : "log_severity::@649cb5ab055927a76ab5"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "raw_logging_internal::@649cb5ab055927a76ab5"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "spinlock_wait::@649cb5ab055927a76ab5"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "malloc_internal::@649cb5ab055927a76ab5"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "base::@649cb5ab055927a76ab5"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "throw_delegate::@649cb5ab055927a76ab5"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "strerror::@649cb5ab055927a76ab5"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "tracing_internal::@649cb5ab055927a76ab5"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "hashtablez_sampler::@49ad4cc58ca2b33d3cb1"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "raw_hash_set::@49ad4cc58ca2b33d3cb1"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "crc_cpu_detect::@e7b73a99dc329af715ea"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "crc_internal::@e7b73a99dc329af715ea"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "crc32c::@e7b73a99dc329af715ea"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "crc_cord_state::@e7b73a99dc329af715ea"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "stacktrace::@29ce828be0197ec6dd61"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "symbolize::@29ce828be0197ec6dd61"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "examine_stack::@29ce828be0197ec6dd61"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "failure_signal_handler::@29ce828be0197ec6dd61"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "debugging_internal::@29ce828be0197ec6dd61"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "demangle_internal::@29ce828be0197ec6dd61"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "decode_rust_punycode::@29ce828be0197ec6dd61"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "demangle_rust::@29ce828be0197ec6dd61"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "utf8_for_code_point::@29ce828be0197ec6dd61"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "leak_check::@29ce828be0197ec6dd61"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "flags_program_name::@4e66689cfd0f0cabb9c5"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "flags_config::@4e66689cfd0f0cabb9c5"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "flags_marshalling::@4e66689cfd0f0cabb9c5"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "flags_commandlineflag_internal::@4e66689cfd0f0cabb9c5"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "flags_commandlineflag::@4e66689cfd0f0cabb9c5"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "flags_private_handle_accessor::@4e66689cfd0f0cabb9c5"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "flags_reflection::@4e66689cfd0f0cabb9c5"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "flags_internal::@4e66689cfd0f0cabb9c5"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "flags_usage_internal::@4e66689cfd0f0cabb9c5"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "flags_usage::@4e66689cfd0f0cabb9c5"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "flags_parse::@4e66689cfd0f0cabb9c5"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "hash::@e82b4f9cfb0ccfacbdfd"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "city::@e82b4f9cfb0ccfacbdfd"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "low_level_hash::@e82b4f9cfb0ccfacbdfd"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "log_internal_check_op::@ec0c5076da8ab1df7c81"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "log_internal_conditions::@ec0c5076da8ab1df7c81"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "log_internal_format::@ec0c5076da8ab1df7c81"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "log_internal_globals::@ec0c5076da8ab1df7c81"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "log_internal_proto::@ec0c5076da8ab1df7c81"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "log_internal_message::@ec0c5076da8ab1df7c81"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "log_internal_log_sink_set::@ec0c5076da8ab1df7c81"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "log_internal_nullguard::@ec0c5076da8ab1df7c81"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "log_globals::@ec0c5076da8ab1df7c81"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "log_sink::@ec0c5076da8ab1df7c81"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "log_internal_structured_proto::@ec0c5076da8ab1df7c81"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "vlog_config_internal::@ec0c5076da8ab1df7c81"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "log_internal_fnmatch::@ec0c5076da8ab1df7c81"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "int128::@9d8e9017d0346130c5af"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "exponential_biased::@610112b8222b7e6b2b6f"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "random_distributions::@3722040ece9e7feeb0a1"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "random_seed_gen_exception::@3722040ece9e7feeb0a1"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "random_seed_sequences::@3722040ece9e7feeb0a1"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "random_internal_seed_material::@3722040ece9e7feeb0a1"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "random_internal_entropy_pool::@3722040ece9e7feeb0a1"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "random_internal_platform::@3722040ece9e7feeb0a1"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "random_internal_randen::@3722040ece9e7feeb0a1"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "random_internal_randen_slow::@3722040ece9e7feeb0a1"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "random_internal_randen_hwaes::@3722040ece9e7feeb0a1"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "random_internal_randen_hwaes_impl::@3722040ece9e7feeb0a1"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "status::@eec4915894d7ef1676bd"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "statusor::@eec4915894d7ef1676bd"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "string_view::@cadd5db28f0587d4097f"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "strings::@cadd5db28f0587d4097f"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "strings_internal::@cadd5db28f0587d4097f"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "str_format_internal::@cadd5db28f0587d4097f"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "cord_internal::@cadd5db28f0587d4097f"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "cordz_functions::@cadd5db28f0587d4097f"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "cordz_handle::@cadd5db28f0587d4097f"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "cordz_info::@cadd5db28f0587d4097f"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "cord::@cadd5db28f0587d4097f"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "graphcycles_internal::@f8dca903cb46e5e9bef2"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "kernel_timeout_internal::@f8dca903cb46e5e9bef2"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "synchronization::@f8dca903cb46e5e9bef2"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "time::@b4524c795b0f97a08e67"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "civil_time::@b4524c795b0f97a08e67"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "time_zone::@b4524c795b0f97a08e67"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "re2::@8091ef369240a0bad874"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "gtest::@1ea2dfc0605fe3ab2a3f"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "fuzztest_bazel::@17e0df6204df78a0ebd4"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "fuzztest_blob_file::@17e0df6204df78a0ebd4"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "fuzztest_hash::@17e0df6204df78a0ebd4"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "fuzztest_remote_file::@17e0df6204df78a0ebd4"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "fuzztest_sha1::@17e0df6204df78a0ebd4"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "fuzztest_fuzzing_bit_gen::@c3c3882a6d4da6c40ff9"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "fuzztest_fuzztest_gtest_main::@c3c3882a6d4da6c40ff9"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "fuzztest_fuzztest_macros::@c3c3882a6d4da6c40ff9"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "fuzztest_init_fuzztest::@c3c3882a6d4da6c40ff9"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "fuzztest_compatibility_mode::@7878a3b1c02ee132e2c0"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "fuzztest_configuration::@7878a3b1c02ee132e2c0"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "fuzztest_corpus_database::@7878a3b1c02ee132e2c0"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "fuzztest_coverage::@7878a3b1c02ee132e2c0"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "fuzztest_fixture_driver::@7878a3b1c02ee132e2c0"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "fuzztest_googletest_adaptor::@7878a3b1c02ee132e2c0"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "fuzztest_io::@7878a3b1c02ee132e2c0"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "fuzztest_logging::@7878a3b1c02ee132e2c0"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "fuzztest_register_fuzzing_mocks::@7878a3b1c02ee132e2c0"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "fuzztest_registry::@7878a3b1c02ee132e2c0"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "fuzztest_runtime::@7878a3b1c02ee132e2c0"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "fuzztest_seed_seq::@7878a3b1c02ee132e2c0"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "fuzztest_serialization::@7878a3b1c02ee132e2c0"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "fuzztest_status::@7878a3b1c02ee132e2c0"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "fuzztest_type_support::@7878a3b1c02ee132e2c0"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "fuzztest_in_grammar_impl::@bbdd4fb84d78f7cf6172"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "fuzztest_in_regexp_impl::@bbdd4fb84d78f7cf6172"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "fuzztest_regexp_dfa::@bbdd4fb84d78f7cf6172"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "fuzztest_utf::@bbdd4fb84d78f7cf6172"
+		},
+		{
+			"backtrace" : 139,
+			"id" : "uorb_headers::@87da20e8da9c58e355ca"
+		},
+		{
+			"backtrace" : 5,
+			"id" : "geo::@98fdcee2b11418b2ae8c"
+		},
+		{
+			"backtrace" : 5,
+			"id" : "npfg::@7fc4217b6283ccd81148"
+		},
+		{
+			"backtrace" : 5,
+			"id" : "px4_layer::@13eebd0deb9b16358cc5"
+		},
+		{
+			"backtrace" : 5,
+			"id" : "work_queue::@4a51fd9749b041c0a765"
+		},
+		{
+			"backtrace" : 141,
+			"id" : "flighttasks_generated::@3320806e5a654be0ce98"
+		},
+		{
+			"backtrace" : 5,
+			"id" : "drivers_board::@a7b731bd9dab5511b243"
+		},
+		{
+			"backtrace" : 143,
+			"id" : "events_header::@5cf9bdc8231d57945e1e"
+		}
+	],
+	"id" : "unit-Npfg::@7fc4217b6283ccd81148",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "-O3 -DNDEBUG",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "-fuse-ld=gold   -Wl,--export-dynamic -rdynamic",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "-L/home/adamgb/phd/gazebo_ws/build/px4/external/Install/lib",
+				"role" : "libraryPath"
+			},
+			{
+				"fragment" : "-Wl,-rpath,/home/adamgb/phd/gazebo_ws/build/px4/external/Install/lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "libnpfg.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "../../../test/fuzztest/fuzztest/libfuzztest_fuzztest_gtest_main.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 11,
+				"fragment" : "../../../platforms/posix/src/px4/common/libpx4_layer.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 13,
+				"fragment" : "../../../platforms/common/px4_work_queue/libpx4_work_queue.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 14,
+				"fragment" : "../../../platforms/posix/src/px4/common/px4_daemon/libpx4_daemon.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 15,
+				"fragment" : "../../../platforms/posix/src/px4/common/lockstep_scheduler/liblockstep_scheduler.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 11,
+				"fragment" : "../../../platforms/posix/src/px4/common/libpx4_layer.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 13,
+				"fragment" : "../../../platforms/common/px4_work_queue/libpx4_work_queue.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 14,
+				"fragment" : "../../../platforms/posix/src/px4/common/px4_daemon/libpx4_daemon.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 15,
+				"fragment" : "../../../platforms/posix/src/px4/common/lockstep_scheduler/liblockstep_scheduler.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 11,
+				"fragment" : "../../../boards/px4/sitl/src/libdrivers_board.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 13,
+				"fragment" : "../../../platforms/common/work_queue/libwork_queue.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 16,
+				"fragment" : "../geo/libgeo.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 19,
+				"fragment" : "../../../test/fuzztest/fuzztest/internal/domains/libfuzztest_in_grammar_impl.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 22,
+				"fragment" : "../../../test/fuzztest/fuzztest/internal/domains/libfuzztest_in_regexp_impl.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 24,
+				"fragment" : "../../../test/fuzztest/fuzztest/internal/domains/libfuzztest_regexp_dfa.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 26,
+				"fragment" : "../../../test/fuzztest/fuzztest/libfuzztest_fuzztest_macros.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 28,
+				"fragment" : "../../../test/fuzztest/fuzztest/libfuzztest_init_fuzztest.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 30,
+				"fragment" : "../../../test/fuzztest/fuzztest/internal/libfuzztest_googletest_adaptor.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 32,
+				"fragment" : "../../../test/fuzztest/fuzztest/internal/libfuzztest_registry.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 35,
+				"fragment" : "../../../test/fuzztest/fuzztest/internal/libfuzztest_compatibility_mode.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 32,
+				"fragment" : "../../../test/fuzztest/fuzztest/internal/libfuzztest_runtime.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 35,
+				"fragment" : "../../../test/fuzztest/fuzztest/internal/libfuzztest_fixture_driver.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 37,
+				"fragment" : "../../../test/fuzztest/fuzztest/internal/domains/libfuzztest_utf.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 39,
+				"fragment" : "../../../test/fuzztest/fuzztest/internal/libfuzztest_coverage.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 37,
+				"fragment" : "../../../test/fuzztest/fuzztest/internal/libfuzztest_serialization.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 19,
+				"fragment" : "../../../test/fuzztest/fuzztest/internal/libfuzztest_status.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 41,
+				"fragment" : "../../../test/fuzztest/fuzztest/libfuzztest_fuzzing_bit_gen.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 43,
+				"fragment" : "../../../test/fuzztest/fuzztest/internal/libfuzztest_register_fuzzing_mocks.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 37,
+				"fragment" : "../../../test/fuzztest/fuzztest/internal/libfuzztest_type_support.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 39,
+				"fragment" : "../../../test/fuzztest/fuzztest/internal/libfuzztest_seed_seq.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 19,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/random/libabsl_random_distributions.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 46,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/random/libabsl_random_seed_sequences.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 48,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/random/libabsl_random_internal_entropy_pool.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 50,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/random/libabsl_random_internal_randen.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 52,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/random/libabsl_random_internal_randen_hwaes.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 54,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/random/libabsl_random_internal_randen_hwaes_impl.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 52,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/random/libabsl_random_internal_randen_slow.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 56,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/random/libabsl_random_internal_platform.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 48,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/random/libabsl_random_internal_seed_material.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 58,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/random/libabsl_random_seed_gen_exception.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 39,
+				"fragment" : "../../../test/fuzztest/common/libfuzztest_bazel.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 39,
+				"fragment" : "../../../test/fuzztest/fuzztest/internal/libfuzztest_corpus_database.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 30,
+				"fragment" : "../../../test/fuzztest/fuzztest/internal/libfuzztest_configuration.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 30,
+				"fragment" : "../../../test/fuzztest/fuzztest/internal/libfuzztest_io.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 32,
+				"fragment" : "../../../test/fuzztest/fuzztest/internal/libfuzztest_logging.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 60,
+				"fragment" : "../../../test/fuzztest/common/libfuzztest_blob_file.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 63,
+				"fragment" : "../../../test/fuzztest/common/libfuzztest_hash.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 65,
+				"fragment" : "../../../test/fuzztest/common/libfuzztest_sha1.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 60,
+				"fragment" : "../../../test/fuzztest/common/libfuzztest_remote_file.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 32,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/status/libabsl_statusor.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 32,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/status/libabsl_status.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 28,
+				"fragment" : "../../../lib/libgtest.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 30,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/flags/libabsl_flags_parse.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 67,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/debugging/libabsl_failure_signal_handler.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 67,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/flags/libabsl_flags_usage.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 70,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/flags/libabsl_flags_usage_internal.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 67,
+				"fragment" : "../../../_deps/re2-build/libre2.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 30,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/flags/libabsl_flags_reflection.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 72,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/flags/libabsl_flags_private_handle_accessor.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 74,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/flags/libabsl_flags_internal.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 74,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/flags/libabsl_flags_commandlineflag.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 74,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/flags/libabsl_flags_config.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 72,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/flags/libabsl_flags_program_name.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 72,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/flags/libabsl_flags_commandlineflag_internal.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 76,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/flags/libabsl_flags_marshalling.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 79,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/container/libabsl_raw_hash_set.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 82,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/strings/libabsl_cord.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 85,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/strings/libabsl_cordz_info.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 85,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/strings/libabsl_cord_internal.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 85,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/strings/libabsl_cordz_functions.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 87,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/strings/libabsl_cordz_handle.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 85,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/crc/libabsl_crc_cord_state.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 85,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/crc/libabsl_crc32c.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 90,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/crc/libabsl_crc_internal.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 90,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/crc/libabsl_crc_cpu_detect.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 92,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/container/libabsl_hashtablez_sampler.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 94,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/profiling/libabsl_exponential_biased.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 97,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/log/libabsl_log_internal_check_op.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 82,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/debugging/libabsl_leak_check.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 97,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/log/libabsl_log_internal_conditions.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 97,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/log/libabsl_log_internal_message.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 82,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/base/libabsl_strerror.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 100,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/debugging/libabsl_examine_stack.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 102,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/log/libabsl_log_internal_nullguard.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 104,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/log/libabsl_log_internal_format.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 106,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/strings/libabsl_str_format_internal.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 104,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/log/libabsl_log_internal_structured_proto.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 104,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/log/libabsl_log_internal_proto.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 104,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/log/libabsl_log_internal_log_sink_set.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 104,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/log/libabsl_log_internal_globals.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 104,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/log/libabsl_log_globals.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 60,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/hash/libabsl_hash.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 109,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/hash/libabsl_city.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 109,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/hash/libabsl_low_level_hash.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 104,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/log/libabsl_log_sink.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 111,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/log/libabsl_vlog_config_internal.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 19,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/synchronization/libabsl_synchronization.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 67,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/debugging/libabsl_stacktrace.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 67,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/debugging/libabsl_symbolize.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 113,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/debugging/libabsl_debugging_internal.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 115,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/debugging/libabsl_demangle_internal.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 117,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/debugging/libabsl_demangle_rust.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 119,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/debugging/libabsl_decode_rust_punycode.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 121,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/debugging/libabsl_utf8_for_code_point.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 124,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/synchronization/libabsl_graphcycles_internal.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 115,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/base/libabsl_malloc_internal.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 124,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/synchronization/libabsl_kernel_timeout_internal.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 30,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/time/libabsl_time.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 127,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/time/libabsl_civil_time.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 127,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/time/libabsl_time_zone.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 124,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/base/libabsl_tracing_internal.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 129,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/log/libabsl_log_internal_fnmatch.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 32,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/strings/libabsl_strings.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 131,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/strings/libabsl_strings_internal.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 32,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/strings/libabsl_string_view.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 131,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/numeric/libabsl_int128.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 133,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/base/libabsl_base.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 136,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/base/libabsl_spinlock_wait.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 136,
+				"fragment" : "-lrt",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 131,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/base/libabsl_throw_delegate.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 82,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/base/libabsl_raw_logging_internal.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 138,
+				"fragment" : "../../../_deps/abseil-cpp-build/absl/base/libabsl_log_severity.a",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "unit-Npfg",
+	"nameOnDisk" : "unit-Npfg",
+	"paths" : 
+	{
+		"build" : "src/lib/npfg",
+		"source" : "src/lib/npfg"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/lib/npfg/NpfgTest.cpp",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "EXECUTABLE"
+}

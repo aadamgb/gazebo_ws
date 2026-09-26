@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmodules__simulation__system_power_simulator.a CMakeFiles/modules__simulation__system_power_simulator.dir/SystemPowerSimulator.cpp.o
+/usr/bin/ranlib libmodules__simulation__system_power_simulator.a

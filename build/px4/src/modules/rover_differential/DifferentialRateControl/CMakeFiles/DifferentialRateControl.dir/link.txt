@@ -1,0 +1,2 @@
+/usr/bin/ar qc libDifferentialRateControl.a CMakeFiles/DifferentialRateControl.dir/DifferentialRateControl.cpp.o
+/usr/bin/ranlib libDifferentialRateControl.a

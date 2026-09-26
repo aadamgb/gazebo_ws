@@ -1,0 +1,2 @@
+/usr/bin/ar qc libpx4_gz_msgs.a CMakeFiles/px4_gz_msgs.dir/opticalflow.pb.cc.o
+/usr/bin/ranlib libpx4_gz_msgs.a

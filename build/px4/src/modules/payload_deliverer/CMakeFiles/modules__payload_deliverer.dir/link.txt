@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmodules__payload_deliverer.a CMakeFiles/modules__payload_deliverer.dir/payload_deliverer.cpp.o CMakeFiles/modules__payload_deliverer.dir/gripper.cpp.o
+/usr/bin/ranlib libmodules__payload_deliverer.a

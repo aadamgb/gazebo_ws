@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmodules__simulation__simulator_mavlink.a CMakeFiles/modules__simulation__simulator_mavlink.dir/SimulatorMavlink.cpp.o
+/usr/bin/ranlib libmodules__simulation__simulator_mavlink.a

@@ -1,0 +1,86 @@
+[0.007s] Invoking command in '/home/adamgb/phd/gazebo_ws/build/srt_controller': /usr/bin/cmake /home/adamgb/phd/gazebo_ws/src/srt_controller -DCMAKE_INSTALL_PREFIX=/home/adamgb/phd/gazebo_ws/install/srt_controller
+[0.047s] -- The C compiler identification is GNU 13.3.0
+[0.084s] -- The CXX compiler identification is GNU 13.3.0
+[0.096s] -- Detecting C compiler ABI info
+[0.172s] -- Detecting C compiler ABI info - done
+[0.176s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.177s] -- Detecting C compile features
+[0.177s] -- Detecting C compile features - done
+[0.185s] -- Detecting CXX compiler ABI info
+[0.255s] -- Detecting CXX compiler ABI info - done
+[0.265s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.265s] -- Detecting CXX compile features
+[0.266s] -- Detecting CXX compile features - done
+[0.267s] -- Found rclcpp: 28.1.22 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.368s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.453s] -- Found rosidl_generator_c: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.462s] -- Found rosidl_generator_cpp: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.470s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.480s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.520s] -- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.521s] -- Found rmw_fastrtps_cpp: 8.4.4 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.581s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[0.596s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[0.615s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.685s] -- Found pluginlib: 5.4.6 (/opt/ros/jazzy/share/pluginlib/cmake)
+[0.694s] -- Found mrs_lib: 2.0.0 (/opt/ros/jazzy/share/mrs_lib/cmake)
+[0.825s] -- Found eigen3_cmake_module: 0.3.1 (/opt/ros/jazzy/share/eigen3_cmake_module/cmake)
+[0.825s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[0.825s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[0.908s] -- Found mrs_uav_managers: 2.0.0 (/opt/ros/jazzy/share/mrs_uav_managers/cmake)
+[0.991s] -- Configuring done (1.0s)
+[1.001s] -- Generating done (0.0s)
+[1.003s] -- Build files have been written to: /home/adamgb/phd/gazebo_ws/build/srt_controller
+[1.011s] Invoked command in '/home/adamgb/phd/gazebo_ws/build/srt_controller' returned '0': /usr/bin/cmake /home/adamgb/phd/gazebo_ws/src/srt_controller -DCMAKE_INSTALL_PREFIX=/home/adamgb/phd/gazebo_ws/install/srt_controller
+[1.011s] Invoking command in '/home/adamgb/phd/gazebo_ws/build/srt_controller': /usr/bin/cmake --build /home/adamgb/phd/gazebo_ws/build/srt_controller -- -j32 -l32
+[1.055s] [ 50%] [32mBuilding CXX object CMakeFiles/SrtController_ActuatorsController.dir/src/actuators_controller.cpp.o[0m
+[3.187s] [01m[K/home/adamgb/phd/gazebo_ws/src/srt_controller/src/actuators_controller.cpp:[m[K In member function ‘[01m[Kvirtual mrs_uav_managers::Controller::ControlOutput srt_controller::ActuatorsController::[01;32m[KupdateActive[m[K(const mrs_msgs::msg::UavState&, const mrs_msgs::msg::TrackerCommand&)[m[K’:
+[3.187s] [01m[K/home/adamgb/phd/gazebo_ws/src/srt_controller/src/actuators_controller.cpp:234:8:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Kconstraints[m[K’ set but not used [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-but-set-variable-Wunused-but-set-variable]8;;[m[K]
+[3.187s]   234 |   auto [01;35m[Kconstraints[m[K = mrs_lib::get_mutexed(mutex_constraints_, constraints_);
+[3.187s]       |        [01;35m[K^~~~~~~~~~~[m[K
+[7.398s] [100%] [32m[1mLinking CXX shared library libSrtController_ActuatorsController.so[0m
+[7.656s] [100%] Built target SrtController_ActuatorsController
+[7.667s] Invoked command in '/home/adamgb/phd/gazebo_ws/build/srt_controller' returned '0': /usr/bin/cmake --build /home/adamgb/phd/gazebo_ws/build/srt_controller -- -j32 -l32
+[7.669s] Invoking command in '/home/adamgb/phd/gazebo_ws/build/srt_controller': /usr/bin/cmake --install /home/adamgb/phd/gazebo_ws/build/srt_controller
+[7.673s] -- Install configuration: ""
+[7.673s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/plugins.xml
+[7.673s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/lib/libSrtController_ActuatorsController.so
+[7.675s] -- Set non-toolchain portion of runtime path of "/home/adamgb/phd/gazebo_ws/install/srt_controller/lib/libSrtController_ActuatorsController.so" to ""
+[7.675s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/config
+[7.675s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/config/actuators_controller.yaml
+[7.675s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/config/custom_config.yaml
+[7.676s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/tmux
+[7.676s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/tmux/layout.json
+[7.676s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/tmux/start.sh
+[7.676s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/tmux/rviz.rviz
+[7.676s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/tmux/session.yml
+[7.676s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/tmux/takeoff.sh
+[7.676s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/tmux/config
+[7.676s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/tmux/config/automatic_start.yaml
+[7.676s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/tmux/config/network_config.yaml
+[7.676s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/tmux/config/hw_api.yaml
+[7.677s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/tmux/config/simulator.yaml
+[7.677s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/tmux/config/world_config.yaml
+[7.677s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/tmux/config/custom_config.yaml
+[7.677s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/environment/library_path.sh
+[7.677s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/environment/library_path.dsv
+[7.677s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/ament_index/resource_index/package_run_dependencies/srt_controller
+[7.677s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/ament_index/resource_index/parent_prefix_path/srt_controller
+[7.677s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/environment/ament_prefix_path.sh
+[7.677s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/environment/ament_prefix_path.dsv
+[7.677s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/environment/path.sh
+[7.677s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/environment/path.dsv
+[7.677s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/local_setup.bash
+[7.677s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/local_setup.sh
+[7.677s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/local_setup.zsh
+[7.677s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/local_setup.dsv
+[7.677s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/package.dsv
+[7.677s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/ament_index/resource_index/packages/srt_controller
+[7.678s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/ament_index/resource_index/mrs_uav_managers__pluginlib__plugin/srt_controller
+[7.678s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/cmake/export_srt_controllerExport.cmake
+[7.678s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/cmake/export_srt_controllerExport-noconfig.cmake
+[7.678s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/cmake/ament_cmake_export_targets-extras.cmake
+[7.678s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/cmake/srt_controllerConfig.cmake
+[7.678s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/cmake/srt_controllerConfig-version.cmake
+[7.678s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/package.xml
+[7.679s] Invoked command in '/home/adamgb/phd/gazebo_ws/build/srt_controller' returned '0': /usr/bin/cmake --install /home/adamgb/phd/gazebo_ws/build/srt_controller

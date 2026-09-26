@@ -1,0 +1,2 @@
+/usr/bin/ar qc libtest_stubs.a CMakeFiles/test_stubs.dir/stub_daemon.cpp.o
+/usr/bin/ranlib libtest_stubs.a

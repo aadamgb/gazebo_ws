@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmc_autotune_attitude_control.a CMakeFiles/mc_autotune_attitude_control.dir/mc_autotune_attitude_control.cpp.o
+/usr/bin/ranlib libmc_autotune_attitude_control.a

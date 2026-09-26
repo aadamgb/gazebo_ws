@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmodules__rover_differential.a CMakeFiles/modules__rover_differential.dir/RoverDifferential.cpp.o
+/usr/bin/ranlib libmodules__rover_differential.a

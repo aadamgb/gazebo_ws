@@ -1,0 +1,96 @@
+# GET ALL PARAMETERS USABLE FOR CUSTOM CONFIG BY RUNNING:
+## --------------------------------------------------------------
+## |          rosrun mrs_uav_core get_public_params.py          #
+## --------------------------------------------------------------
+
+mrs_uav_managers:
+
+  estimation_manager:
+
+    # loaded state estimator plugins
+    state_estimators: [
+      "gps_baro",
+      "ground_truth",
+    ]
+
+
+    # passthrough (PX4 ODOMETRY, 100 Hz) is rate-gated below the 250 Hz uav_state needed for actuator output
+    initial_state_estimator: "ground_truth" # will be used as the first state estimator
+    agl_height_estimator: "" # only slightly filtered height for checking min height (not used in control feedback)
+
+  control_manager:
+
+    safety:
+      tilt_limit:
+        eland:
+          enabled: false
+        disarm:
+          enabled: false
+      tilt_error_disarm:
+        enabled: false
+      yaw_error_eland:
+        enabled: false
+
+    ActuatorsController:
+      address: "srt_controller::ActuatorsController"
+      namespace: "actuators_controller"
+      eland_threshold: 0.0 # [m]
+      failsafe_threshold: 0.0 # [m]
+      odometry_innovation_threshold: 0.0 # [m]
+      human_switchable: true
+
+      outputs:
+        actuators:             true
+        control_group:         false
+        attitude_rate:         false
+        attitude:              false
+        acceleration_hdg_rate: false
+        acceleration_hdg:      false
+        velocity_hdg_rate:     false
+        velocity_hdg:          false
+        position:              false
+
+    VelocityController:
+      address: "lvhr_controller::VelocityController"
+      namespace: "velocity_controller"
+      eland_threshold: 0.0 # [m]
+      failsafe_threshold: 0.0 # [m]
+      odometry_innovation_threshold: 0.0 # [m]
+      human_switchable: true
+
+      # HwApiAttitudeRateCmd (collective thrust + body rates)
+      outputs:
+        actuators:             false
+        control_group:         false
+        attitude_rate:         true
+        attitude:              false
+        acceleration_hdg_rate: false
+        acceleration_hdg:      false
+        velocity_hdg_rate:     false
+        velocity_hdg:          false
+        position:              false
+
+    # every name here needs a matching parameter block above, otherwise
+    # control_manager cannot resolve its address and silently drops it
+    controllers : [
+      "ActuatorsController",
+      "VelocityController",
+    ]
+
+  uav_manager:
+
+    max_throttle:
+      enabled: false
+
+    takeoff:
+
+      # gate height of the fig8 track
+      takeoff_height: 1.5
+
+      during_takeoff:
+        controller: "MpcController"
+        tracker: "LandoffTracker"
+
+      after_takeoff:
+        controller: "MpcController" # stable hover, then switch to ActuatorsController manually
+        tracker: "MpcTracker"

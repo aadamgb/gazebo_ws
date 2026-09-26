@@ -1,0 +1,2 @@
+/usr/bin/ar qc libDifferentialAttControl.a CMakeFiles/DifferentialAttControl.dir/DifferentialAttControl.cpp.o
+/usr/bin/ranlib libDifferentialAttControl.a

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libgtest_functional_main.a CMakeFiles/gtest_functional_main.dir/gtest_functional_main.cpp.o
+/usr/bin/ranlib libgtest_functional_main.a

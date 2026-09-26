@@ -1,0 +1,2 @@
+/usr/bin/ar qc libDifferentialManualMode.a CMakeFiles/DifferentialManualMode.dir/DifferentialManualMode.cpp.o
+/usr/bin/ranlib libDifferentialManualMode.a

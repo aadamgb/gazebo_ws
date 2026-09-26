@@ -1,0 +1,87 @@
+{
+	"backtrace" : 2,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"fuzztest_grammar_library",
+			"add_custom_command"
+		],
+		"files" : 
+		[
+			"test/fuzztest/fuzztest/grammars/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 43,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 22,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 11,
+				"parent" : 1
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 3,
+			"id" : "grammar_domain_code_generator::@c7487bd46009962be548"
+		}
+	],
+	"id" : "json_grammar::@7957be1328ddbefbfb29",
+	"name" : "json_grammar",
+	"paths" : 
+	{
+		"build" : "test/fuzztest/fuzztest/grammars",
+		"source" : "test/fuzztest/fuzztest/grammars"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				1
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 2,
+			"isGenerated" : true,
+			"path" : "/home/adamgb/phd/gazebo_ws/build/px4/test/fuzztest/fuzztest/grammars/json_grammar.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/home/adamgb/phd/gazebo_ws/build/px4/test/fuzztest/fuzztest/grammars/json_grammar.h.rule",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "INTERFACE_LIBRARY"
+}

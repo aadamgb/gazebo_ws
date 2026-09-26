@@ -1,0 +1,2 @@
+/usr/bin/ar qc libfollow_target_estimator.a CMakeFiles/follow_target_estimator.dir/TargetEstimator.cpp.o
+/usr/bin/ranlib libfollow_target_estimator.a

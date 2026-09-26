@@ -1,0 +1,4 @@
+Invoking command in '/home/adamgb/phd/gazebo_ws/build/alien_gazebo_resources': /usr/bin/cmake --build /home/adamgb/phd/gazebo_ws/build/alien_gazebo_resources -- -j32 -l32
+Invoked command in '/home/adamgb/phd/gazebo_ws/build/alien_gazebo_resources' returned '0': /usr/bin/cmake --build /home/adamgb/phd/gazebo_ws/build/alien_gazebo_resources -- -j32 -l32
+Invoking command in '/home/adamgb/phd/gazebo_ws/build/alien_gazebo_resources': /usr/bin/cmake --install /home/adamgb/phd/gazebo_ws/build/alien_gazebo_resources
+Invoked command in '/home/adamgb/phd/gazebo_ws/build/alien_gazebo_resources' returned '0': /usr/bin/cmake --install /home/adamgb/phd/gazebo_ws/build/alien_gazebo_resources

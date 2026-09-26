@@ -1,0 +1,2 @@
+/usr/bin/ar qc libdrivers__osd__msp_osd.a CMakeFiles/drivers__osd__msp_osd.dir/msp_osd.cpp.o CMakeFiles/drivers__osd__msp_osd.dir/MspV1.cpp.o CMakeFiles/drivers__osd__msp_osd.dir/uorb_to_msp.cpp.o
+/usr/bin/ranlib libdrivers__osd__msp_osd.a

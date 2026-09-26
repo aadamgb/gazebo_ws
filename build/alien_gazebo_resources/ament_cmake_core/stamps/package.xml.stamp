@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>alien_gazebo_resources</name>
+  <version>1.0.0</version>
+  <description>This package only contains gazebo files for the fast nmpc project</description>
+  <maintainer email="prochon4@fel.cvut.cz">Procházka Ondřej</maintainer>
+  <license>free of charge</license>
+  <author email="prochon4@fel.cvut.cz">Procházka Ondřej</author>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <exec_depend>gazebo_ros</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

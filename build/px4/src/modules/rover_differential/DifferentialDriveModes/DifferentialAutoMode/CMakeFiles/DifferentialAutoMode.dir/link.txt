@@ -1,0 +1,2 @@
+/usr/bin/ar qc libDifferentialAutoMode.a CMakeFiles/DifferentialAutoMode.dir/DifferentialAutoMode.cpp.o
+/usr/bin/ranlib libDifferentialAutoMode.a

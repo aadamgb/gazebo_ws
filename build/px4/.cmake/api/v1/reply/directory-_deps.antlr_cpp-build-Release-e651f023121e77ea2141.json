@@ -1,0 +1,44 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"/home/adamgb/phd/gazebo_ws/build/px4/_deps/antlr_cpp-src/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 211,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "share/doc/libantlr4",
+			"paths" : 
+			[
+				"/home/adamgb/phd/gazebo_ws/build/px4/_deps/antlr_cpp-src/README.md",
+				"/home/adamgb/phd/gazebo_ws/build/px4/_deps/antlr_cpp-src/VERSION"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "_deps/antlr_cpp-build",
+		"source" : "/home/adamgb/phd/gazebo_ws/build/px4/_deps/antlr_cpp-src"
+	}
+}

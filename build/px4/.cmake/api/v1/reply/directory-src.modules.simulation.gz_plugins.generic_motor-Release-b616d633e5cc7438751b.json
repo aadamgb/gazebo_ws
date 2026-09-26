@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "src/modules/simulation/gz_plugins/generic_motor",
+		"source" : "src/modules/simulation/gz_plugins/generic_motor"
+	}
+}

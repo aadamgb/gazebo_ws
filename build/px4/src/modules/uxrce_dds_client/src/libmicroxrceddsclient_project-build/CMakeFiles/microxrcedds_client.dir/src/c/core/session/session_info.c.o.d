@@ -1,0 +1,40 @@
+CMakeFiles/microxrcedds_client.dir/src/c/core/session/session_info.c.o: \
+ /home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/uxrce_dds_client/Micro-XRCE-DDS-Client/src/c/core/session/session_info.c \
+ /usr/include/stdc-predef.h \
+ /home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/uxrce_dds_client/Micro-XRCE-DDS-Client/include/uxr/client/defines.h \
+ /home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/uxrce_dds_client/Micro-XRCE-DDS-Client/include/uxr/client/core/session/object_id.h \
+ /home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/uxrce_dds_client/Micro-XRCE-DDS-Client/include/uxr/client/visibility.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
+ /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+ /usr/include/features.h /usr/include/features-time64.h \
+ /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+ /usr/include/x86_64-linux-gnu/bits/timesize.h \
+ /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ /usr/include/x86_64-linux-gnu/bits/long-double.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+ /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h \
+ /usr/include/x86_64-linux-gnu/bits/time64.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
+ /home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/uxrce_dds_client/Micro-XRCE-DDS-Client/include/uxr/client/core/type/xrce_types.h \
+ /home/adamgb/phd/gazebo_ws/build/px4/src/modules/uxrce_dds_client/src/libmicroxrceddsclient_project-build/include/uxr/client/config.h \
+ /home/adamgb/phd/gazebo_ws/build/px4/src/modules/uxrce_dds_client/src/libmicroxrceddsclient_project-build/temp_install/microcdr-2.0.1/include/ucdr/microcdr.h \
+ /home/adamgb/phd/gazebo_ws/build/px4/src/modules/uxrce_dds_client/src/libmicroxrceddsclient_project-build/temp_install/microcdr-2.0.1/include/ucdr/visibility.h \
+ /home/adamgb/phd/gazebo_ws/build/px4/src/modules/uxrce_dds_client/src/libmicroxrceddsclient_project-build/temp_install/microcdr-2.0.1/include/ucdr/config.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/stdbool.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
+ /home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/uxrce_dds_client/Micro-XRCE-DDS-Client/src/c/core/session/session_info_internal.h \
+ /home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/uxrce_dds_client/Micro-XRCE-DDS-Client/include/uxr/client/core/session/session_info.h \
+ /home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/uxrce_dds_client/Micro-XRCE-DDS-Client/include/uxr/client/core/session/stream/seq_num.h \
+ /home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/uxrce_dds_client/Micro-XRCE-DDS-Client/src/c/core/session/../serialization/xrce_header_internal.h \
+ /home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/uxrce_dds_client/Micro-XRCE-DDS-Client/src/c/core/session/submessage_internal.h \
+ /usr/include/string.h \
+ /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
+ /usr/include/strings.h \
+ /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
+ /usr/include/x86_64-linux-gnu/bits/string_fortified.h

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libAckermannRateControl.a CMakeFiles/AckermannRateControl.dir/AckermannRateControl.cpp.o
+/usr/bin/ranlib libAckermannRateControl.a

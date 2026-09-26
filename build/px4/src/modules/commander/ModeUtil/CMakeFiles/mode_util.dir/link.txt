@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmode_util.a CMakeFiles/mode_util.dir/control_mode.cpp.o CMakeFiles/mode_util.dir/mode_requirements.cpp.o
+/usr/bin/ranlib libmode_util.a

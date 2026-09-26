@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmodules__control_allocator.a CMakeFiles/modules__control_allocator.dir/ControlAllocator.cpp.o
+/usr/bin/ranlib libmodules__control_allocator.a

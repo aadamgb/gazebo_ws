@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmodules__simulation__sensor_gps_sim.a CMakeFiles/modules__simulation__sensor_gps_sim.dir/SensorGpsSim.cpp.o
+/usr/bin/ranlib libmodules__simulation__sensor_gps_sim.a

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libbias_estimator.a CMakeFiles/bias_estimator.dir/bias_estimator.cpp.o
+/usr/bin/ranlib libbias_estimator.a

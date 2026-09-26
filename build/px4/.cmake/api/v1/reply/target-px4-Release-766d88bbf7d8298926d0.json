@@ -1,0 +1,4027 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "bin/px4"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"link_directories",
+			"target_link_libraries",
+			"px4_add_module",
+			"set_target_properties",
+			"find_package",
+			"include",
+			"gz_import_target",
+			"gz_pkg_check_modules_quiet",
+			"px4_os_prebuild_targets",
+			"add_dependencies",
+			"add_compile_options",
+			"px4_add_common_flags",
+			"add_definitions",
+			"px4_os_add_flags",
+			"include_directories"
+		],
+		"files" : 
+		[
+			"platforms/posix/CMakeLists.txt",
+			"CMakeLists.txt",
+			"cmake/px4_add_module.cmake",
+			"src/lib/rc/rc_tests/CMakeLists.txt",
+			"src/drivers/osd/msp_osd/CMakeLists.txt",
+			"src/drivers/tone_alarm/CMakeLists.txt",
+			"src/modules/airspeed_selector/CMakeLists.txt",
+			"src/modules/commander/CMakeLists.txt",
+			"src/modules/control_allocator/CMakeLists.txt",
+			"src/modules/ekf2/CMakeLists.txt",
+			"src/modules/flight_mode_manager/CMakeLists.txt",
+			"src/modules/flight_mode_manager/tasks/ManualPosition/CMakeLists.txt",
+			"src/modules/flight_mode_manager/tasks/AutoFollowTarget/CMakeLists.txt",
+			"src/modules/flight_mode_manager/tasks/Auto/CMakeLists.txt",
+			"src/modules/fw_lateral_longitudinal_control/CMakeLists.txt",
+			"src/modules/fw_mode_manager/CMakeLists.txt",
+			"src/modules/mavlink/CMakeLists.txt",
+			"src/lib/variable_length_ringbuffer/CMakeLists.txt",
+			"src/modules/mc_att_control/CMakeLists.txt",
+			"src/modules/fw_autotune_attitude_control/CMakeLists.txt",
+			"src/modules/mc_hover_thrust_estimator/CMakeLists.txt",
+			"src/modules/local_position_estimator/CMakeLists.txt",
+			"src/modules/mc_pos_control/CMakeLists.txt",
+			"src/modules/fw_rate_control/CMakeLists.txt",
+			"src/modules/navigator/CMakeLists.txt",
+			"src/modules/rover_ackermann/CMakeLists.txt",
+			"src/modules/rover_differential/CMakeLists.txt",
+			"src/modules/rover_mecanum/CMakeLists.txt",
+			"src/modules/control_allocator/VehicleActuatorEffectiveness/CMakeLists.txt",
+			"src/modules/sensors/CMakeLists.txt",
+			"src/modules/simulation/battery_simulator/CMakeLists.txt",
+			"/opt/ros/jazzy/opt/gz_transport_vendor/lib/cmake/gz-transport13/gz-transport13-config.cmake",
+			"src/modules/simulation/gz_bridge/CMakeLists.txt",
+			"/opt/ros/jazzy/opt/gz_transport_vendor/lib/cmake/gz-transport13/gz-transport13-targets.cmake",
+			"/opt/ros/jazzy/opt/gz_msgs_vendor/lib/cmake/gz-msgs10/gz-msgs10-targets.cmake",
+			"/opt/ros/jazzy/opt/gz_msgs_vendor/lib/cmake/gz-msgs10/gz-msgs10-config.cmake",
+			"/opt/ros/jazzy/opt/gz_cmake_vendor/share/cmake/gz-cmake3/cmake3/GzImportTarget.cmake",
+			"/opt/ros/jazzy/opt/gz_cmake_vendor/share/cmake/gz-cmake3/cmake3/GzPkgConfig.cmake",
+			"/opt/ros/jazzy/opt/gz_cmake_vendor/share/cmake/gz-cmake3/cmake3/FindTINYXML2.cmake",
+			"/opt/ros/jazzy/opt/gz_cmake_vendor/share/cmake/gz-cmake3/cmake3/FindUUID.cmake",
+			"src/modules/simulation/gz_msgs/CMakeLists.txt",
+			"src/modules/uxrce_dds_client/CMakeLists.txt",
+			"src/systemcmds/dyn/CMakeLists.txt",
+			"src/modules/logger/CMakeLists.txt",
+			"src/modules/attitude_estimator_q/CMakeLists.txt",
+			"src/lib/cdev/test/CMakeLists.txt",
+			"platforms/common/uORB/CMakeLists.txt",
+			"src/systemcmds/bsondump/CMakeLists.txt",
+			"platforms/common/px4_work_queue/test/CMakeLists.txt",
+			"platforms/posix/src/px4/common/CMakeLists.txt",
+			"platforms/posix/cmake/px4_impl_os.cmake",
+			"cmake/kconfig.cmake",
+			"src/lib/version/CMakeLists.txt",
+			"src/lib/events/CMakeLists.txt",
+			"cmake/px4_add_common_flags.cmake",
+			"cmake/px4_config.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 26,
+				"parent" : 0
+			},
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 398,
+				"parent" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 62,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 70,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 74,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 77,
+				"parent" : 0
+			},
+			{
+				"file" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 3,
+				"line" : 34,
+				"parent" : 8
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 9
+			},
+			{
+				"file" : 4
+			},
+			{
+				"command" : 3,
+				"file" : 4,
+				"line" : 36,
+				"parent" : 11
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 12
+			},
+			{
+				"file" : 5
+			},
+			{
+				"command" : 3,
+				"file" : 5,
+				"line" : 34,
+				"parent" : 14
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 15
+			},
+			{
+				"file" : 6
+			},
+			{
+				"command" : 3,
+				"file" : 6,
+				"line" : 33,
+				"parent" : 17
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 18
+			},
+			{
+				"file" : 7
+			},
+			{
+				"command" : 3,
+				"file" : 7,
+				"line" : 41,
+				"parent" : 20
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 21
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 21
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 21
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 21
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 21
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 21
+			},
+			{
+				"file" : 8
+			},
+			{
+				"command" : 3,
+				"file" : 8,
+				"line" : 37,
+				"parent" : 28
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 29
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 29
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 29
+			},
+			{
+				"file" : 9
+			},
+			{
+				"command" : 3,
+				"file" : 9,
+				"line" : 238,
+				"parent" : 33
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 34
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 34
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 34
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 34
+			},
+			{
+				"file" : 10
+			},
+			{
+				"command" : 2,
+				"file" : 10,
+				"line" : 120,
+				"parent" : 39
+			},
+			{
+				"command" : 2,
+				"file" : 10,
+				"line" : 120,
+				"parent" : 39
+			},
+			{
+				"command" : 2,
+				"file" : 10,
+				"line" : 120,
+				"parent" : 39
+			},
+			{
+				"command" : 2,
+				"file" : 10,
+				"line" : 120,
+				"parent" : 39
+			},
+			{
+				"command" : 2,
+				"file" : 10,
+				"line" : 120,
+				"parent" : 39
+			},
+			{
+				"file" : 11
+			},
+			{
+				"command" : 2,
+				"file" : 11,
+				"line" : 39,
+				"parent" : 45
+			},
+			{
+				"command" : 2,
+				"file" : 10,
+				"line" : 120,
+				"parent" : 39
+			},
+			{
+				"command" : 2,
+				"file" : 10,
+				"line" : 120,
+				"parent" : 39
+			},
+			{
+				"command" : 2,
+				"file" : 10,
+				"line" : 120,
+				"parent" : 39
+			},
+			{
+				"command" : 2,
+				"file" : 10,
+				"line" : 120,
+				"parent" : 39
+			},
+			{
+				"command" : 3,
+				"file" : 10,
+				"line" : 99,
+				"parent" : 39
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 51
+			},
+			{
+				"file" : 12
+			},
+			{
+				"command" : 2,
+				"file" : 12,
+				"line" : 40,
+				"parent" : 53
+			},
+			{
+				"command" : 2,
+				"file" : 10,
+				"line" : 120,
+				"parent" : 39
+			},
+			{
+				"command" : 2,
+				"file" : 10,
+				"line" : 120,
+				"parent" : 39
+			},
+			{
+				"command" : 2,
+				"file" : 10,
+				"line" : 120,
+				"parent" : 39
+			},
+			{
+				"file" : 13
+			},
+			{
+				"command" : 2,
+				"file" : 13,
+				"line" : 38,
+				"parent" : 58
+			},
+			{
+				"file" : 14
+			},
+			{
+				"command" : 3,
+				"file" : 14,
+				"line" : 7,
+				"parent" : 60
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 61
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 61
+			},
+			{
+				"file" : 15
+			},
+			{
+				"command" : 3,
+				"file" : 15,
+				"line" : 58,
+				"parent" : 64
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 65
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 65
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 65
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 65
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 65
+			},
+			{
+				"file" : 16
+			},
+			{
+				"command" : 3,
+				"file" : 16,
+				"line" : 99,
+				"parent" : 71
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 72
+			},
+			{
+				"file" : 17
+			},
+			{
+				"command" : 2,
+				"file" : 17,
+				"line" : 38,
+				"parent" : 74
+			},
+			{
+				"file" : 18
+			},
+			{
+				"command" : 3,
+				"file" : 18,
+				"line" : 36,
+				"parent" : 76
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 77
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 77
+			},
+			{
+				"file" : 19
+			},
+			{
+				"command" : 3,
+				"file" : 19,
+				"line" : 34,
+				"parent" : 80
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 81
+			},
+			{
+				"file" : 20
+			},
+			{
+				"command" : 3,
+				"file" : 20,
+				"line" : 39,
+				"parent" : 83
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 84
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 29
+			},
+			{
+				"file" : 21
+			},
+			{
+				"command" : 3,
+				"file" : 21,
+				"line" : 33,
+				"parent" : 87
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 88
+			},
+			{
+				"file" : 22
+			},
+			{
+				"command" : 3,
+				"file" : 22,
+				"line" : 38,
+				"parent" : 90
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 91
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 91
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 91
+			},
+			{
+				"file" : 23
+			},
+			{
+				"command" : 3,
+				"file" : 23,
+				"line" : 34,
+				"parent" : 95
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 96
+			},
+			{
+				"file" : 24
+			},
+			{
+				"command" : 3,
+				"file" : 24,
+				"line" : 61,
+				"parent" : 98
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 99
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 65
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 72
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 99
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 99
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 21
+			},
+			{
+				"file" : 25
+			},
+			{
+				"command" : 3,
+				"file" : 25,
+				"line" : 41,
+				"parent" : 106
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 107
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 107
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 107
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 107
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 107
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 107
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 107
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 107
+			},
+			{
+				"file" : 26
+			},
+			{
+				"command" : 3,
+				"file" : 26,
+				"line" : 41,
+				"parent" : 116
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 117
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 117
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 117
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 117
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 117
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 117
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 117
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 117
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 107
+			},
+			{
+				"file" : 27
+			},
+			{
+				"command" : 3,
+				"file" : 27,
+				"line" : 41,
+				"parent" : 127
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 128
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 128
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 128
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 128
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 128
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 107
+			},
+			{
+				"file" : 28
+			},
+			{
+				"command" : 2,
+				"file" : 28,
+				"line" : 38,
+				"parent" : 135
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 128
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 128
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 128
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 72
+			},
+			{
+				"file" : 29
+			},
+			{
+				"command" : 3,
+				"file" : 29,
+				"line" : 64,
+				"parent" : 141
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 142
+			},
+			{
+				"command" : 2,
+				"file" : 29,
+				"line" : 85,
+				"parent" : 141
+			},
+			{
+				"command" : 2,
+				"file" : 29,
+				"line" : 89,
+				"parent" : 141
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 21
+			},
+			{
+				"command" : 2,
+				"file" : 29,
+				"line" : 97,
+				"parent" : 141
+			},
+			{
+				"command" : 2,
+				"file" : 29,
+				"line" : 101,
+				"parent" : 141
+			},
+			{
+				"command" : 2,
+				"file" : 29,
+				"line" : 105,
+				"parent" : 141
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 21
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 142
+			},
+			{
+				"command" : 2,
+				"file" : 29,
+				"line" : 109,
+				"parent" : 141
+			},
+			{
+				"file" : 30
+			},
+			{
+				"command" : 3,
+				"file" : 30,
+				"line" : 34,
+				"parent" : 153
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 154
+			},
+			{
+				"file" : 32
+			},
+			{
+				"command" : 5,
+				"file" : 32,
+				"line" : 35,
+				"parent" : 156
+			},
+			{
+				"file" : 31,
+				"parent" : 157
+			},
+			{
+				"command" : 4,
+				"file" : 31,
+				"line" : 132,
+				"parent" : 158
+			},
+			{
+				"command" : 6,
+				"file" : 31,
+				"line" : 127,
+				"parent" : 158
+			},
+			{
+				"file" : 33,
+				"parent" : 160
+			},
+			{
+				"command" : 4,
+				"file" : 33,
+				"line" : 61,
+				"parent" : 161
+			},
+			{
+				"command" : 5,
+				"file" : 31,
+				"line" : 97,
+				"parent" : 158
+			},
+			{
+				"file" : 35,
+				"parent" : 163
+			},
+			{
+				"command" : 6,
+				"file" : 35,
+				"line" : 125,
+				"parent" : 164
+			},
+			{
+				"file" : 34,
+				"parent" : 165
+			},
+			{
+				"command" : 4,
+				"file" : 34,
+				"line" : 61,
+				"parent" : 166
+			},
+			{
+				"command" : 5,
+				"file" : 35,
+				"line" : 95,
+				"parent" : 164
+			},
+			{
+				"file" : 38,
+				"parent" : 168
+			},
+			{
+				"command" : 8,
+				"file" : 38,
+				"line" : 22,
+				"parent" : 169
+			},
+			{
+				"command" : 7,
+				"file" : 37,
+				"line" : 187,
+				"parent" : 170
+			},
+			{
+				"command" : 4,
+				"file" : 36,
+				"line" : 141,
+				"parent" : 171
+			},
+			{
+				"command" : 5,
+				"file" : 31,
+				"line" : 95,
+				"parent" : 158
+			},
+			{
+				"file" : 39,
+				"parent" : 173
+			},
+			{
+				"command" : 8,
+				"file" : 39,
+				"line" : 21,
+				"parent" : 174
+			},
+			{
+				"command" : 7,
+				"file" : 37,
+				"line" : 187,
+				"parent" : 175
+			},
+			{
+				"command" : 4,
+				"file" : 36,
+				"line" : 141,
+				"parent" : 176
+			},
+			{
+				"command" : 2,
+				"file" : 32,
+				"line" : 79,
+				"parent" : 156
+			},
+			{
+				"file" : 40
+			},
+			{
+				"command" : 2,
+				"file" : 40,
+				"line" : 26,
+				"parent" : 179
+			},
+			{
+				"command" : 3,
+				"file" : 32,
+				"line" : 49,
+				"parent" : 156
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 181
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 29
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 72
+			},
+			{
+				"file" : 41
+			},
+			{
+				"command" : 3,
+				"file" : 41,
+				"line" : 131,
+				"parent" : 185
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 186
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 186
+			},
+			{
+				"file" : 42
+			},
+			{
+				"command" : 2,
+				"file" : 42,
+				"line" : 8,
+				"parent" : 189
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 72
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 15
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 15
+			},
+			{
+				"file" : 43
+			},
+			{
+				"command" : 3,
+				"file" : 43,
+				"line" : 40,
+				"parent" : 194
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 195
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 72
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 72
+			},
+			{
+				"file" : 44
+			},
+			{
+				"command" : 3,
+				"file" : 44,
+				"line" : 34,
+				"parent" : 199
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 200
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 21
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 72
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 72
+			},
+			{
+				"file" : 45
+			},
+			{
+				"command" : 3,
+				"file" : 45,
+				"line" : 34,
+				"parent" : 205
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 206
+			},
+			{
+				"file" : 46
+			},
+			{
+				"command" : 2,
+				"file" : 46,
+				"line" : 108,
+				"parent" : 208
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 169,
+				"parent" : 206
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 453,
+				"parent" : 2
+			},
+			{
+				"file" : 47
+			},
+			{
+				"command" : 3,
+				"file" : 47,
+				"line" : 33,
+				"parent" : 212
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 213
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 175,
+				"parent" : 206
+			},
+			{
+				"file" : 48
+			},
+			{
+				"command" : 3,
+				"file" : 48,
+				"line" : 34,
+				"parent" : 216
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 217
+			},
+			{
+				"file" : 49
+			},
+			{
+				"command" : 2,
+				"file" : 49,
+				"line" : 55,
+				"parent" : 219
+			},
+			{
+				"command" : 2,
+				"file" : 49,
+				"line" : 58,
+				"parent" : 219
+			},
+			{
+				"command" : 6,
+				"file" : 1,
+				"line" : 191,
+				"parent" : 2
+			},
+			{
+				"file" : 51,
+				"parent" : 222
+			},
+			{
+				"command" : 9,
+				"file" : 51,
+				"line" : 411,
+				"parent" : 223
+			},
+			{
+				"command" : 2,
+				"file" : 50,
+				"line" : 291,
+				"parent" : 224
+			},
+			{
+				"command" : 2,
+				"file" : 49,
+				"line" : 54,
+				"parent" : 219
+			},
+			{
+				"command" : 10,
+				"file" : 50,
+				"line" : 292,
+				"parent" : 224
+			},
+			{
+				"file" : 52
+			},
+			{
+				"command" : 10,
+				"file" : 52,
+				"line" : 70,
+				"parent" : 228
+			},
+			{
+				"command" : 10,
+				"file" : 10,
+				"line" : 90,
+				"parent" : 39
+			},
+			{
+				"command" : 10,
+				"file" : 41,
+				"line" : 114,
+				"parent" : 185
+			},
+			{
+				"file" : 53
+			},
+			{
+				"command" : 10,
+				"file" : 53,
+				"line" : 120,
+				"parent" : 232
+			},
+			{
+				"command" : 10,
+				"file" : 0,
+				"line" : 112,
+				"parent" : 0
+			},
+			{
+				"command" : 12,
+				"file" : 1,
+				"line" : 368,
+				"parent" : 2
+			},
+			{
+				"command" : 11,
+				"file" : 54,
+				"line" : 45,
+				"parent" : 235
+			},
+			{
+				"command" : 11,
+				"file" : 54,
+				"line" : 115,
+				"parent" : 235
+			},
+			{
+				"command" : 11,
+				"file" : 54,
+				"line" : 119,
+				"parent" : 235
+			},
+			{
+				"command" : 11,
+				"file" : 54,
+				"line" : 122,
+				"parent" : 235
+			},
+			{
+				"command" : 11,
+				"file" : 54,
+				"line" : 135,
+				"parent" : 235
+			},
+			{
+				"command" : 11,
+				"file" : 54,
+				"line" : 172,
+				"parent" : 235
+			},
+			{
+				"command" : 11,
+				"file" : 54,
+				"line" : 172,
+				"parent" : 235
+			},
+			{
+				"command" : 13,
+				"file" : 54,
+				"line" : 195,
+				"parent" : 235
+			},
+			{
+				"command" : 13,
+				"file" : 1,
+				"line" : 204,
+				"parent" : 2
+			},
+			{
+				"command" : 13,
+				"file" : 0,
+				"line" : 24,
+				"parent" : 0
+			},
+			{
+				"command" : 13,
+				"file" : 0,
+				"line" : 12,
+				"parent" : 0
+			},
+			{
+				"command" : 14,
+				"file" : 1,
+				"line" : 369,
+				"parent" : 2
+			},
+			{
+				"command" : 13,
+				"file" : 50,
+				"line" : 236,
+				"parent" : 247
+			},
+			{
+				"command" : 13,
+				"file" : 50,
+				"line" : 216,
+				"parent" : 247
+			},
+			{
+				"command" : 6,
+				"file" : 1,
+				"line" : 190,
+				"parent" : 2
+			},
+			{
+				"file" : 55,
+				"parent" : 250
+			},
+			{
+				"command" : 15,
+				"file" : 55,
+				"line" : 94,
+				"parent" : 251
+			},
+			{
+				"command" : 15,
+				"file" : 51,
+				"line" : 253,
+				"parent" : 223
+			},
+			{
+				"command" : 15,
+				"file" : 54,
+				"line" : 176,
+				"parent" : 235
+			},
+			{
+				"command" : 15,
+				"file" : 50,
+				"line" : 221,
+				"parent" : 247
+			},
+			{
+				"command" : 15,
+				"file" : 1,
+				"line" : 400,
+				"parent" : 2
+			},
+			{
+				"command" : 15,
+				"file" : 0,
+				"line" : 2,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-O3 -DNDEBUG -std=gnu++14 -fPIE"
+				},
+				{
+					"backtrace" : 236,
+					"fragment" : "-g"
+				},
+				{
+					"backtrace" : 236,
+					"fragment" : "-fdata-sections"
+				},
+				{
+					"backtrace" : 236,
+					"fragment" : "-ffunction-sections"
+				},
+				{
+					"backtrace" : 236,
+					"fragment" : "-fomit-frame-pointer"
+				},
+				{
+					"backtrace" : 236,
+					"fragment" : "-fmerge-all-constants"
+				},
+				{
+					"backtrace" : 236,
+					"fragment" : "-fno-signed-zeros"
+				},
+				{
+					"backtrace" : 236,
+					"fragment" : "-fno-trapping-math"
+				},
+				{
+					"backtrace" : 236,
+					"fragment" : "-freciprocal-math"
+				},
+				{
+					"backtrace" : 236,
+					"fragment" : "-fno-math-errno"
+				},
+				{
+					"backtrace" : 236,
+					"fragment" : "-fno-strict-aliasing"
+				},
+				{
+					"backtrace" : 236,
+					"fragment" : "-fvisibility=hidden"
+				},
+				{
+					"backtrace" : 236,
+					"fragment" : "-include"
+				},
+				{
+					"backtrace" : 236,
+					"fragment" : "visibility.h"
+				},
+				{
+					"backtrace" : 236,
+					"fragment" : "-Wall"
+				},
+				{
+					"backtrace" : 236,
+					"fragment" : "-Wextra"
+				},
+				{
+					"backtrace" : 236,
+					"fragment" : "-Werror"
+				},
+				{
+					"backtrace" : 236,
+					"fragment" : "-Warray-bounds"
+				},
+				{
+					"backtrace" : 236,
+					"fragment" : "-Wcast-align"
+				},
+				{
+					"backtrace" : 236,
+					"fragment" : "-Wdisabled-optimization"
+				},
+				{
+					"backtrace" : 236,
+					"fragment" : "-Wdouble-promotion"
+				},
+				{
+					"backtrace" : 236,
+					"fragment" : "-Wfatal-errors"
+				},
+				{
+					"backtrace" : 236,
+					"fragment" : "-Wfloat-equal"
+				},
+				{
+					"backtrace" : 236,
+					"fragment" : "-Wformat-security"
+				},
+				{
+					"backtrace" : 236,
+					"fragment" : "-Winit-self"
+				},
+				{
+					"backtrace" : 236,
+					"fragment" : "-Wlogical-op"
+				},
+				{
+					"backtrace" : 236,
+					"fragment" : "-Wpointer-arith"
+				},
+				{
+					"backtrace" : 236,
+					"fragment" : "-Wshadow"
+				},
+				{
+					"backtrace" : 236,
+					"fragment" : "-Wuninitialized"
+				},
+				{
+					"backtrace" : 236,
+					"fragment" : "-Wunknown-pragmas"
+				},
+				{
+					"backtrace" : 236,
+					"fragment" : "-Wunused-variable"
+				},
+				{
+					"backtrace" : 236,
+					"fragment" : "-Wno-missing-field-initializers"
+				},
+				{
+					"backtrace" : 236,
+					"fragment" : "-Wno-missing-include-dirs"
+				},
+				{
+					"backtrace" : 236,
+					"fragment" : "-Wno-unused-parameter"
+				},
+				{
+					"backtrace" : 237,
+					"fragment" : "-fdiagnostics-color=always"
+				},
+				{
+					"backtrace" : 238,
+					"fragment" : "-Wno-stringop-truncation"
+				},
+				{
+					"backtrace" : 239,
+					"fragment" : "-fno-builtin-printf"
+				},
+				{
+					"backtrace" : 239,
+					"fragment" : "-fno-strength-reduce"
+				},
+				{
+					"backtrace" : 239,
+					"fragment" : "-Wformat=1"
+				},
+				{
+					"backtrace" : 239,
+					"fragment" : "-Wunused-but-set-variable"
+				},
+				{
+					"backtrace" : 239,
+					"fragment" : "-Wno-format-truncation"
+				},
+				{
+					"backtrace" : 240,
+					"fragment" : "-fcheck-new"
+				},
+				{
+					"backtrace" : 241,
+					"fragment" : "-Wreorder"
+				},
+				{
+					"backtrace" : 242,
+					"fragment" : "-Wno-overloaded-virtual"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 243,
+					"define" : "CONFIG_ARCH_BOARD_PX4_SITL"
+				},
+				{
+					"backtrace" : 244,
+					"define" : "ENABLE_LOCKSTEP_SCHEDULER"
+				},
+				{
+					"backtrace" : 245,
+					"define" : "PX4_BINARY_DIR=\"/home/adamgb/phd/gazebo_ws/build/px4\""
+				},
+				{
+					"backtrace" : 246,
+					"define" : "PX4_SHELL_COMMAND_PREFIX=\"px4-\""
+				},
+				{
+					"backtrace" : 245,
+					"define" : "PX4_SOURCE_DIR=\"/home/adamgb/phd/gazebo_ws/src/px4_firmware\""
+				},
+				{
+					"backtrace" : 243,
+					"define" : "__CUSTOM_FILE_IO__"
+				},
+				{
+					"backtrace" : 248,
+					"define" : "__PX4_LINUX"
+				},
+				{
+					"backtrace" : 249,
+					"define" : "__PX4_POSIX"
+				},
+				{
+					"backtrace" : 243,
+					"define" : "__STDC_FORMAT_MACROS"
+				},
+				{
+					"backtrace" : 249,
+					"define" : "noreturn_function=__attribute__((noreturn))"
+				},
+				{
+					"define" : "px4_EXPORTS"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 252,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/boards/px4/sitl/src"
+				},
+				{
+					"backtrace" : 253,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/platforms/posix/src/px4/common/include"
+				},
+				{
+					"backtrace" : 254,
+					"path" : "/home/adamgb/phd/gazebo_ws/build/px4"
+				},
+				{
+					"backtrace" : 254,
+					"path" : "/home/adamgb/phd/gazebo_ws/build/px4/src/lib"
+				},
+				{
+					"backtrace" : 254,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/platforms/posix/src/px4/generic/generic/include"
+				},
+				{
+					"backtrace" : 254,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/platforms/common"
+				},
+				{
+					"backtrace" : 254,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/platforms/common/include"
+				},
+				{
+					"backtrace" : 254,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/src"
+				},
+				{
+					"backtrace" : 254,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/src/include"
+				},
+				{
+					"backtrace" : 254,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/src/lib"
+				},
+				{
+					"backtrace" : 254,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/src/lib/matrix"
+				},
+				{
+					"backtrace" : 254,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules"
+				},
+				{
+					"backtrace" : 255,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/platforms/posix/include"
+				},
+				{
+					"backtrace" : 256,
+					"path" : "/home/adamgb/phd/gazebo_ws/build/px4/external/Install/include"
+				},
+				{
+					"backtrace" : 257,
+					"path" : "/home/adamgb/phd/gazebo_ws/build/px4/platforms/posix"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/flight_mode_manager/tasks/Auto"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/flight_mode_manager/tasks/FlightTask"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/flight_mode_manager/tasks/Utility"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/src/lib/slew_rate"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/src/lib/sticks"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/src/lib/motion_planning"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/src/lib/stick_yaw"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/flight_mode_manager/tasks/Descend"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/flight_mode_manager/tasks/Failsafe"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/flight_mode_manager/tasks/ManualAcceleration"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/flight_mode_manager/tasks/ManualAltitudeSmoothVel"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/flight_mode_manager/tasks/ManualAltitude"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/flight_mode_manager/tasks/ManualAccelerationSlow"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/flight_mode_manager/tasks/ManualPosition"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/flight_mode_manager/tasks/Transition"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/flight_mode_manager/tasks/AltitudeCruise"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/flight_mode_manager/tasks/AutoFollowTarget"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/flight_mode_manager/tasks/Orbit"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/adamgb/phd/gazebo_ws/build/px4/src/modules/simulation/gz_msgs"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/simulation/gz_bridge/px4_gz_msgs"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					1
+				],
+				"standard" : "14"
+			},
+			"sourceIndexes" : 
+			[
+				0,
+				1
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 227,
+			"id" : "uorb_headers::@87da20e8da9c58e355ca"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "uorb_msgs::@87da20e8da9c58e355ca"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "adsb::@dfad60d30f196ab0a9e2"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "airspeed::@51b991d5807708af06c8"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "atmosphere::@8b8995195457f70964e3"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "battery::@1f69de361fb938b34122"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "cdev::@486c09b1dd2eb468d1b8"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "lib__cdev__test__cdev_test::@bb209f40c29219ada13d"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "circuit_breaker::@e4f77452a3966ca624be"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "CollisionPrevention::@7756802a5552c73ac220"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "ControlAllocation::@21ff1f336157af2e8da1"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "ActuatorEffectiveness::@82904f268e3462cf251f"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "controllib::@74a778f119068e90351d"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "lib__controllib__controllib_test::@7860b14b226c11e06ed3"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "conversion::@799cc045a91375c93c85"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "dataman_client::@b4593578c767823c907a"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "drivers_accelerometer::@0bf5022875b8e01a3345"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "drivers_gyroscope::@0e4539b7be9fa97acfc4"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "drivers_magnetometer::@59d140376cec04eac720"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "geo::@98fdcee2b11418b2ae8c"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "heatshrink::@08e408c2e1387fae7adf"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "hysteresis::@7f07278cf04a53607836"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "lat_lon_alt::@c28cdbe49e2fbee673df"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "mathlib::@acbeda415806513a99b0"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "mixer_module::@cfbf9a880ba63102fbb1"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "motion_planning::@61f5c9020768c0679cbd"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "npfg::@7fc4217b6283ccd81148"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "perf::@25bdab5b7fa021aa5d4c"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "performance_model::@b1495b2acd9e097fa9a5"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "PID::@cca4012f1a8440300d3d"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "pure_pursuit::@097ea363821836516509"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "RateControl::@714dbb369896d8b6f4dd"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "rc::@49b8c95f7ed13faa65f6"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "lib__rc__rc_tests::@0d14814bc2eff50b9abd"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "ringbuffer::@16b34cbb4b5d649f1fde"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "rover_control::@0587cf62924235d854ba"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "rtl_time_estimator::@2a0c702c209403c75902"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "sensor_calibration::@868ec604c463d1b1bbd5"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "SlewRate::@9911ea5c1339838a71c4"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "Sticks::@c0edb485543d38efc22f"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "StickYaw::@add40ef25e9dd2805a78"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "systemlib::@f1c82114109d59f0af77"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "SystemIdentification::@ab08cac45f0581a9d1eb"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "tecs::@bc30ba9c71363de0c3f5"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "timesync::@4161e98748ce817b0405"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "tinybson::@8e13947b44723869e90e"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "tunes::@1600209e4069d3c42e2f"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "variable_length_ringbuffer::@e8540ad4d5fddf1705e5"
+		},
+		{
+			"backtrace" : 229,
+			"id" : "ver_gen::@e0eff460355dd36c32f3"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "version::@e0eff460355dd36c32f3"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "WeatherVane::@db8bb4115fe514821604"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "wind_estimator::@b55defc95dba34d47a5b"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "world_magnetic_model::@68c15c83472908ee1955"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "px4_layer::@13eebd0deb9b16358cc5"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "arch_tone_alarm::@b1e8bec5e2a316c55c59"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "uORB::@afa8ade38fd817f34bcc"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__uORB__uORB_tests::@10c52d625f6c0527b279"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "lib__work_queue__test__wqueue_test::@66df713ef415bcfd03fb"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "work_queue::@4a51fd9749b041c0a765"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "drivers__camera_trigger::@99bf81b3b6dbc6068d78"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "driver__septentrio::@27cf8a7d201ceeb7e51c"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "drivers__gps::@fb4bd54b8c06039428df"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "drivers__osd__msp_osd::@249f0a1cf6a119792810"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "message_display::@81c7692616280a4dfd9f"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "drivers__tone_alarm::@9ef4ec13529e5c28207d"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__airship_att_control::@ee13aa78eca741c32a96"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__airspeed_selector::@7d2e84573253dd74c5c6"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__attitude_estimator_q::@a6c898ce303806c1af9f"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__camera_feedback::@50ceae0b6010350d7c42"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__commander::@cf114cfe209d53ca6183"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "ArmAuthorization::@05230fe8e35748d05eba"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "failsafe::@f9e60417268e84cd9cda"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "failure_detector::@3a9836a6bc05cfab7ed1"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "health_and_arming_checks::@3cc36bf46d6b921e689e"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "mode_util::@3f00299d92e2a1952827"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "MulticopterThrowLaunch::@05f5acf1246e5288f110"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__control_allocator::@15b4504365ab6355372e"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "VehicleActuatorEffectiveness::@0b1c52219089adcdaf77"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__dataman::@27224b01485f1869d122"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__ekf2::@74b2225f2dde2a468e7a"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "bias_estimator::@8dbdaa2f5bbcaa4b98d3"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "output_predictor::@699369f4733d24cc8f43"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "yaw_estimator::@ad357e3e13424fd3b81c"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__events::@f265462420f63df507f4"
+		},
+		{
+			"backtrace" : 230,
+			"id" : "flighttasks_generated::@3320806e5a654be0ce98"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__flight_mode_manager::@3320806e5a654be0ce98"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "FlightTask::@f2f24f547eebff7e047c"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "FlightTaskUtility::@d28535f85074e81d26aa"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "FlightTaskAuto::@9e5ceeecd6574c0c17d5"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "FlightTaskDescend::@bba9fc963ade69fea794"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "FlightTaskFailsafe::@6ac9fd93f4ddd9db0044"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "FlightTaskManualAcceleration::@649462c8c9ad769f01e1"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "FlightTaskManualAccelerationSlow::@ca42909f66a604e98d6d"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "FlightTaskManualAltitude::@773ab3a94f5ade0f3ca7"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "FlightTaskManualAltitudeSmoothVel::@233b536d283860c38b10"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "FlightTaskManualPosition::@c6191fec9fbb0af7f71e"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "FlightTaskTransition::@3c0e18faa09a5be75027"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "FlightTaskAltitudeCruise::@78e7399ba6c374cb9023"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "FlightTaskAutoFollowTarget::@198352f956d8d11f6f6e"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "follow_target_estimator::@893ea0fc876922361fe3"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "FlightTaskOrbit::@e9e999ec1386af3d2f0f"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__fw_att_control::@9a4cba9e2395868006cc"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "fw_autotune_attitude_control::@be640dae3aa4da707157"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__fw_lateral_longitudinal_control::@35cc2b3c1e7290541a70"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__fw_mode_manager::@b1836dfce55957161506"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "launchdetection::@656ebbc3d0255cab42c0"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "runway_takeoff::@90751c1774da22cade0b"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "figure_eight::@f072b64d59bc7cb114ae"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__fw_rate_control::@ba250ef17e5acdc7d598"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "drivers__gimbal::@9a190fb686ea07bb2ccd"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__gyro_calibration::@985feb8a13a18d2887af"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__gyro_fft::@4f885d8e0cceca0e1b28"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__land_detector::@b39b4f0f89b742063f5b"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__landing_target_estimator::@4b0d51c4b0bd5bb487a1"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__load_mon::@64b9696d437ff130a724"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__local_position_estimator::@af15a95c598b1e8c6e06"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__logger::@40b27daba1bf71feaf6c"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__mag_bias_estimator::@29db46d1baaf75316bfb"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__manual_control::@d3b937a979c11cfe3cfc"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__mavlink::@583fe9156e84f4c4698e"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__mc_att_control::@b4f9c6679fbfd1d93728"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "AttitudeControl::@18321c1b5f5071099d36"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "mc_autotune_attitude_control::@5741cdc0797bdc33125e"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "zero_order_hover_thrust_ekf::@a8b0099dad52aa59f514"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__mc_hover_thrust_estimator::@a8b0099dad52aa59f514"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__mc_pos_control::@0c1c5899b202da4628dd"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "GotoControl::@cd91d8b1c946a12a0023"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "PositionControl::@a404ed42e0ff660582e2"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "Takeoff::@adc7048ad1782ef6150e"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__mc_rate_control::@1be37876e0a8eb9403e5"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__navigator::@b5bce39740402a359bc1"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "geofence_breach_avoidance::@5aa66506d07d385a8126"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__payload_deliverer::@fb14a0690cf8d4bfbfc6"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__rc_update::@b7a8020506c37f3a5073"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__replay::@507d6596bfa4644d1ecf"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__rover_ackermann::@bb7d2ce635a81716c8a3"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "AckermannActControl::@ba57fd111213170da1fd"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "AckermannRateControl::@a6ce5ce0439574f35039"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "AckermannAttControl::@006b05fdd301b3df0390"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "AckermannSpeedControl::@1b0b20efd57394a1495b"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "AckermannPosControl::@c866afe20fa68fd48142"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "AckermannAutoMode::@c632eff3758d29237692"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "AckermannManualMode::@498d37ed5035248cd29c"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "AckermannOffboardMode::@6fe2ceeb2d521c5677f2"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__rover_differential::@3634e8b3e615b93bf6dc"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "DifferentialActControl::@ae0d7ae1dfb210734c2b"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "DifferentialRateControl::@2e9e093766d56281469a"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "DifferentialAttControl::@d3ffa77d0c533f8fcd79"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "DifferentialSpeedControl::@98c4b8632a0f8baf6622"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "DifferentialPosControl::@f02a43e1b49219812dd3"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "DifferentialAutoMode::@cc6a2a9d97696957985a"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "DifferentialManualMode::@159a4f08a814a4fef8c7"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "DifferentialOffboardMode::@42ab4deb22b2f30ee9aa"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__rover_mecanum::@112dbb2e7b435ff27294"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "MecanumActControl::@19b55bbda475d4b7b2d6"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "MecanumRateControl::@7176931de813a9fbb7bb"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "MecanumAttControl::@913e736fc1e19583c4b5"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "MecanumSpeedControl::@ba64f98906ff48021217"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "MecanumPosControl::@66a3703fff63733a4013"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "MecanumAutoMode::@d9f1f7f94af958c1b430"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "MecanumManualMode::@a467192359555285d13d"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "MecanumOffboardMode::@84cd60ad8536f9415c83"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__sensors::@077873df8c4ad4fc53f7"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "data_validator::@2fecac86c42487b5dc05"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "vehicle_acceleration::@07c1f7b8f85a05d97ce6"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "vehicle_imu::@454a94ea98151ce07287"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "vehicle_air_data::@b1fce6cd77438843e59a"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "vehicle_angular_velocity::@abdcaa9db840f3a0800e"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "vehicle_gps_position::@42af4192a9bded48a4b4"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "vehicle_magnetometer::@3a30843e44481c5df9ac"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "vehicle_optical_flow::@950f6c7540fa74846885"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__simulation__battery_simulator::@1cbe6d68dad31a8bc564"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__simulation__gz_bridge::@895bb6d810a4ac7dc655"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "px4_gz_msgs::@e1482a0674f004e4dc1f"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__simulation__pwm_out_sim::@0baeab3aa226b8f99ca3"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__simulation__sensor_agp_sim::@40d51ae0d230787e8433"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__simulation__sensor_airspeed_sim::@1166f2b7d4e6ba68e29d"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__simulation__sensor_baro_sim::@3b794fb18f906362a34c"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__simulation__sensor_gps_sim::@6c7c93a5a95ac89afd17"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__simulation__senosr_mag_sim::@0a5c296a4448478f248d"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__simulation__simulator_mavlink::@2b2ba8b30dd5813ab657"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__simulation__simulator_sih::@c1c173d9ff42c0a3ee17"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__simulation__system_power_simulator::@f0558502d477cec30c35"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__temperature_compensation::@5330157b3c99e6793fd1"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__uuv_att_control::@b0c34e97e6f763df4e04"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__uuv_pos_control::@0038d498eec06b11009b"
+		},
+		{
+			"backtrace" : 231,
+			"id" : "libmicroxrceddsclient_project::@d4233197056eff763ec9"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__uxrce_dds_client::@d4233197056eff763ec9"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__vtol_att_control::@0998d7400f242b51c525"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "systemcmds__actuator_test::@efffd815d9aa4eddd3f7"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "systemcmds__bsondump::@53004c3e82ed67dc6671"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "systemcmds__dyn::@cdab394adb584cb55fc5"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "systemcmds__failure::@c380f586e8560d2d4c86"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "systemcmds__led_control::@b1b211e84ed2f36900a1"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "systemcmds__param::@ba7fb24be2fff78c7cb3"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "systemcmds__perf::@5812fb63bd9aa084dfd7"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "systemcmds__sd_bench::@1a8e76727e4a0c45b7e8"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "systemcmds__shutdown::@6c70b4b1100d60b60461"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "systemcmds__system_time::@68ce6f0f8798071de760"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "systemcmds__tests::@652f4abdf2fe1ed285da"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "systemcmds__tests__hrt_test::@cbf16f593d4df8b53f42"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "systemcmds__topic_listener::@6a4e4992b66875bf24ea"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "systemcmds__tune_control::@510165f0452054e6af69"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "systemcmds__uorb::@d213a8da64551c2401a5"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "systemcmds__ver::@f7da1f0da3caa42e580e"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "systemcmds__work_queue::@47e2f69d7ce89286e27c"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__fake_gps::@888c799a84a377868587"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "modules__fake_imu::@5346d9df9f94aae1322d"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "examples__fake_magnetometer::@132fee311130da92d691"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "examples__hello::@7bca3e642e9152447c40"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "examples__px4_mavlink_debug::@d69cf6da2ad4eac27741"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "examples__px4_simple_app::@3584c3307323981712e1"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "examples__work_item::@c3c9620056f343cb9ebe"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "drivers_board::@a7b731bd9dab5511b243"
+		},
+		{
+			"backtrace" : 233,
+			"id" : "events_header::@5cf9bdc8231d57945e1e"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "events::@5cf9bdc8231d57945e1e"
+		},
+		{
+			"backtrace" : 234,
+			"id" : "romfs_gen_files_target::@493434700134a4b080d6"
+		}
+	],
+	"id" : "px4::@5d9bc03c265b0d8f956f",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "-O3 -DNDEBUG",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "-fuse-ld=gold   -Wl,--export-dynamic -rdynamic",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "-L/home/adamgb/phd/gazebo_ws/build/px4/external/Install/lib",
+				"role" : "libraryPath"
+			},
+			{
+				"fragment" : "-Wl,-rpath,/home/adamgb/phd/gazebo_ws/build/px4/external/Install/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/lib/cdev/test/liblib__cdev__test__cdev_test.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/lib/controllib/controllib_test/liblib__controllib__controllib_test.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/lib/rc/rc_tests/liblib__rc__rc_tests.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../common/uORB/uORB_tests/libmodules__uORB__uORB_tests.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../common/px4_work_queue/test/liblib__work_queue__test__wqueue_test.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/drivers/camera_trigger/libdrivers__camera_trigger.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/drivers/gnss/septentrio/libdriver__septentrio.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/drivers/gps/libdrivers__gps.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/drivers/osd/msp_osd/libdrivers__osd__msp_osd.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/drivers/tone_alarm/libdrivers__tone_alarm.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/airship_att_control/libmodules__airship_att_control.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/airspeed_selector/libmodules__airspeed_selector.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/attitude_estimator_q/libmodules__attitude_estimator_q.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/camera_feedback/libmodules__camera_feedback.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/commander/libmodules__commander.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/control_allocator/libmodules__control_allocator.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/dataman/libmodules__dataman.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/ekf2/libmodules__ekf2.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/events/libmodules__events.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/flight_mode_manager/libmodules__flight_mode_manager.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/fw_att_control/libmodules__fw_att_control.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/fw_autotune_attitude_control/libfw_autotune_attitude_control.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/fw_lateral_longitudinal_control/libmodules__fw_lateral_longitudinal_control.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/fw_mode_manager/libmodules__fw_mode_manager.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/fw_rate_control/libmodules__fw_rate_control.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/gimbal/libdrivers__gimbal.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/gyro_calibration/libmodules__gyro_calibration.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/gyro_fft/libmodules__gyro_fft.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/land_detector/libmodules__land_detector.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/landing_target_estimator/libmodules__landing_target_estimator.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/load_mon/libmodules__load_mon.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/local_position_estimator/libmodules__local_position_estimator.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/logger/libmodules__logger.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/mag_bias_estimator/libmodules__mag_bias_estimator.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/manual_control/libmodules__manual_control.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/mavlink/libmodules__mavlink.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/mc_att_control/libmodules__mc_att_control.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/mc_autotune_attitude_control/libmc_autotune_attitude_control.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/mc_hover_thrust_estimator/libmodules__mc_hover_thrust_estimator.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/mc_pos_control/libmodules__mc_pos_control.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/mc_rate_control/libmodules__mc_rate_control.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/navigator/libmodules__navigator.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/payload_deliverer/libmodules__payload_deliverer.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/rc_update/libmodules__rc_update.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/replay/libmodules__replay.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/rover_ackermann/libmodules__rover_ackermann.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/rover_differential/libmodules__rover_differential.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/rover_mecanum/libmodules__rover_mecanum.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/sensors/libmodules__sensors.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/simulation/battery_simulator/libmodules__simulation__battery_simulator.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/simulation/gz_bridge/libmodules__simulation__gz_bridge.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/simulation/pwm_out_sim/libmodules__simulation__pwm_out_sim.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/simulation/sensor_agp_sim/libmodules__simulation__sensor_agp_sim.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/simulation/sensor_airspeed_sim/libmodules__simulation__sensor_airspeed_sim.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/simulation/sensor_baro_sim/libmodules__simulation__sensor_baro_sim.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/simulation/sensor_gps_sim/libmodules__simulation__sensor_gps_sim.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/simulation/sensor_mag_sim/libmodules__simulation__senosr_mag_sim.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/simulation/simulator_mavlink/libmodules__simulation__simulator_mavlink.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/simulation/simulator_sih/libmodules__simulation__simulator_sih.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/simulation/system_power_simulator/libmodules__simulation__system_power_simulator.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/temperature_compensation/libmodules__temperature_compensation.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/uuv_att_control/libmodules__uuv_att_control.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/uuv_pos_control/libmodules__uuv_pos_control.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/uxrce_dds_client/libmodules__uxrce_dds_client.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/vtol_att_control/libmodules__vtol_att_control.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/systemcmds/actuator_test/libsystemcmds__actuator_test.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/systemcmds/bsondump/libsystemcmds__bsondump.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/systemcmds/dyn/libsystemcmds__dyn.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/systemcmds/failure/libsystemcmds__failure.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/systemcmds/led_control/libsystemcmds__led_control.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/systemcmds/param/libsystemcmds__param.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/systemcmds/perf/libsystemcmds__perf.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/systemcmds/sd_bench/libsystemcmds__sd_bench.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/systemcmds/shutdown/libsystemcmds__shutdown.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/systemcmds/system_time/libsystemcmds__system_time.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/systemcmds/tests/libsystemcmds__tests.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/systemcmds/tests/hrt_test/libsystemcmds__tests__hrt_test.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/systemcmds/topic_listener/libsystemcmds__topic_listener.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/systemcmds/tune_control/libsystemcmds__tune_control.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/systemcmds/uorb/libsystemcmds__uorb.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/systemcmds/ver/libsystemcmds__ver.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/systemcmds/work_queue/libsystemcmds__work_queue.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/examples/fake_gps/libmodules__fake_gps.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/examples/fake_imu/libmodules__fake_imu.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/examples/fake_magnetometer/libexamples__fake_magnetometer.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/examples/hello/libexamples__hello.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/examples/px4_mavlink_debug/libexamples__px4_mavlink_debug.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/examples/px4_simple_app/libexamples__px4_simple_app.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/examples/work_item/libexamples__work_item.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "-lm",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/lib/parameters/libparameters.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "-lrt",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "-lpthread",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "../common/uORB/libuORB.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 10,
+				"fragment" : "../../src/lib/rc/librc.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 13,
+				"fragment" : "../../src/drivers/osd/msp_osd/MessageDisplay/libmessage_display.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 16,
+				"fragment" : "src/px4/generic/generic/tone_alarm/libarch_tone_alarm.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 19,
+				"fragment" : "../../src/lib/wind_estimator/libwind_estimator.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 22,
+				"fragment" : "../../src/modules/commander/Arming/ArmAuthorization/libArmAuthorization.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 23,
+				"fragment" : "../../src/modules/commander/failsafe/libfailsafe.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 24,
+				"fragment" : "../../src/modules/commander/failure_detector/libfailure_detector.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 25,
+				"fragment" : "../../src/modules/commander/HealthAndArmingChecks/libhealth_and_arming_checks.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 26,
+				"fragment" : "../../src/modules/commander/ModeUtil/libmode_util.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 27,
+				"fragment" : "../../src/modules/commander/MulticopterThrowLaunch/libMulticopterThrowLaunch.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 30,
+				"fragment" : "../../src/modules/control_allocator/VehicleActuatorEffectiveness/libVehicleActuatorEffectiveness.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 31,
+				"fragment" : "../../src/lib/control_allocation/actuator_effectiveness/libActuatorEffectiveness.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 32,
+				"fragment" : "../../src/lib/control_allocation/control_allocation/libControlAllocation.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 35,
+				"fragment" : "../../src/modules/ekf2/EKF/yaw_estimator/libyaw_estimator.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 36,
+				"fragment" : "../../src/lib/lat_lon_alt/liblat_lon_alt.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 37,
+				"fragment" : "../../src/modules/ekf2/EKF/bias_estimator/libbias_estimator.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 38,
+				"fragment" : "../../src/modules/ekf2/EKF/output_predictor/liboutput_predictor.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 40,
+				"fragment" : "../../src/modules/flight_mode_manager/tasks/Descend/libFlightTaskDescend.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 41,
+				"fragment" : "../../src/modules/flight_mode_manager/tasks/Failsafe/libFlightTaskFailsafe.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 42,
+				"fragment" : "../../src/modules/flight_mode_manager/tasks/ManualAccelerationSlow/libFlightTaskManualAccelerationSlow.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 43,
+				"fragment" : "../../src/modules/flight_mode_manager/tasks/ManualAcceleration/libFlightTaskManualAcceleration.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 44,
+				"fragment" : "../../src/modules/flight_mode_manager/tasks/ManualPosition/libFlightTaskManualPosition.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 46,
+				"fragment" : "../../src/lib/collision_prevention/libCollisionPrevention.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 47,
+				"fragment" : "../../src/modules/flight_mode_manager/tasks/Transition/libFlightTaskTransition.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 48,
+				"fragment" : "../../src/modules/flight_mode_manager/tasks/AltitudeCruise/libFlightTaskAltitudeCruise.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 49,
+				"fragment" : "../../src/modules/flight_mode_manager/tasks/AutoFollowTarget/libFlightTaskAutoFollowTarget.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 50,
+				"fragment" : "../../src/modules/flight_mode_manager/tasks/Auto/libFlightTaskAuto.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 52,
+				"fragment" : "../../src/lib/weather_vane/libWeatherVane.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 54,
+				"fragment" : "../../src/modules/flight_mode_manager/tasks/AutoFollowTarget/follow_target_estimator/libfollow_target_estimator.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 55,
+				"fragment" : "../../src/modules/flight_mode_manager/tasks/Orbit/libFlightTaskOrbit.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 56,
+				"fragment" : "../../src/modules/flight_mode_manager/tasks/ManualAltitudeSmoothVel/libFlightTaskManualAltitudeSmoothVel.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 57,
+				"fragment" : "../../src/modules/flight_mode_manager/tasks/ManualAltitude/libFlightTaskManualAltitude.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 59,
+				"fragment" : "../../src/modules/flight_mode_manager/tasks/Utility/libFlightTaskUtility.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 59,
+				"fragment" : "../../src/modules/flight_mode_manager/tasks/FlightTask/libFlightTask.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 62,
+				"fragment" : "../../src/lib/npfg/libnpfg.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 63,
+				"fragment" : "../../src/lib/tecs/libtecs.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 66,
+				"fragment" : "../../src/modules/fw_mode_manager/launchdetection/liblaunchdetection.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 67,
+				"fragment" : "../../src/modules/fw_mode_manager/runway_takeoff/librunway_takeoff.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 68,
+				"fragment" : "../../src/lib/fw_performance_model/libperformance_model.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 69,
+				"fragment" : "../../src/lib/sticks/libSticks.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 70,
+				"fragment" : "../../src/modules/fw_mode_manager/figure_eight/libfigure_eight.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 73,
+				"fragment" : "../../src/lib/variable_length_ringbuffer/libvariable_length_ringbuffer.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 75,
+				"fragment" : "../../src/lib/ringbuffer/libringbuffer.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 78,
+				"fragment" : "../../src/modules/mc_att_control/AttitudeControl/libAttitudeControl.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 79,
+				"fragment" : "../../src/lib/stick_yaw/libStickYaw.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 82,
+				"fragment" : "../../src/lib/system_identification/libSystemIdentification.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 85,
+				"fragment" : "../../src/modules/mc_hover_thrust_estimator/libzero_order_hover_thrust_ekf.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 86,
+				"fragment" : "../../src/lib/slew_rate/libSlewRate.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 89,
+				"fragment" : "../../src/lib/controllib/libcontrollib.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 92,
+				"fragment" : "../../src/modules/mc_pos_control/GotoControl/libGotoControl.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 93,
+				"fragment" : "../../src/modules/mc_pos_control/PositionControl/libPositionControl.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 94,
+				"fragment" : "../../src/modules/mc_pos_control/Takeoff/libTakeoff.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 97,
+				"fragment" : "../../src/lib/rate_control/libRateControl.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 100,
+				"fragment" : "../../src/modules/navigator/MissionFeasibility/libmission_feasibility_checker.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/navigator/libmodules__navigator.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 100,
+				"fragment" : "../../src/modules/navigator/MissionFeasibility/libmission_feasibility_checker.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 101,
+				"fragment" : "../../src/lib/motion_planning/libmotion_planning.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 102,
+				"fragment" : "../../src/lib/adsb/libadsb.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 103,
+				"fragment" : "../../src/modules/navigator/GeofenceBreachAvoidance/libgeofence_breach_avoidance.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 104,
+				"fragment" : "../../src/lib/rtl/librtl_time_estimator.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/modules/dataman/libmodules__dataman.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 105,
+				"fragment" : "../../src/lib/hysteresis/libhysteresis.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 108,
+				"fragment" : "../../src/modules/rover_ackermann/AckermannActControl/libAckermannActControl.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 109,
+				"fragment" : "../../src/modules/rover_ackermann/AckermannRateControl/libAckermannRateControl.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 110,
+				"fragment" : "../../src/modules/rover_ackermann/AckermannAttControl/libAckermannAttControl.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 111,
+				"fragment" : "../../src/modules/rover_ackermann/AckermannSpeedControl/libAckermannSpeedControl.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 112,
+				"fragment" : "../../src/modules/rover_ackermann/AckermannPosControl/libAckermannPosControl.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 113,
+				"fragment" : "../../src/modules/rover_ackermann/AckermannDriveModes/AckermannAutoMode/libAckermannAutoMode.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 114,
+				"fragment" : "../../src/modules/rover_ackermann/AckermannDriveModes/AckermannManualMode/libAckermannManualMode.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 115,
+				"fragment" : "../../src/modules/rover_ackermann/AckermannDriveModes/AckermannOffboardMode/libAckermannOffboardMode.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 118,
+				"fragment" : "../../src/modules/rover_differential/DifferentialActControl/libDifferentialActControl.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 119,
+				"fragment" : "../../src/modules/rover_differential/DifferentialRateControl/libDifferentialRateControl.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 120,
+				"fragment" : "../../src/modules/rover_differential/DifferentialAttControl/libDifferentialAttControl.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 121,
+				"fragment" : "../../src/modules/rover_differential/DifferentialSpeedControl/libDifferentialSpeedControl.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 122,
+				"fragment" : "../../src/modules/rover_differential/DifferentialPosControl/libDifferentialPosControl.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 123,
+				"fragment" : "../../src/modules/rover_differential/DifferentialDriveModes/DifferentialAutoMode/libDifferentialAutoMode.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 124,
+				"fragment" : "../../src/modules/rover_differential/DifferentialDriveModes/DifferentialManualMode/libDifferentialManualMode.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 125,
+				"fragment" : "../../src/modules/rover_differential/DifferentialDriveModes/DifferentialOffboardMode/libDifferentialOffboardMode.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 126,
+				"fragment" : "../../src/lib/rover_control/librover_control.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 129,
+				"fragment" : "../../src/modules/rover_mecanum/MecanumActControl/libMecanumActControl.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 130,
+				"fragment" : "../../src/modules/rover_mecanum/MecanumRateControl/libMecanumRateControl.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 131,
+				"fragment" : "../../src/modules/rover_mecanum/MecanumAttControl/libMecanumAttControl.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 132,
+				"fragment" : "../../src/modules/rover_mecanum/MecanumSpeedControl/libMecanumSpeedControl.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 133,
+				"fragment" : "../../src/modules/rover_mecanum/MecanumPosControl/libMecanumPosControl.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 134,
+				"fragment" : "../../src/lib/pure_pursuit/libpure_pursuit.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 136,
+				"fragment" : "../../src/lib/pid/libPID.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 137,
+				"fragment" : "../../src/modules/rover_mecanum/MecanumDriveModes/MecanumAutoMode/libMecanumAutoMode.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 138,
+				"fragment" : "../../src/modules/rover_mecanum/MecanumDriveModes/MecanumManualMode/libMecanumManualMode.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 139,
+				"fragment" : "../../src/modules/rover_mecanum/MecanumDriveModes/MecanumOffboardMode/libMecanumOffboardMode.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 140,
+				"fragment" : "../../src/lib/airspeed/libairspeed.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 143,
+				"fragment" : "../../src/modules/sensors/vehicle_imu/libvehicle_imu.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 144,
+				"fragment" : "../../src/modules/sensors/vehicle_acceleration/libvehicle_acceleration.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 145,
+				"fragment" : "../../src/modules/sensors/vehicle_air_data/libvehicle_air_data.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 146,
+				"fragment" : "../../src/lib/atmosphere/libatmosphere.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 147,
+				"fragment" : "../../src/modules/sensors/vehicle_angular_velocity/libvehicle_angular_velocity.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 148,
+				"fragment" : "../../src/modules/sensors/vehicle_gps_position/libvehicle_gps_position.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 149,
+				"fragment" : "../../src/modules/sensors/vehicle_magnetometer/libvehicle_magnetometer.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 150,
+				"fragment" : "../../src/lib/sensor_calibration/libsensor_calibration.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 151,
+				"fragment" : "../../src/modules/sensors/data_validator/libdata_validator.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 152,
+				"fragment" : "../../src/modules/sensors/vehicle_optical_flow/libvehicle_optical_flow.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 155,
+				"fragment" : "../../src/lib/battery/libbattery.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 159,
+				"fragment" : "/opt/ros/jazzy/opt/gz_transport_vendor/lib/libgz-transport13.so.13.6.0",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 162,
+				"fragment" : "/opt/ros/jazzy/opt/gz_msgs_vendor/lib/libgz-msgs10.so.10.4.0",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 167,
+				"fragment" : "/opt/ros/jazzy/opt/gz_math_vendor/lib/libgz-math7.so.7.7.0",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 162,
+				"fragment" : "/opt/ros/jazzy/opt/gz_utils_vendor/lib/libgz-utils2.so.2.2.1",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 167,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libtinyxml2.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 172,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libtinyxml2.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 167,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libprotobuf.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 162,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libuuid.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 177,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libuuid.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 178,
+				"fragment" : "../../src/modules/simulation/gz_msgs/libpx4_gz_msgs.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 180,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libprotobuf.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 182,
+				"fragment" : "../../src/lib/mixer_module/libmixer_module.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 183,
+				"fragment" : "../../src/lib/mathlib/libmathlib.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 184,
+				"fragment" : "../../src/lib/timesync/libtimesync.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 187,
+				"fragment" : "../../src/modules/uxrce_dds_client/lib/libmicroxrcedds_client.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 188,
+				"fragment" : "../../src/modules/uxrce_dds_client/lib/libmicrocdr.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 190,
+				"fragment" : "-ldl",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 191,
+				"fragment" : "../../src/lib/dataman_client/libdataman_client.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 192,
+				"fragment" : "../../src/lib/tunes/libtunes.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 193,
+				"fragment" : "../../src/lib/circuit_breaker/libcircuit_breaker.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 196,
+				"fragment" : "../../src/lib/version/libversion.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 197,
+				"fragment" : "../../src/lib/drivers/accelerometer/libdrivers_accelerometer.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 198,
+				"fragment" : "../../src/lib/drivers/gyroscope/libdrivers_gyroscope.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 201,
+				"fragment" : "../../src/lib/world_magnetic_model/libworld_magnetic_model.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 202,
+				"fragment" : "../../src/lib/geo/libgeo.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 203,
+				"fragment" : "../../src/lib/drivers/magnetometer/libdrivers_magnetometer.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 204,
+				"fragment" : "../../src/lib/conversion/libconversion.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "../common/uORB/libuORB.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 207,
+				"fragment" : "../../src/lib/cdev/libcdev.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 209,
+				"fragment" : "../../msg/libuorb_msgs.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "-lm",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 209,
+				"fragment" : "../../src/lib/heatshrink/libheatshrink.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 210,
+				"fragment" : "../../src/lib/systemlib/libsystemlib.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 211,
+				"fragment" : "../../src/lib/events/libevents.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../src/lib/parameters/libparameters.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 210,
+				"fragment" : "../common/libpx4_platform.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 210,
+				"fragment" : "../../src/lib/perf/libperf.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 214,
+				"fragment" : "../../src/lib/tinybson/libtinybson.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 215,
+				"fragment" : "src/px4/common/libpx4_layer.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 218,
+				"fragment" : "../common/px4_work_queue/libpx4_work_queue.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 220,
+				"fragment" : "src/px4/common/px4_daemon/libpx4_daemon.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 221,
+				"fragment" : "src/px4/common/lockstep_scheduler/liblockstep_scheduler.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 215,
+				"fragment" : "src/px4/common/libpx4_layer.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 218,
+				"fragment" : "../common/px4_work_queue/libpx4_work_queue.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 220,
+				"fragment" : "src/px4/common/px4_daemon/libpx4_daemon.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 221,
+				"fragment" : "src/px4/common/lockstep_scheduler/liblockstep_scheduler.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 225,
+				"fragment" : "../../boards/px4/sitl/src/libdrivers_board.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 226,
+				"fragment" : "../common/work_queue/libwork_queue.a",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "px4",
+	"nameOnDisk" : "px4",
+	"paths" : 
+	{
+		"build" : "platforms/posix",
+		"source" : "platforms/posix"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "platforms/posix/src/px4/common/main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/adamgb/phd/gazebo_ws/build/px4/platforms/posix/apps.cpp",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "EXECUTABLE"
+}

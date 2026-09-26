@@ -1,0 +1,2 @@
+/usr/bin/ar qc libdriver__septentrio.a CMakeFiles/driver__septentrio.dir/septentrio.cpp.o CMakeFiles/driver__septentrio.dir/util.cpp.o CMakeFiles/driver__septentrio.dir/rtcm.cpp.o CMakeFiles/driver__septentrio.dir/sbf/decoder.cpp.o
+/usr/bin/ranlib libdriver__septentrio.a

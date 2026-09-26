@@ -1,0 +1,2 @@
+/usr/bin/ar qc libfigure_eight.a CMakeFiles/figure_eight.dir/FigureEight.cpp.o
+/usr/bin/ranlib libfigure_eight.a

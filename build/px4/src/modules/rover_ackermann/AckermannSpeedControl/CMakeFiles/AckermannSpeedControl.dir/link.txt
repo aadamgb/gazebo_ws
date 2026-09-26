@@ -1,0 +1,2 @@
+/usr/bin/ar qc libAckermannSpeedControl.a CMakeFiles/AckermannSpeedControl.dir/AckermannSpeedControl.cpp.o
+/usr/bin/ranlib libAckermannSpeedControl.a

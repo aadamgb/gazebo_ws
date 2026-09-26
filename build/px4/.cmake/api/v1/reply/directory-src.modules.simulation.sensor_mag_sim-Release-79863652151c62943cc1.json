@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "src/modules/simulation/sensor_mag_sim",
+		"source" : "src/modules/simulation/sensor_mag_sim"
+	}
+}

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libvehicle_optical_flow.a CMakeFiles/vehicle_optical_flow.dir/VehicleOpticalFlow.cpp.o
+/usr/bin/ranlib libvehicle_optical_flow.a

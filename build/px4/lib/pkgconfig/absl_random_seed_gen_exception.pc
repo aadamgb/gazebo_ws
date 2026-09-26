@@ -1,0 +1,12 @@
+prefix=/home/adamgb/phd/gazebo_ws/install/px4
+exec_prefix=${prefix}
+libdir=/home/adamgb/phd/gazebo_ws/install/px4/lib
+includedir=/home/adamgb/phd/gazebo_ws/install/px4/include
+
+Name: absl_random_seed_gen_exception
+Description: Abseil random_seed_gen_exception library
+URL: https://abseil.io/
+Version: head
+Requires: absl_config = head, absl_raw_logging_internal = head
+Libs: -L${libdir}  -labsl_random_seed_gen_exception 
+Cflags: -I${includedir} -DNOMINMAX

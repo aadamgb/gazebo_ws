@@ -1,0 +1,43 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/modules__navigator.dir/geofence.cpp.o"
+  "CMakeFiles/modules__navigator.dir/geofence.cpp.o.d"
+  "CMakeFiles/modules__navigator.dir/land.cpp.o"
+  "CMakeFiles/modules__navigator.dir/land.cpp.o.d"
+  "CMakeFiles/modules__navigator.dir/loiter.cpp.o"
+  "CMakeFiles/modules__navigator.dir/loiter.cpp.o.d"
+  "CMakeFiles/modules__navigator.dir/mission.cpp.o"
+  "CMakeFiles/modules__navigator.dir/mission.cpp.o.d"
+  "CMakeFiles/modules__navigator.dir/mission_base.cpp.o"
+  "CMakeFiles/modules__navigator.dir/mission_base.cpp.o.d"
+  "CMakeFiles/modules__navigator.dir/mission_block.cpp.o"
+  "CMakeFiles/modules__navigator.dir/mission_block.cpp.o.d"
+  "CMakeFiles/modules__navigator.dir/mission_feasibility_checker.cpp.o"
+  "CMakeFiles/modules__navigator.dir/mission_feasibility_checker.cpp.o.d"
+  "CMakeFiles/modules__navigator.dir/navigator_main.cpp.o"
+  "CMakeFiles/modules__navigator.dir/navigator_main.cpp.o.d"
+  "CMakeFiles/modules__navigator.dir/navigator_mode.cpp.o"
+  "CMakeFiles/modules__navigator.dir/navigator_mode.cpp.o.d"
+  "CMakeFiles/modules__navigator.dir/precland.cpp.o"
+  "CMakeFiles/modules__navigator.dir/precland.cpp.o.d"
+  "CMakeFiles/modules__navigator.dir/rtl.cpp.o"
+  "CMakeFiles/modules__navigator.dir/rtl.cpp.o.d"
+  "CMakeFiles/modules__navigator.dir/rtl_direct.cpp.o"
+  "CMakeFiles/modules__navigator.dir/rtl_direct.cpp.o.d"
+  "CMakeFiles/modules__navigator.dir/rtl_direct_mission_land.cpp.o"
+  "CMakeFiles/modules__navigator.dir/rtl_direct_mission_land.cpp.o.d"
+  "CMakeFiles/modules__navigator.dir/rtl_mission_fast.cpp.o"
+  "CMakeFiles/modules__navigator.dir/rtl_mission_fast.cpp.o.d"
+  "CMakeFiles/modules__navigator.dir/rtl_mission_fast_reverse.cpp.o"
+  "CMakeFiles/modules__navigator.dir/rtl_mission_fast_reverse.cpp.o.d"
+  "CMakeFiles/modules__navigator.dir/takeoff.cpp.o"
+  "CMakeFiles/modules__navigator.dir/takeoff.cpp.o.d"
+  "CMakeFiles/modules__navigator.dir/vtol_takeoff.cpp.o"
+  "CMakeFiles/modules__navigator.dir/vtol_takeoff.cpp.o.d"
+  "libmodules__navigator.a"
+  "libmodules__navigator.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/modules__navigator.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

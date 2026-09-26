@@ -1,0 +1,607 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "test/fuzztest/fuzztest/libfuzztest_llvm_fuzzer_wrapper.a"
+		}
+	],
+	"backtrace" : 2,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"fuzztest_cc_library",
+			"target_link_libraries",
+			"add_definitions",
+			"include_directories",
+			"include",
+			"target_include_directories",
+			"target_sources"
+		],
+		"files" : 
+		[
+			"test/fuzztest/cmake/FuzzTestHelpers.cmake",
+			"test/fuzztest/fuzztest/CMakeLists.txt",
+			"CMakeLists.txt",
+			"cmake/px4_config.cmake",
+			"cmake/kconfig.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 182,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 100,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 109,
+				"parent" : 1
+			},
+			{
+				"file" : 2
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 204,
+				"parent" : 4
+			},
+			{
+				"command" : 5,
+				"file" : 2,
+				"line" : 190,
+				"parent" : 4
+			},
+			{
+				"file" : 3,
+				"parent" : 6
+			},
+			{
+				"command" : 4,
+				"file" : 3,
+				"line" : 94,
+				"parent" : 7
+			},
+			{
+				"command" : 5,
+				"file" : 2,
+				"line" : 191,
+				"parent" : 4
+			},
+			{
+				"file" : 4,
+				"parent" : 9
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 253,
+				"parent" : 10
+			},
+			{
+				"command" : 6,
+				"file" : 0,
+				"line" : 122,
+				"parent" : 1
+			},
+			{
+				"command" : 7,
+				"file" : 0,
+				"line" : 102,
+				"parent" : 1
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-O3 -DNDEBUG -std=gnu++17 -fPIC"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 3,
+					"define" : "CENTIPEDE_DISABLE_RIEGELI"
+				},
+				{
+					"backtrace" : 5,
+					"define" : "ENABLE_LOCKSTEP_SCHEDULER"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 8,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/boards/px4/sitl/src"
+				},
+				{
+					"backtrace" : 11,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/platforms/posix/src/px4/common/include"
+				},
+				{
+					"backtrace" : 12,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/test/fuzztest"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/adamgb/phd/gazebo_ws/build/px4/_deps/abseil-cpp-src"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/adamgb/phd/gazebo_ws/build/px4/_deps/re2-src"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					3,
+					3
+				],
+				"standard" : "17"
+			},
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 3,
+			"id" : "log_severity::@649cb5ab055927a76ab5"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "raw_logging_internal::@649cb5ab055927a76ab5"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "spinlock_wait::@649cb5ab055927a76ab5"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "malloc_internal::@649cb5ab055927a76ab5"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "base::@649cb5ab055927a76ab5"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "throw_delegate::@649cb5ab055927a76ab5"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "strerror::@649cb5ab055927a76ab5"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "tracing_internal::@649cb5ab055927a76ab5"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "hashtablez_sampler::@49ad4cc58ca2b33d3cb1"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "raw_hash_set::@49ad4cc58ca2b33d3cb1"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "crc_cpu_detect::@e7b73a99dc329af715ea"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "crc_internal::@e7b73a99dc329af715ea"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "crc32c::@e7b73a99dc329af715ea"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "crc_cord_state::@e7b73a99dc329af715ea"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "stacktrace::@29ce828be0197ec6dd61"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "symbolize::@29ce828be0197ec6dd61"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "examine_stack::@29ce828be0197ec6dd61"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "debugging_internal::@29ce828be0197ec6dd61"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "demangle_internal::@29ce828be0197ec6dd61"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "decode_rust_punycode::@29ce828be0197ec6dd61"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "demangle_rust::@29ce828be0197ec6dd61"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "utf8_for_code_point::@29ce828be0197ec6dd61"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "leak_check::@29ce828be0197ec6dd61"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "flags_program_name::@4e66689cfd0f0cabb9c5"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "flags_config::@4e66689cfd0f0cabb9c5"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "flags_marshalling::@4e66689cfd0f0cabb9c5"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "flags_commandlineflag_internal::@4e66689cfd0f0cabb9c5"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "flags_commandlineflag::@4e66689cfd0f0cabb9c5"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "flags_private_handle_accessor::@4e66689cfd0f0cabb9c5"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "flags_reflection::@4e66689cfd0f0cabb9c5"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "flags_internal::@4e66689cfd0f0cabb9c5"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "hash::@e82b4f9cfb0ccfacbdfd"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "city::@e82b4f9cfb0ccfacbdfd"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "low_level_hash::@e82b4f9cfb0ccfacbdfd"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "log_internal_check_op::@ec0c5076da8ab1df7c81"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "log_internal_conditions::@ec0c5076da8ab1df7c81"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "log_internal_format::@ec0c5076da8ab1df7c81"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "log_internal_globals::@ec0c5076da8ab1df7c81"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "log_internal_proto::@ec0c5076da8ab1df7c81"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "log_internal_message::@ec0c5076da8ab1df7c81"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "log_internal_log_sink_set::@ec0c5076da8ab1df7c81"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "log_internal_nullguard::@ec0c5076da8ab1df7c81"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "log_globals::@ec0c5076da8ab1df7c81"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "log_sink::@ec0c5076da8ab1df7c81"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "log_internal_structured_proto::@ec0c5076da8ab1df7c81"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "vlog_config_internal::@ec0c5076da8ab1df7c81"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "log_internal_fnmatch::@ec0c5076da8ab1df7c81"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "int128::@9d8e9017d0346130c5af"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "exponential_biased::@610112b8222b7e6b2b6f"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "random_distributions::@3722040ece9e7feeb0a1"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "random_seed_gen_exception::@3722040ece9e7feeb0a1"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "random_seed_sequences::@3722040ece9e7feeb0a1"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "random_internal_seed_material::@3722040ece9e7feeb0a1"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "random_internal_entropy_pool::@3722040ece9e7feeb0a1"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "random_internal_platform::@3722040ece9e7feeb0a1"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "random_internal_randen::@3722040ece9e7feeb0a1"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "random_internal_randen_slow::@3722040ece9e7feeb0a1"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "random_internal_randen_hwaes::@3722040ece9e7feeb0a1"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "random_internal_randen_hwaes_impl::@3722040ece9e7feeb0a1"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "status::@eec4915894d7ef1676bd"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "statusor::@eec4915894d7ef1676bd"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "string_view::@cadd5db28f0587d4097f"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "strings::@cadd5db28f0587d4097f"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "strings_internal::@cadd5db28f0587d4097f"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "str_format_internal::@cadd5db28f0587d4097f"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "cord_internal::@cadd5db28f0587d4097f"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "cordz_functions::@cadd5db28f0587d4097f"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "cordz_handle::@cadd5db28f0587d4097f"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "cordz_info::@cadd5db28f0587d4097f"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "cord::@cadd5db28f0587d4097f"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "graphcycles_internal::@f8dca903cb46e5e9bef2"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "kernel_timeout_internal::@f8dca903cb46e5e9bef2"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "synchronization::@f8dca903cb46e5e9bef2"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "time::@b4524c795b0f97a08e67"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "civil_time::@b4524c795b0f97a08e67"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "time_zone::@b4524c795b0f97a08e67"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "re2::@8091ef369240a0bad874"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "fuzztest_bazel::@17e0df6204df78a0ebd4"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "fuzztest_blob_file::@17e0df6204df78a0ebd4"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "fuzztest_hash::@17e0df6204df78a0ebd4"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "fuzztest_remote_file::@17e0df6204df78a0ebd4"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "fuzztest_sha1::@17e0df6204df78a0ebd4"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "fuzztest_fuzzing_bit_gen::@c3c3882a6d4da6c40ff9"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "fuzztest_fuzztest_macros::@c3c3882a6d4da6c40ff9"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "fuzztest_compatibility_mode::@7878a3b1c02ee132e2c0"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "fuzztest_configuration::@7878a3b1c02ee132e2c0"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "fuzztest_corpus_database::@7878a3b1c02ee132e2c0"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "fuzztest_coverage::@7878a3b1c02ee132e2c0"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "fuzztest_fixture_driver::@7878a3b1c02ee132e2c0"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "fuzztest_io::@7878a3b1c02ee132e2c0"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "fuzztest_logging::@7878a3b1c02ee132e2c0"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "fuzztest_register_fuzzing_mocks::@7878a3b1c02ee132e2c0"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "fuzztest_registry::@7878a3b1c02ee132e2c0"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "fuzztest_runtime::@7878a3b1c02ee132e2c0"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "fuzztest_seed_seq::@7878a3b1c02ee132e2c0"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "fuzztest_serialization::@7878a3b1c02ee132e2c0"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "fuzztest_status::@7878a3b1c02ee132e2c0"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "fuzztest_type_support::@7878a3b1c02ee132e2c0"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "fuzztest_in_grammar_impl::@bbdd4fb84d78f7cf6172"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "fuzztest_in_regexp_impl::@bbdd4fb84d78f7cf6172"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "fuzztest_regexp_dfa::@bbdd4fb84d78f7cf6172"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "fuzztest_utf::@bbdd4fb84d78f7cf6172"
+		}
+	],
+	"id" : "fuzztest_llvm_fuzzer_wrapper::@c3c3882a6d4da6c40ff9",
+	"name" : "fuzztest_llvm_fuzzer_wrapper",
+	"nameOnDisk" : "libfuzztest_llvm_fuzzer_wrapper.a",
+	"paths" : 
+	{
+		"build" : "test/fuzztest/fuzztest",
+		"source" : "test/fuzztest/fuzztest"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 13,
+			"compileGroupIndex" : 0,
+			"path" : "test/fuzztest/fuzztest/llvm_fuzzer_wrapper.cc",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

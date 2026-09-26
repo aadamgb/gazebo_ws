@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmodules__simulation__simulator_sih.a CMakeFiles/modules__simulation__simulator_sih.dir/sih.cpp.o
+/usr/bin/ranlib libmodules__simulation__simulator_sih.a

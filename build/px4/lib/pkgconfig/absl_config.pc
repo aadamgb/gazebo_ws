@@ -1,0 +1,12 @@
+prefix=/home/adamgb/phd/gazebo_ws/install/px4
+exec_prefix=${prefix}
+libdir=/home/adamgb/phd/gazebo_ws/install/px4/lib
+includedir=/home/adamgb/phd/gazebo_ws/install/px4/include
+
+Name: absl_config
+Description: Abseil config library
+URL: https://abseil.io/
+Version: head
+Requires:
+Libs: -L${libdir}  
+Cflags: -I${includedir} -DNOMINMAX

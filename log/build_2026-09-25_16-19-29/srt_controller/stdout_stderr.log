@@ -1,0 +1,43 @@
+-- Found rclcpp: 28.1.22 (/opt/ros/jazzy/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+-- Found rosidl_generator_cpp: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 8.4.4 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found pluginlib: 5.4.6 (/opt/ros/jazzy/share/pluginlib/cmake)
+-- Found mrs_lib: 2.0.0 (/opt/ros/jazzy/share/mrs_lib/cmake)
+-- Found eigen3_cmake_module: 0.3.1 (/opt/ros/jazzy/share/eigen3_cmake_module/cmake)
+-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+-- Found mrs_uav_managers: 2.0.0 (/opt/ros/jazzy/share/mrs_uav_managers/cmake)
+-- Configuring done (0.8s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/adamgb/phd/gazebo_ws/build/srt_controller
+[100%] Built target SrtController_ActuatorsController
+-- Install configuration: ""
+-- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/plugins.xml
+-- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/lib/libSrtController_ActuatorsController.so
+-- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/config
+-- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/config/actuators_controller.yaml
+-- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/environment/library_path.sh
+-- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/environment/library_path.dsv
+-- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/ament_index/resource_index/package_run_dependencies/srt_controller
+-- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/ament_index/resource_index/parent_prefix_path/srt_controller
+-- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/environment/ament_prefix_path.sh
+-- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/environment/path.sh
+-- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/environment/path.dsv
+-- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/local_setup.bash
+-- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/local_setup.sh
+-- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/local_setup.zsh
+-- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/local_setup.dsv
+-- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/package.dsv
+-- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/ament_index/resource_index/packages/srt_controller
+-- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/ament_index/resource_index/mrs_uav_managers__pluginlib__plugin/srt_controller
+-- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/cmake/export_srt_controllerExport.cmake
+-- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/cmake/export_srt_controllerExport-noconfig.cmake
+-- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/cmake/ament_cmake_export_targets-extras.cmake
+-- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/cmake/srt_controllerConfig.cmake
+-- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/cmake/srt_controllerConfig-version.cmake
+-- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/package.xml

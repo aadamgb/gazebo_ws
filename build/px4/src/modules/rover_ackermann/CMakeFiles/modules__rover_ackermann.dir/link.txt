@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmodules__rover_ackermann.a CMakeFiles/modules__rover_ackermann.dir/RoverAckermann.cpp.o
+/usr/bin/ranlib libmodules__rover_ackermann.a

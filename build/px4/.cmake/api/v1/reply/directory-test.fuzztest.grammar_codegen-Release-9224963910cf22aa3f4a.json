@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "test/fuzztest/grammar_codegen",
+		"source" : "test/fuzztest/grammar_codegen"
+	}
+}

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libdrivers__gimbal.a CMakeFiles/drivers__gimbal.dir/input.cpp.o CMakeFiles/drivers__gimbal.dir/input_mavlink.cpp.o CMakeFiles/drivers__gimbal.dir/input_rc.cpp.o CMakeFiles/drivers__gimbal.dir/input_test.cpp.o CMakeFiles/drivers__gimbal.dir/output.cpp.o CMakeFiles/drivers__gimbal.dir/output_mavlink.cpp.o CMakeFiles/drivers__gimbal.dir/output_rc.cpp.o CMakeFiles/drivers__gimbal.dir/gimbal.cpp.o
+/usr/bin/ranlib libdrivers__gimbal.a

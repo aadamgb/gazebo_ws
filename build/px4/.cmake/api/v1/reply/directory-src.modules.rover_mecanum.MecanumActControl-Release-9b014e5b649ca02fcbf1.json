@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "src/modules/rover_mecanum/MecanumActControl",
+		"source" : "src/modules/rover_mecanum/MecanumActControl"
+	}
+}

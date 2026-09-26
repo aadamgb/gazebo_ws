@@ -1,0 +1,2 @@
+/usr/bin/ar qc libAckermannPosControl.a CMakeFiles/AckermannPosControl.dir/AckermannPosControl.cpp.o
+/usr/bin/ranlib libAckermannPosControl.a

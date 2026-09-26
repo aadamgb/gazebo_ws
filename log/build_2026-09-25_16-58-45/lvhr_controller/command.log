@@ -1,0 +1,4 @@
+Invoking command in '/home/adamgb/phd/gazebo_ws/build/lvhr_controller': /usr/bin/cmake --build /home/adamgb/phd/gazebo_ws/build/lvhr_controller -- -j32 -l32
+Invoked command in '/home/adamgb/phd/gazebo_ws/build/lvhr_controller' returned '0': /usr/bin/cmake --build /home/adamgb/phd/gazebo_ws/build/lvhr_controller -- -j32 -l32
+Invoking command in '/home/adamgb/phd/gazebo_ws/build/lvhr_controller': /usr/bin/cmake --install /home/adamgb/phd/gazebo_ws/build/lvhr_controller
+Invoked command in '/home/adamgb/phd/gazebo_ws/build/lvhr_controller' returned '0': /usr/bin/cmake --install /home/adamgb/phd/gazebo_ws/build/lvhr_controller

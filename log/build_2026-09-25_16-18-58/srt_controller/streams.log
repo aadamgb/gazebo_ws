@@ -1,0 +1,23 @@
+[0.004s] Invoking command in '/home/adamgb/phd/gazebo_ws/build/srt_controller': /usr/bin/cmake --build /home/adamgb/phd/gazebo_ws/build/srt_controller -- -j32 -l32
+[0.054s] [ 50%] Building CXX object CMakeFiles/SrtController_ActuatorsController.dir/src/actuators_controller.cpp.o
+[2.362s] /home/adamgb/phd/gazebo_ws/src/srt_controller/src/actuators_controller.cpp: In member function ‘virtual mrs_uav_managers::Controller::ControlOutput srt_controller::ActuatorsController::updateActive(const mrs_msgs::msg::UavState&, const mrs_msgs::msg::TrackerCommand&)’:
+[2.362s] /home/adamgb/phd/gazebo_ws/src/srt_controller/src/actuators_controller.cpp:234:8: warning: variable ‘constraints’ set but not used [-Wunused-but-set-variable]
+[2.363s]   234 |   auto constraints = mrs_lib::get_mutexed(mutex_constraints_, constraints_);
+[2.363s]       |        ^~~~~~~~~~~
+[6.956s] [100%] Linking CXX shared library libSrtController_ActuatorsController.so
+[7.197s] [100%] Built target SrtController_ActuatorsController
+[7.209s] Invoked command in '/home/adamgb/phd/gazebo_ws/build/srt_controller' returned '0': /usr/bin/cmake --build /home/adamgb/phd/gazebo_ws/build/srt_controller -- -j32 -l32
+[7.218s] Invoking command in '/home/adamgb/phd/gazebo_ws/build/srt_controller': /usr/bin/cmake --install /home/adamgb/phd/gazebo_ws/build/srt_controller
+[7.222s] -- Install configuration: ""
+[7.222s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/plugins.xml
+[7.222s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/lib/libSrtController_ActuatorsController.so
+[7.225s] -- Set non-toolchain portion of runtime path of "/home/adamgb/phd/gazebo_ws/install/srt_controller/lib/libSrtController_ActuatorsController.so" to ""
+[7.225s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/config
+[7.225s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/config/actuators_controller.yaml
+[7.225s] CMake Error at cmake_install.cmake:77 (file):
+[7.225s]   file INSTALL cannot find
+[7.225s]   "/home/adamgb/phd/gazebo_ws/src/srt_controller/tmux": No such file or
+[7.225s]   directory.
+[7.225s] 
+[7.225s] 
+[7.226s] Invoked command in '/home/adamgb/phd/gazebo_ws/build/srt_controller' returned '1': /usr/bin/cmake --install /home/adamgb/phd/gazebo_ws/build/srt_controller

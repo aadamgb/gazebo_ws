@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsystemcmds__actuator_test.a CMakeFiles/systemcmds__actuator_test.dir/actuator_test.cpp.o
+/usr/bin/ranlib libsystemcmds__actuator_test.a

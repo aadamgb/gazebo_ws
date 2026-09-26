@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsystemcmds__uorb.a CMakeFiles/systemcmds__uorb.dir/uorb.cpp.o
+/usr/bin/ranlib libsystemcmds__uorb.a

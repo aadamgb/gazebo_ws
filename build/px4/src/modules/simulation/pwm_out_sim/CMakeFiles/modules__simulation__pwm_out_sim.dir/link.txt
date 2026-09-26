@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmodules__simulation__pwm_out_sim.a CMakeFiles/modules__simulation__pwm_out_sim.dir/PWMSim.cpp.o
+/usr/bin/ranlib libmodules__simulation__pwm_out_sim.a

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmodules__uxrce_dds_client.a CMakeFiles/modules__uxrce_dds_client.dir/uxrce_dds_client.cpp.o CMakeFiles/modules__uxrce_dds_client.dir/vehicle_command_srv.cpp.o CMakeFiles/modules__uxrce_dds_client.dir/srv_base.cpp.o
+/usr/bin/ranlib libmodules__uxrce_dds_client.a

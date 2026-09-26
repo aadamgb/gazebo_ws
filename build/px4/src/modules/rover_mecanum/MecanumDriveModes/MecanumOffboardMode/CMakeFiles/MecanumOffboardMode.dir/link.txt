@@ -1,0 +1,2 @@
+/usr/bin/ar qc libMecanumOffboardMode.a CMakeFiles/MecanumOffboardMode.dir/MecanumOffboardMode.cpp.o
+/usr/bin/ranlib libMecanumOffboardMode.a

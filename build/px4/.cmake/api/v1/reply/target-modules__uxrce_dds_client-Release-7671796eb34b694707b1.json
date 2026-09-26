@@ -1,0 +1,759 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "src/modules/uxrce_dds_client/libmodules__uxrce_dds_client.a"
+		}
+	],
+	"backtrace" : 2,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"px4_add_module",
+			"add_dependencies",
+			"target_link_libraries",
+			"add_compile_options",
+			"px4_add_common_flags",
+			"target_compile_options",
+			"add_definitions",
+			"target_compile_definitions",
+			"px4_os_add_flags",
+			"include_directories",
+			"include",
+			"target_include_directories"
+		],
+		"files" : 
+		[
+			"cmake/px4_add_module.cmake",
+			"src/modules/uxrce_dds_client/CMakeLists.txt",
+			"src/modules/flight_mode_manager/CMakeLists.txt",
+			"src/lib/events/CMakeLists.txt",
+			"cmake/px4_add_common_flags.cmake",
+			"CMakeLists.txt",
+			"platforms/posix/cmake/px4_impl_os.cmake",
+			"cmake/px4_config.cmake",
+			"cmake/kconfig.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 131,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 151,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 155,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 240,
+				"parent" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 175,
+				"parent" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 169,
+				"parent" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 238,
+				"parent" : 1
+			},
+			{
+				"file" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 90,
+				"parent" : 8
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 240,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 240,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 240,
+				"parent" : 1
+			},
+			{
+				"file" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 3,
+				"line" : 120,
+				"parent" : 13
+			},
+			{
+				"file" : 5
+			},
+			{
+				"command" : 5,
+				"file" : 5,
+				"line" : 368,
+				"parent" : 15
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 45,
+				"parent" : 16
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 115,
+				"parent" : 16
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 119,
+				"parent" : 16
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 122,
+				"parent" : 16
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 135,
+				"parent" : 16
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 172,
+				"parent" : 16
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 172,
+				"parent" : 16
+			},
+			{
+				"command" : 6,
+				"file" : 0,
+				"line" : 221,
+				"parent" : 1
+			},
+			{
+				"command" : 7,
+				"file" : 4,
+				"line" : 195,
+				"parent" : 16
+			},
+			{
+				"command" : 7,
+				"file" : 5,
+				"line" : 204,
+				"parent" : 15
+			},
+			{
+				"command" : 8,
+				"file" : 0,
+				"line" : 215,
+				"parent" : 1
+			},
+			{
+				"command" : 8,
+				"file" : 0,
+				"line" : 214,
+				"parent" : 1
+			},
+			{
+				"command" : 9,
+				"file" : 5,
+				"line" : 369,
+				"parent" : 15
+			},
+			{
+				"command" : 7,
+				"file" : 6,
+				"line" : 236,
+				"parent" : 29
+			},
+			{
+				"command" : 7,
+				"file" : 6,
+				"line" : 216,
+				"parent" : 29
+			},
+			{
+				"command" : 11,
+				"file" : 5,
+				"line" : 190,
+				"parent" : 15
+			},
+			{
+				"file" : 7,
+				"parent" : 32
+			},
+			{
+				"command" : 10,
+				"file" : 7,
+				"line" : 94,
+				"parent" : 33
+			},
+			{
+				"command" : 11,
+				"file" : 5,
+				"line" : 191,
+				"parent" : 15
+			},
+			{
+				"file" : 8,
+				"parent" : 35
+			},
+			{
+				"command" : 10,
+				"file" : 8,
+				"line" : 253,
+				"parent" : 36
+			},
+			{
+				"command" : 10,
+				"file" : 4,
+				"line" : 176,
+				"parent" : 16
+			},
+			{
+				"command" : 10,
+				"file" : 6,
+				"line" : 221,
+				"parent" : 29
+			},
+			{
+				"command" : 10,
+				"file" : 5,
+				"line" : 400,
+				"parent" : 15
+			},
+			{
+				"command" : 12,
+				"file" : 0,
+				"line" : 229,
+				"parent" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 238,
+				"parent" : 1
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-O3 -DNDEBUG -std=gnu++14 -fPIC"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "-g"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "-fdata-sections"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "-ffunction-sections"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "-fomit-frame-pointer"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "-fmerge-all-constants"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "-fno-signed-zeros"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "-fno-trapping-math"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "-freciprocal-math"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "-fno-math-errno"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "-fno-strict-aliasing"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "-fvisibility=hidden"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "-include"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "visibility.h"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "-Wall"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "-Wextra"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "-Werror"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "-Warray-bounds"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "-Wcast-align"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "-Wdisabled-optimization"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "-Wdouble-promotion"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "-Wfatal-errors"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "-Wfloat-equal"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "-Wformat-security"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "-Winit-self"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "-Wlogical-op"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "-Wpointer-arith"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "-Wshadow"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "-Wuninitialized"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "-Wunknown-pragmas"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "-Wunused-variable"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "-Wno-missing-field-initializers"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "-Wno-missing-include-dirs"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "-Wno-unused-parameter"
+				},
+				{
+					"backtrace" : 18,
+					"fragment" : "-fdiagnostics-color=always"
+				},
+				{
+					"backtrace" : 19,
+					"fragment" : "-Wno-stringop-truncation"
+				},
+				{
+					"backtrace" : 20,
+					"fragment" : "-fno-builtin-printf"
+				},
+				{
+					"backtrace" : 20,
+					"fragment" : "-fno-strength-reduce"
+				},
+				{
+					"backtrace" : 20,
+					"fragment" : "-Wformat=1"
+				},
+				{
+					"backtrace" : 20,
+					"fragment" : "-Wunused-but-set-variable"
+				},
+				{
+					"backtrace" : 20,
+					"fragment" : "-Wno-format-truncation"
+				},
+				{
+					"backtrace" : 21,
+					"fragment" : "-fcheck-new"
+				},
+				{
+					"backtrace" : 22,
+					"fragment" : "-Wreorder"
+				},
+				{
+					"backtrace" : 23,
+					"fragment" : "-Wno-overloaded-virtual"
+				},
+				{
+					"backtrace" : 24,
+					"fragment" : "-O3"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 25,
+					"define" : "CONFIG_ARCH_BOARD_PX4_SITL"
+				},
+				{
+					"backtrace" : 26,
+					"define" : "ENABLE_LOCKSTEP_SCHEDULER"
+				},
+				{
+					"backtrace" : 27,
+					"define" : "MODULE_NAME=\"uxrce_dds_client\""
+				},
+				{
+					"backtrace" : 28,
+					"define" : "PX4_MAIN=uxrce_dds_client_app_main"
+				},
+				{
+					"backtrace" : 25,
+					"define" : "__CUSTOM_FILE_IO__"
+				},
+				{
+					"backtrace" : 30,
+					"define" : "__PX4_LINUX"
+				},
+				{
+					"backtrace" : 31,
+					"define" : "__PX4_POSIX"
+				},
+				{
+					"backtrace" : 25,
+					"define" : "__STDC_FORMAT_MACROS"
+				},
+				{
+					"backtrace" : 31,
+					"define" : "noreturn_function=__attribute__((noreturn))"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 34,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/boards/px4/sitl/src"
+				},
+				{
+					"backtrace" : 37,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/platforms/posix/src/px4/common/include"
+				},
+				{
+					"backtrace" : 38,
+					"path" : "/home/adamgb/phd/gazebo_ws/build/px4"
+				},
+				{
+					"backtrace" : 38,
+					"path" : "/home/adamgb/phd/gazebo_ws/build/px4/src/lib"
+				},
+				{
+					"backtrace" : 38,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/platforms/posix/src/px4/generic/generic/include"
+				},
+				{
+					"backtrace" : 38,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/platforms/common"
+				},
+				{
+					"backtrace" : 38,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/platforms/common/include"
+				},
+				{
+					"backtrace" : 38,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/src"
+				},
+				{
+					"backtrace" : 38,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/src/include"
+				},
+				{
+					"backtrace" : 38,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/src/lib"
+				},
+				{
+					"backtrace" : 38,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/src/lib/matrix"
+				},
+				{
+					"backtrace" : 38,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules"
+				},
+				{
+					"backtrace" : 39,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/platforms/posix/include"
+				},
+				{
+					"backtrace" : 40,
+					"path" : "/home/adamgb/phd/gazebo_ws/build/px4/external/Install/include"
+				},
+				{
+					"backtrace" : 41,
+					"path" : "/home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/uxrce_dds_client"
+				},
+				{
+					"backtrace" : 42,
+					"path" : "/home/adamgb/phd/gazebo_ws/build/px4/src/modules/uxrce_dds_client/include"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					2
+				],
+				"standard" : "14"
+			},
+			"sourceIndexes" : 
+			[
+				1,
+				3,
+				5
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 3,
+			"id" : "uorb_headers::@87da20e8da9c58e355ca"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "uorb_ucdr_headers::@87da20e8da9c58e355ca"
+		},
+		{
+			"backtrace" : 5,
+			"id" : "uorb_msgs::@87da20e8da9c58e355ca"
+		},
+		{
+			"backtrace" : 5,
+			"id" : "cdev::@486c09b1dd2eb468d1b8"
+		},
+		{
+			"backtrace" : 5,
+			"id" : "heatshrink::@08e408c2e1387fae7adf"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "perf::@25bdab5b7fa021aa5d4c"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "systemlib::@f1c82114109d59f0af77"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "timesync::@4161e98748ce817b0405"
+		},
+		{
+			"backtrace" : 5,
+			"id" : "tinybson::@8e13947b44723869e90e"
+		},
+		{
+			"backtrace" : 5,
+			"id" : "px4_layer::@13eebd0deb9b16358cc5"
+		},
+		{
+			"backtrace" : 5,
+			"id" : "uORB::@afa8ade38fd817f34bcc"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "work_queue::@4a51fd9749b041c0a765"
+		},
+		{
+			"backtrace" : 9,
+			"id" : "flighttasks_generated::@3320806e5a654be0ce98"
+		},
+		{
+			"backtrace" : 10,
+			"id" : "git_micro_xrce_dds_client::@d4233197056eff763ec9"
+		},
+		{
+			"backtrace" : 11,
+			"id" : "libmicroxrceddsclient_project::@d4233197056eff763ec9"
+		},
+		{
+			"backtrace" : 12,
+			"id" : "topic_bridge_files::@d4233197056eff763ec9"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "drivers_board::@a7b731bd9dab5511b243"
+		},
+		{
+			"backtrace" : 14,
+			"id" : "events_header::@5cf9bdc8231d57945e1e"
+		},
+		{
+			"backtrace" : 5,
+			"id" : "events::@5cf9bdc8231d57945e1e"
+		}
+	],
+	"id" : "modules__uxrce_dds_client::@d4233197056eff763ec9",
+	"name" : "modules__uxrce_dds_client",
+	"nameOnDisk" : "libmodules__uxrce_dds_client.a",
+	"paths" : 
+	{
+		"build" : "src/modules/uxrce_dds_client",
+		"source" : "src/modules/uxrce_dds_client"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				0,
+				2,
+				4,
+				6
+			]
+		},
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				1,
+				3,
+				5
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				7
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 2,
+			"isGenerated" : true,
+			"path" : "/home/adamgb/phd/gazebo_ws/build/px4/src/modules/uxrce_dds_client/dds_topics.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/modules/uxrce_dds_client/uxrce_dds_client.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/modules/uxrce_dds_client/uxrce_dds_client.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/modules/uxrce_dds_client/vehicle_command_srv.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/modules/uxrce_dds_client/vehicle_command_srv.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/modules/uxrce_dds_client/srv_base.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/modules/uxrce_dds_client/srv_base.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/home/adamgb/phd/gazebo_ws/build/px4/src/modules/uxrce_dds_client/dds_topics.h.rule",
+			"sourceGroupIndex" : 2
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

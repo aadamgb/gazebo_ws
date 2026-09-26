@@ -1,0 +1,34 @@
+[0.013s] Invoking command in '/home/adamgb/phd/gazebo_ws/build/srt_controller': /usr/bin/cmake --build /home/adamgb/phd/gazebo_ws/build/srt_controller -- -j32 -l32
+[0.074s] [ 50%] [32mBuilding CXX object CMakeFiles/SrtController_ActuatorsController.dir/src/actuators_controller.cpp.o[0m
+[7.561s] [100%] [32m[1mLinking CXX shared library libSrtController_ActuatorsController.so[0m
+[7.822s] [100%] Built target SrtController_ActuatorsController
+[7.834s] Invoked command in '/home/adamgb/phd/gazebo_ws/build/srt_controller' returned '0': /usr/bin/cmake --build /home/adamgb/phd/gazebo_ws/build/srt_controller -- -j32 -l32
+[7.835s] Invoking command in '/home/adamgb/phd/gazebo_ws/build/srt_controller': /usr/bin/cmake --install /home/adamgb/phd/gazebo_ws/build/srt_controller
+[7.844s] -- Install configuration: ""
+[7.844s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/plugins.xml
+[7.844s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/lib/libSrtController_ActuatorsController.so
+[7.852s] -- Set non-toolchain portion of runtime path of "/home/adamgb/phd/gazebo_ws/install/srt_controller/lib/libSrtController_ActuatorsController.so" to ""
+[7.852s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/config
+[7.852s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/config/actuators_controller.yaml
+[7.852s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/environment/library_path.sh
+[7.852s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/environment/library_path.dsv
+[7.853s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/ament_index/resource_index/package_run_dependencies/srt_controller
+[7.853s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/ament_index/resource_index/parent_prefix_path/srt_controller
+[7.853s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/environment/ament_prefix_path.sh
+[7.853s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/environment/ament_prefix_path.dsv
+[7.853s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/environment/path.sh
+[7.853s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/environment/path.dsv
+[7.853s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/local_setup.bash
+[7.853s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/local_setup.sh
+[7.853s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/local_setup.zsh
+[7.853s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/local_setup.dsv
+[7.853s] -- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/package.dsv
+[7.854s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/ament_index/resource_index/packages/srt_controller
+[7.854s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/ament_index/resource_index/mrs_uav_managers__pluginlib__plugin/srt_controller
+[7.854s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/cmake/export_srt_controllerExport.cmake
+[7.854s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/cmake/export_srt_controllerExport-noconfig.cmake
+[7.854s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/cmake/ament_cmake_export_targets-extras.cmake
+[7.854s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/cmake/srt_controllerConfig.cmake
+[7.854s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/cmake/srt_controllerConfig-version.cmake
+[7.854s] -- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/package.xml
+[7.856s] Invoked command in '/home/adamgb/phd/gazebo_ws/build/srt_controller' returned '0': /usr/bin/cmake --install /home/adamgb/phd/gazebo_ws/build/srt_controller

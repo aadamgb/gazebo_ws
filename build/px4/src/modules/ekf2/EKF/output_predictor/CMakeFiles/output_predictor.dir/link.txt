@@ -1,0 +1,2 @@
+/usr/bin/ar qc liboutput_predictor.a CMakeFiles/output_predictor.dir/output_predictor.cpp.o
+/usr/bin/ranlib liboutput_predictor.a

@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "src/modules/fw_mode_manager/runway_takeoff",
+		"source" : "src/modules/fw_mode_manager/runway_takeoff"
+	}
+}

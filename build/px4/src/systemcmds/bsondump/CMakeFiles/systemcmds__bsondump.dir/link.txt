@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsystemcmds__bsondump.a CMakeFiles/systemcmds__bsondump.dir/bsondump.cpp.o
+/usr/bin/ranlib libsystemcmds__bsondump.a

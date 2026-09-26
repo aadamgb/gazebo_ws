@@ -1,0 +1,8 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/SrtController_ActuatorsController.dir/src/actuators_controller.cpp.o[0m
+[01m[K/home/adamgb/phd/gazebo_ws/src/srt_controller/src/actuators_controller.cpp:[m[K In member function ‘[01m[Kvirtual mrs_uav_managers::Controller::ControlOutput srt_controller::ActuatorsController::[01;32m[KupdateActive[m[K(const mrs_msgs::msg::UavState&, const mrs_msgs::msg::TrackerCommand&)[m[K’:
+[01m[K/home/adamgb/phd/gazebo_ws/src/srt_controller/src/actuators_controller.cpp:424:41:[m[K [01;31m[Kerror: [m[K‘[01m[Kactuator_cmd[m[K’ was not declared in this scope
+  424 |   last_control_output_.control_output = [01;31m[Kactuator_cmd[m[K;
+      |                                         [01;31m[K^~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/SrtController_ActuatorsController.dir/build.make:76: CMakeFiles/SrtController_ActuatorsController.dir/src/actuators_controller.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/SrtController_ActuatorsController.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

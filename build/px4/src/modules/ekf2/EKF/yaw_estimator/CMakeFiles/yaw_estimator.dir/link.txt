@@ -1,0 +1,2 @@
+/usr/bin/ar qc libyaw_estimator.a CMakeFiles/yaw_estimator.dir/EKFGSF_yaw.cpp.o
+/usr/bin/ranlib libyaw_estimator.a

@@ -1,0 +1,19 @@
+[ 50%] Building CXX object CMakeFiles/SrtController_ActuatorsController.dir/src/actuators_controller.cpp.o
+/home/adamgb/phd/gazebo_ws/src/srt_controller/src/actuators_controller.cpp: In member function ‘virtual mrs_uav_managers::Controller::ControlOutput srt_controller::ActuatorsController::updateActive(const mrs_msgs::msg::UavState&, const mrs_msgs::msg::TrackerCommand&)’:
+/home/adamgb/phd/gazebo_ws/src/srt_controller/src/actuators_controller.cpp:234:8: warning: variable ‘constraints’ set but not used [-Wunused-but-set-variable]
+  234 |   auto constraints = mrs_lib::get_mutexed(mutex_constraints_, constraints_);
+      |        ^~~~~~~~~~~
+[100%] Linking CXX shared library libSrtController_ActuatorsController.so
+[100%] Built target SrtController_ActuatorsController
+-- Install configuration: ""
+-- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/plugins.xml
+-- Installing: /home/adamgb/phd/gazebo_ws/install/srt_controller/lib/libSrtController_ActuatorsController.so
+-- Set non-toolchain portion of runtime path of "/home/adamgb/phd/gazebo_ws/install/srt_controller/lib/libSrtController_ActuatorsController.so" to ""
+-- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/config
+-- Up-to-date: /home/adamgb/phd/gazebo_ws/install/srt_controller/share/srt_controller/config/actuators_controller.yaml
+CMake Error at cmake_install.cmake:77 (file):
+  file INSTALL cannot find
+  "/home/adamgb/phd/gazebo_ws/src/srt_controller/tmux": No such file or
+  directory.
+
+

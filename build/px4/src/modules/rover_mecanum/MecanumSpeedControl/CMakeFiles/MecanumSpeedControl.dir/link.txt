@@ -1,0 +1,2 @@
+/usr/bin/ar qc libMecanumSpeedControl.a CMakeFiles/MecanumSpeedControl.dir/MecanumSpeedControl.cpp.o
+/usr/bin/ranlib libMecanumSpeedControl.a

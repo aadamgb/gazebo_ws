@@ -1,0 +1,2 @@
+/usr/bin/ar qc libAckermannManualMode.a CMakeFiles/AckermannManualMode.dir/AckermannManualMode.cpp.o
+/usr/bin/ranlib libAckermannManualMode.a

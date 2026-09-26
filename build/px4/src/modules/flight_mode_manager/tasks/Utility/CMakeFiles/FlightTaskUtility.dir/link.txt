@@ -1,0 +1,2 @@
+/usr/bin/ar qc libFlightTaskUtility.a CMakeFiles/FlightTaskUtility.dir/StickAccelerationXY.cpp.o CMakeFiles/FlightTaskUtility.dir/StickTiltXY.cpp.o CMakeFiles/FlightTaskUtility.dir/Gimbal.cpp.o
+/usr/bin/ranlib libFlightTaskUtility.a

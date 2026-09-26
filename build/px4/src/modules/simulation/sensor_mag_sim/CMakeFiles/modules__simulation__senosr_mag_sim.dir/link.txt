@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmodules__simulation__senosr_mag_sim.a CMakeFiles/modules__simulation__senosr_mag_sim.dir/SensorMagSim.cpp.o
+/usr/bin/ranlib libmodules__simulation__senosr_mag_sim.a

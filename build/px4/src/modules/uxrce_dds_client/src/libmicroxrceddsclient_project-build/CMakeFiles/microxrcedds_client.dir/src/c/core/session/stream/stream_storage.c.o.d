@@ -1,0 +1,37 @@
+CMakeFiles/microxrcedds_client.dir/src/c/core/session/stream/stream_storage.c.o: \
+ /home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/uxrce_dds_client/Micro-XRCE-DDS-Client/src/c/core/session/stream/stream_storage.c \
+ /usr/include/stdc-predef.h \
+ /home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/uxrce_dds_client/Micro-XRCE-DDS-Client/src/c/core/session/stream/stream_storage_internal.h \
+ /home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/uxrce_dds_client/Micro-XRCE-DDS-Client/include/uxr/client/core/session/stream/stream_storage.h \
+ /home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/uxrce_dds_client/Micro-XRCE-DDS-Client/include/uxr/client/core/session/stream/output_best_effort_stream.h \
+ /home/adamgb/phd/gazebo_ws/build/px4/src/modules/uxrce_dds_client/src/libmicroxrceddsclient_project-build/include/uxr/client/config.h \
+ /home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/uxrce_dds_client/Micro-XRCE-DDS-Client/include/uxr/client/core/session/stream/seq_num.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
+ /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+ /usr/include/features.h /usr/include/features-time64.h \
+ /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+ /usr/include/x86_64-linux-gnu/bits/timesize.h \
+ /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ /usr/include/x86_64-linux-gnu/bits/long-double.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+ /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h \
+ /usr/include/x86_64-linux-gnu/bits/time64.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/stdbool.h \
+ /home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/uxrce_dds_client/Micro-XRCE-DDS-Client/include/uxr/client/core/session/stream/output_reliable_stream.h \
+ /home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/uxrce_dds_client/Micro-XRCE-DDS-Client/include/uxr/client/core/session/stream/reliable_stream.h \
+ /home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/uxrce_dds_client/Micro-XRCE-DDS-Client/include/uxr/client/core/session/stream/input_best_effort_stream.h \
+ /home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/uxrce_dds_client/Micro-XRCE-DDS-Client/include/uxr/client/core/session/stream/input_reliable_stream.h \
+ /home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/uxrce_dds_client/Micro-XRCE-DDS-Client/include/uxr/client/core/session/stream/stream_id.h \
+ /home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/uxrce_dds_client/Micro-XRCE-DDS-Client/include/uxr/client/visibility.h \
+ /home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/uxrce_dds_client/Micro-XRCE-DDS-Client/src/c/core/session/stream/input_best_effort_stream_internal.h \
+ /home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/uxrce_dds_client/Micro-XRCE-DDS-Client/src/c/core/session/stream/input_reliable_stream_internal.h \
+ /home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/uxrce_dds_client/Micro-XRCE-DDS-Client/src/c/core/session/stream/output_best_effort_stream_internal.h \
+ /home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/uxrce_dds_client/Micro-XRCE-DDS-Client/src/c/core/session/stream/output_reliable_stream_internal.h \
+ /home/adamgb/phd/gazebo_ws/src/px4_firmware/src/modules/uxrce_dds_client/Micro-XRCE-DDS-Client/include/uxr/client/profile/multithread/multithread.h

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmodules__simulation__gz_bridge.a CMakeFiles/modules__simulation__gz_bridge.dir/GZBridge.cpp.o CMakeFiles/modules__simulation__gz_bridge.dir/GZMixingInterfaceESC.cpp.o CMakeFiles/modules__simulation__gz_bridge.dir/GZMixingInterfaceServo.cpp.o CMakeFiles/modules__simulation__gz_bridge.dir/GZMixingInterfaceWheel.cpp.o CMakeFiles/modules__simulation__gz_bridge.dir/GZGimbal.cpp.o
+/usr/bin/ranlib libmodules__simulation__gz_bridge.a

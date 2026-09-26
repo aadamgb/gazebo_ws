@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "src/modules/navigator/MissionFeasibility",
+		"source" : "src/modules/navigator/MissionFeasibility"
+	}
+}

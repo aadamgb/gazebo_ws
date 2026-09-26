@@ -1,0 +1,2 @@
+/usr/bin/ar qc libMecanumAutoMode.a CMakeFiles/MecanumAutoMode.dir/MecanumAutoMode.cpp.o
+/usr/bin/ranlib libMecanumAutoMode.a

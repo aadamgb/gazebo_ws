@@ -1,0 +1,2 @@
+/usr/bin/ar qc libMulticopterThrowLaunch.a CMakeFiles/MulticopterThrowLaunch.dir/MulticopterThrowLaunch.cpp.o
+/usr/bin/ranlib libMulticopterThrowLaunch.a

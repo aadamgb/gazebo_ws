@@ -1,0 +1,2 @@
+/usr/bin/ar qc libAckermannAutoMode.a CMakeFiles/AckermannAutoMode.dir/AckermannAutoMode.cpp.o
+/usr/bin/ranlib libAckermannAutoMode.a

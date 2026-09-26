@@ -1,0 +1,10 @@
+/home/adamgb/phd/gazebo_ws/src/srt_controller/src/actuators_controller.cpp: In member function ‘virtual mrs_uav_managers::Controller::ControlOutput srt_controller::ActuatorsController::updateActive(const mrs_msgs::msg::UavState&, const mrs_msgs::msg::TrackerCommand&)’:
+/home/adamgb/phd/gazebo_ws/src/srt_controller/src/actuators_controller.cpp:234:8: warning: variable ‘constraints’ set but not used [-Wunused-but-set-variable]
+  234 |   auto constraints = mrs_lib::get_mutexed(mutex_constraints_, constraints_);
+      |        ^~~~~~~~~~~
+CMake Error at cmake_install.cmake:77 (file):
+  file INSTALL cannot find
+  "/home/adamgb/phd/gazebo_ws/src/srt_controller/tmux": No such file or
+  directory.
+
+

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libAckermannActControl.a CMakeFiles/AckermannActControl.dir/AckermannActControl.cpp.o
+/usr/bin/ranlib libAckermannActControl.a

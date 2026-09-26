@@ -1,0 +1,19 @@
+CMake Warning (dev) at CMakeLists.txt:176 (find_package):
+  Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules
+  are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use
+  the cmake_policy command to set the policy and suppress this warning.
+
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'menuconfig'
+CMake Error at cmake/kconfig.cmake:6 (message):
+  kconfiglib is not installed or not in PATH
+
+  please install using "pip3 install kconfiglib"
+
+Call Stack (most recent call first):
+  CMakeLists.txt:191 (include)
+
+
