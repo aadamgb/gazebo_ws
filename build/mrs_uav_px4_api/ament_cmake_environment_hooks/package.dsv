@@ -1,4 +1,0 @@
-source;share/mrs_uav_px4_api/local_setup.bash
-source;share/mrs_uav_px4_api/local_setup.dsv
-source;share/mrs_uav_px4_api/local_setup.sh
-source;share/mrs_uav_px4_api/local_setup.zsh

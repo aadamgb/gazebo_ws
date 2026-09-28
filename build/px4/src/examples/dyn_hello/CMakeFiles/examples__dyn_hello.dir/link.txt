@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC -O3 -DNDEBUG  -fuse-ld=gold -shared -Wl,-soname,examples__dyn_hello.px4mod -o examples__dyn_hello.px4mod CMakeFiles/examples__dyn_hello.dir/hello.cpp.o   -L/home/adamgb/phd/gazebo_ws/build/px4/external/Install/lib  -Wl,-rpath,/home/adamgb/phd/gazebo_ws/build/px4/external/Install/lib 

@@ -1,2 +1,0 @@
-/usr/bin/ar qc libFlightTaskManualAltitude.a CMakeFiles/FlightTaskManualAltitude.dir/FlightTaskManualAltitude.cpp.o
-/usr/bin/ranlib libFlightTaskManualAltitude.a

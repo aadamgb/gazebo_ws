@@ -1,0 +1,5 @@
+<library path="RlGotoController_RLGoto">
+  <class name="rl_goto_controller::RLGoto" type="rl_goto_controller::RLGoto" base_class_type="mrs_uav_managers::Controller">
+    <description>RL goto controller: policy outputs motor commands</description>
+  </class>
+</library>

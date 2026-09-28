@@ -1,2 +1,0 @@
-/usr/bin/ar qc libMecanumAttControl.a CMakeFiles/MecanumAttControl.dir/MecanumAttControl.cpp.o
-/usr/bin/ranlib libMecanumAttControl.a

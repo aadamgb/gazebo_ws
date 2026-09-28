@@ -1,4 +1,0 @@
--- PX4_GIT_TAG: v1.17.0-dev
--- Found PythonInterp: /usr/bin/python3 (found suitable version "3.12.3", minimum required is "3") 
--- PX4 config file: /home/adamgb/phd/gazebo_ws/src/px4_firmware/boards/px4/sitl/default.px4board
--- Configuring incomplete, errors occurred!

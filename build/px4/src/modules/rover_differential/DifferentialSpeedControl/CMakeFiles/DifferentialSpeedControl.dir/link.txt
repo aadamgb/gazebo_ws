@@ -1,2 +1,0 @@
-/usr/bin/ar qc libDifferentialSpeedControl.a CMakeFiles/DifferentialSpeedControl.dir/DifferentialSpeedControl.cpp.o
-/usr/bin/ranlib libDifferentialSpeedControl.a

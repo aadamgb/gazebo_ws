@@ -1,2 +1,0 @@
-/usr/bin/ar qc libheatshrink.a CMakeFiles/heatshrink.dir/heatshrink/heatshrink_decoder.c.o
-/usr/bin/ranlib libheatshrink.a

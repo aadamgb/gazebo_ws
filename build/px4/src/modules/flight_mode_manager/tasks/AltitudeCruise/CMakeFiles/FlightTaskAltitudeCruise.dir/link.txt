@@ -1,2 +1,0 @@
-/usr/bin/ar qc libFlightTaskAltitudeCruise.a CMakeFiles/FlightTaskAltitudeCruise.dir/FlightTaskAltitudeCruise.cpp.o
-/usr/bin/ranlib libFlightTaskAltitudeCruise.a

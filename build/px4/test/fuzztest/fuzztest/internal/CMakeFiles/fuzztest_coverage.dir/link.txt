@@ -1,2 +1,0 @@
-/usr/bin/ar qc libfuzztest_coverage.a CMakeFiles/fuzztest_coverage.dir/coverage.cc.o
-/usr/bin/ranlib libfuzztest_coverage.a

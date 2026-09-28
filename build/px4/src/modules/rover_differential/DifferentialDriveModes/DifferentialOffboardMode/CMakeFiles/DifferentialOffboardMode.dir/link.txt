@@ -1,2 +1,0 @@
-/usr/bin/ar qc libDifferentialOffboardMode.a CMakeFiles/DifferentialOffboardMode.dir/DifferentialOffboardMode.cpp.o
-/usr/bin/ranlib libDifferentialOffboardMode.a

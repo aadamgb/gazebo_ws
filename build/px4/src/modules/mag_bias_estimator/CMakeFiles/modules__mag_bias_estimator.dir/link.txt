@@ -1,2 +1,0 @@
-/usr/bin/ar qc libmodules__mag_bias_estimator.a CMakeFiles/modules__mag_bias_estimator.dir/MagBiasEstimator.cpp.o
-/usr/bin/ranlib libmodules__mag_bias_estimator.a

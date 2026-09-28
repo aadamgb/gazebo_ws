@@ -18,11 +18,13 @@ mrs_uav_managers:
     state_estimators: [
       "gps_baro",
       "ground_truth",
+      "passthrough",
     ]
 
 
-    # passthrough (PX4 ODOMETRY, 100 Hz) is rate-gated below the 250 Hz uav_state needed for actuator output
-    initial_state_estimator: "ground_truth" # will be used as the first state estimator
+    # passthrough needs >= 225 Hz hw_api/odometry for actuator output: PX4 EKF2_PREDICT_US 4000,
+    # LOCAL_POSITION_NED + ODOMETRY streams at 250 Hz and a 4 ms world step (alien_gazebo_resources)
+    initial_state_estimator: "passthrough" # will be used as the first state estimator
     agl_height_estimator: "" # only slightly filtered height for checking min height (not used in control feedback)
 
   control_manager:
@@ -77,11 +79,47 @@ mrs_uav_managers:
         velocity_hdg:          false
         position:              false
 
-    # every name here needs a matching parameter block above, otherwise
-    # control_manager cannot resolve its address and silently drops it
+    RLGoto:
+      address: "rl_goto_controller::RLGoto"
+      namespace: "rl_goto"
+      eland_threshold: 0.0
+      failsafe_threshold: 0.0
+      odometry_innovation_threshold: 0.0
+      human_switchable: true
+      outputs:
+        actuators:             true
+        control_group:         false
+        attitude_rate:         false
+        attitude:              false
+        acceleration_hdg_rate: false
+        acceleration_hdg:      false
+        velocity_hdg_rate:     false
+        velocity_hdg:          false
+        position:              false
+
+    TestController:
+      address: "test_controller::TestController"
+      namespace: "test_controller"
+      eland_threshold: 0.0
+      failsafe_threshold: 0.0
+      odometry_innovation_threshold: 0.0
+      human_switchable: true
+      outputs:
+        actuators:             true
+        control_group:         false
+        attitude_rate:         false
+        attitude:              false
+        acceleration_hdg_rate: false
+        acceleration_hdg:      false
+        velocity_hdg_rate:     false
+        velocity_hdg:          false
+        position:              false
+
+
     controllers : [
       "ActuatorsController",
       "VelocityController",
+      "TestController",
     ]
 
   uav_manager:

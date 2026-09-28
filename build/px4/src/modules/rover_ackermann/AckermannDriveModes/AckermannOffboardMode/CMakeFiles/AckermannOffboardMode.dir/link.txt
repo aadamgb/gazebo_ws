@@ -1,2 +1,0 @@
-/usr/bin/ar qc libAckermannOffboardMode.a CMakeFiles/AckermannOffboardMode.dir/AckermannOffboardMode.cpp.o
-/usr/bin/ranlib libAckermannOffboardMode.a

@@ -1,8 +1,0 @@
-source;share/alien_gazebo_resources/hook/cmake_prefix_path.ps1
-source;share/alien_gazebo_resources/hook/cmake_prefix_path.dsv
-source;share/alien_gazebo_resources/hook/cmake_prefix_path.sh
-source;share/alien_gazebo_resources/local_setup.bash
-source;share/alien_gazebo_resources/local_setup.dsv
-source;share/alien_gazebo_resources/local_setup.ps1
-source;share/alien_gazebo_resources/local_setup.sh
-source;share/alien_gazebo_resources/local_setup.zsh

@@ -1,3 +1,0 @@
-/home/adamgb/phd/gazebo_ws/build/px4/_deps/googletest-subbuild/CMakeFiles/googletest-populate.dir
-/home/adamgb/phd/gazebo_ws/build/px4/_deps/googletest-subbuild/CMakeFiles/edit_cache.dir
-/home/adamgb/phd/gazebo_ws/build/px4/_deps/googletest-subbuild/CMakeFiles/rebuild_cache.dir

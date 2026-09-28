@@ -1,2 +1,0 @@
-/usr/bin/ar qc libhysteresis.a CMakeFiles/hysteresis.dir/hysteresis.cpp.o
-/usr/bin/ranlib libhysteresis.a

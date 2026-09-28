@@ -1,2 +1,0 @@
-/usr/bin/ar qc libecl_test_helper.a CMakeFiles/ecl_test_helper.dir/reset_logging_checker.cpp.o CMakeFiles/ecl_test_helper.dir/comparison_helper.cpp.o
-/usr/bin/ranlib libecl_test_helper.a

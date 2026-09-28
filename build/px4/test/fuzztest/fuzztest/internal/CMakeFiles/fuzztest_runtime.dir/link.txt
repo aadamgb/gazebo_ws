@@ -1,2 +1,0 @@
-/usr/bin/ar qc libfuzztest_runtime.a CMakeFiles/fuzztest_runtime.dir/runtime.cc.o
-/usr/bin/ranlib libfuzztest_runtime.a

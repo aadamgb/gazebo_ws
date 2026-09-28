@@ -1,2 +1,0 @@
-/usr/bin/ar qc libAttitudeControl.a CMakeFiles/AttitudeControl.dir/AttitudeControl.cpp.o
-/usr/bin/ranlib libAttitudeControl.a

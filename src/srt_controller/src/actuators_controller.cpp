@@ -405,8 +405,8 @@ ActuatorsController::ControlOutput ActuatorsController::updateActive(const mrs_m
   mrs_msgs::msg::HwApiActuatorCmd actuator_cmd =
       actuatorMixer(node_, control_group_command.value(), common_handlers_->detailed_model_params->control_group_mixer);
 
-  RCLCPP_INFO_THROTTLE(node_->get_logger(), *clock_, 100, "[ExampleController] 😀😀😀: motor output:\nmotor1: %.2f\nmotor2: %.2f\nmotor3: %.2f\nmotor4: %.2f", actuator_cmd.motors[0], actuator_cmd.motors[1],
-                       actuator_cmd.motors[2], actuator_cmd.motors[3]);
+  // RCLCPP_INFO_THROTTLE(node_->get_logger(), *clock_, 100, "[ExampleController] 😀😀😀: motor output:\nmotor1: %.2f\nmotor2: %.2f\nmotor3: %.2f\nmotor4: %.2f", actuator_cmd.motors[0], actuator_cmd.motors[1],
+  //                      actuator_cmd.motors[2], actuator_cmd.motors[3]);
 
   // | ----------------- set the control output ----------------- |
 

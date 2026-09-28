@@ -1,4 +1,0 @@
-Invoking command in '/home/adamgb/phd/gazebo_ws/build/srt_controller': /usr/bin/cmake --build /home/adamgb/phd/gazebo_ws/build/srt_controller -- -j32 -l32
-Invoked command in '/home/adamgb/phd/gazebo_ws/build/srt_controller' returned '0': /usr/bin/cmake --build /home/adamgb/phd/gazebo_ws/build/srt_controller -- -j32 -l32
-Invoking command in '/home/adamgb/phd/gazebo_ws/build/srt_controller': /usr/bin/cmake --install /home/adamgb/phd/gazebo_ws/build/srt_controller
-Invoked command in '/home/adamgb/phd/gazebo_ws/build/srt_controller' returned '1': /usr/bin/cmake --install /home/adamgb/phd/gazebo_ws/build/srt_controller

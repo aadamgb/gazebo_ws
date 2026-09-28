@@ -1,2 +1,0 @@
-Invoking command in '/home/adamgb/phd/gazebo_ws/build/px4': /usr/bin/cmake /home/adamgb/phd/gazebo_ws/src/px4_firmware -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/home/adamgb/phd/gazebo_ws/install/px4
-Invoked command in '/home/adamgb/phd/gazebo_ws/build/px4' returned '1': /usr/bin/cmake /home/adamgb/phd/gazebo_ws/src/px4_firmware -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/home/adamgb/phd/gazebo_ws/install/px4

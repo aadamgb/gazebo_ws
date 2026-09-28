@@ -1,2 +1,0 @@
-/usr/bin/ar qc libfuzztest_bazel.a CMakeFiles/fuzztest_bazel.dir/bazel.cc.o
-/usr/bin/ranlib libfuzztest_bazel.a

@@ -1,2 +1,0 @@
-/usr/bin/ar qc libevents.a CMakeFiles/events.dir/events.cpp.o
-/usr/bin/ranlib libevents.a

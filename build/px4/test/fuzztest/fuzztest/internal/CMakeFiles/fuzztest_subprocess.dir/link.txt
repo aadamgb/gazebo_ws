@@ -1,2 +1,0 @@
-/usr/bin/ar qc libfuzztest_subprocess.a CMakeFiles/fuzztest_subprocess.dir/subprocess.cc.o
-/usr/bin/ranlib libfuzztest_subprocess.a

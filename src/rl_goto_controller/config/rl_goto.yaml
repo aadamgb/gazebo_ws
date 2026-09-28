@@ -1,0 +1,5 @@
+mrs_uav_controllers:
+
+  rl_goto:
+
+    policy: "/home/adamgb/phd/data/policies/rl_goto/policy.pt"

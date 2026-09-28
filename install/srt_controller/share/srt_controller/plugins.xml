@@ -1,5 +1,0 @@
-<library path="SrtController_ActuatorsController">
-  <class name="srt_controller::ActuatorsController" type="srt_controller::ActuatorsController" base_class_type="mrs_uav_managers::Controller">
-    <description>SRT MRS controller plugin</description>
-  </class>
-</library>

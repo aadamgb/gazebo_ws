@@ -1,2 +1,0 @@
-/usr/bin/ar qc libfuzztest_registry.a CMakeFiles/fuzztest_registry.dir/registry.cc.o
-/usr/bin/ranlib libfuzztest_registry.a

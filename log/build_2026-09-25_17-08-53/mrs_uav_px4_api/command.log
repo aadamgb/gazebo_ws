@@ -1,4 +1,0 @@
-Invoking command in '/home/adamgb/phd/gazebo_ws/build/mrs_uav_px4_api': /usr/bin/cmake --build /home/adamgb/phd/gazebo_ws/build/mrs_uav_px4_api -- -j32 -l32
-Invoked command in '/home/adamgb/phd/gazebo_ws/build/mrs_uav_px4_api' returned '0': /usr/bin/cmake --build /home/adamgb/phd/gazebo_ws/build/mrs_uav_px4_api -- -j32 -l32
-Invoking command in '/home/adamgb/phd/gazebo_ws/build/mrs_uav_px4_api': /usr/bin/cmake --install /home/adamgb/phd/gazebo_ws/build/mrs_uav_px4_api
-Invoked command in '/home/adamgb/phd/gazebo_ws/build/mrs_uav_px4_api' returned '0': /usr/bin/cmake --install /home/adamgb/phd/gazebo_ws/build/mrs_uav_px4_api

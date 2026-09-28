@@ -1,2 +1,0 @@
-/usr/bin/ar qc libdrivers_board.a CMakeFiles/drivers_board.dir/board_shutdown.cpp.o CMakeFiles/drivers_board.dir/sitl_led.c.o
-/usr/bin/ranlib libdrivers_board.a
