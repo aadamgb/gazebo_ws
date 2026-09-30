@@ -18,7 +18,7 @@ find_package(Eigen3 REQUIRED)
 find_package(mrs_msgs REQUIRED)
 find_package(ament_index_cpp REQUIRED)
 
-# libtorch is linked directly (CPU only), see lvhr_controller/CMakeLists.txt for why
+# libtorch is linked directly (CPU only), only used to load the TorchScript policy
 set(LIBTORCH_DIR "$ENV{HOME}/miniconda3/envs/rl/lib/python3.10/site-packages/torch"
   CACHE PATH "Root of the libtorch install (contains lib/ and include/)")
 

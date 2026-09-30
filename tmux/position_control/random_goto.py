@@ -2,9 +2,13 @@
 """
 Send the UAV to random positions inside a box. When the UAV gets within
 `radius` of the current goal (or `timeout` expires), a new goal is sampled.
+Goals go straight to RLGoto (/<uav>/control_manager/rl_goto/goal), bypassing the
+MRS tracker like the genesis env; `-p direct:=false` sends them through the tracker.
+A fixed `seed` makes the goal sequence reproducible.
 
 Run (from a shell with the same env as the tmux panes):
   ./random_goto.py
+  ./random_goto.py --ros-args -p seed:=0
   ./random_goto.py --ros-args -p radius:=0.5 -p x_min:=-5.0 -p x_max:=5.0
 
 The goal and threshold radius are shown as a green sphere (visual only, no
@@ -24,6 +28,7 @@ from rclpy.qos import qos_profile_sensor_data
 
 from nav_msgs.msg import Odometry
 from visualization_msgs.msg import Marker
+from mrs_msgs.msg import ReferenceStamped
 from mrs_msgs.srv import ReferenceStampedSrv
 
 try:
@@ -56,6 +61,9 @@ GZ_SPHERE_SDF = """<?xml version="1.0"?>
   </model>
 </sdf>"""
 
+X_RANGE = 1.0
+Y_RANGE = 1.0
+Z_RANGE = 1.0
 
 class RandomGoto(Node):
 
@@ -69,11 +77,11 @@ class RandomGoto(Node):
         self.uav_name = self.declare_parameter("uav_name", "uav1").value
 
         # sampling bounds [m], must lie inside the safety area in world_config.yaml
-        self.x_bounds = (self.declare_parameter("x_min", -10.0).value, self.declare_parameter("x_max", 10.0).value)
-        self.y_bounds = (self.declare_parameter("y_min", -10.0).value, self.declare_parameter("y_max", 10.0).value)
-        self.z_bounds = (self.declare_parameter("z_min", 1.0).value, self.declare_parameter("z_max", 5.0).value)
+        self.x_bounds = (self.declare_parameter("x_min", -X_RANGE).value, self.declare_parameter("x_max", X_RANGE).value)
+        self.y_bounds = (self.declare_parameter("y_min", -Y_RANGE).value, self.declare_parameter("y_max", Y_RANGE).value)
+        self.z_bounds = (self.declare_parameter("z_min", Z_RANGE).value, self.declare_parameter("z_max", Z_RANGE).value)
 
-        self.radius = self.declare_parameter("radius", 0.225).value            # [m] goal reached threshold
+        self.radius = self.declare_parameter("radius", 0.1).value            # [m] goal reached threshold
         self.timeout = self.declare_parameter("timeout", 10.0).value         # [s] resample if goal not reached
         self.random_heading = self.declare_parameter("random_heading", False).value
         # position used for the "goal reached" check (simulator ground truth, not the estimator)
@@ -88,6 +96,10 @@ class RandomGoto(Node):
         self.gz_world = self.declare_parameter("gz_world", "default").value
         self.gz_model = f"{self.uav_name}_goto_goal"
 
+        # direct: publish the goal straight to RLGoto (like the genesis env), bypassing the MRS tracker;
+        # otherwise send it to control_manager/reference and the tracker plans a trajectory to it
+        self.direct = self.declare_parameter("direct", True).value
+
         seed = self.declare_parameter("seed", -1).value
         if seed >= 0:
             random.seed(seed)
@@ -101,6 +113,7 @@ class RandomGoto(Node):
         self.create_subscription(
             Odometry, self.odom_topic, self.odom_cb, qos_profile_sensor_data)
         self.client = self.create_client(ReferenceStampedSrv, f"/{self.uav_name}/control_manager/reference")
+        self.goal_pub = self.create_publisher(ReferenceStamped, f"/{self.uav_name}/control_manager/rl_goto/goal", 10)
         self.marker_pub = self.create_publisher(Marker, f"/{self.uav_name}/random_goto/goal_marker", 1)
         # republish so RViz picks up the marker even if it starts after this node
         self.create_timer(1.0, self.publish_marker)
@@ -116,7 +129,7 @@ class RandomGoto(Node):
         self.create_timer(0.1, self.loop)
         self.get_logger().info(
             f"bounds x{self.x_bounds} y{self.y_bounds} z{self.z_bounds}, radius {self.radius} m, "
-            f"position from {self.odom_topic}")
+            f"position from {self.odom_topic}, goals {'direct to RLGoto' if self.direct else 'via the MRS tracker'}")
 
     def odom_cb(self, msg):
         if self.odom is None:
@@ -129,7 +142,9 @@ class RandomGoto(Node):
             return
         if self.pending:
             return
-        if not self.client.service_is_ready():
+        if self.direct and self.goal is not None:
+            self.publish_goal()  # republish, RLGoto may start listening later
+        if not self.direct and not self.client.service_is_ready():
             self.get_logger().info("waiting for control_manager/reference", throttle_duration_sec=5.0)
             return
 
@@ -168,8 +183,22 @@ class RandomGoto(Node):
             f"new goal [{goal[0]:.2f}, {goal[1]:.2f}, {goal[2]:.2f}] hdg {heading:.2f} in '{req.header.frame_id}' "
             f"({math.dist((p.x, p.y, p.z), goal):.2f} m away)")
 
+        if self.direct:
+            self.goal_msg = ReferenceStamped(header=req.header, reference=req.reference)
+            self.goal = goal
+            self.goal_frame = req.header.frame_id
+            self.goal_time = self.get_clock().now()
+            self.publish_goal()
+            self.publish_marker()
+            self.move_gz_marker()
+            return
+
         self.pending = True
         self.client.call_async(req).add_done_callback(lambda f: self.response_cb(f, goal))
+
+    def publish_goal(self):
+        self.goal_msg.header.stamp = self.get_clock().now().to_msg()
+        self.goal_pub.publish(self.goal_msg)
 
     def response_cb(self, future, goal):
         self.pending = False

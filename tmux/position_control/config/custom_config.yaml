@@ -21,10 +21,11 @@ mrs_uav_managers:
       "passthrough",
     ]
 
-
     # passthrough needs >= 225 Hz hw_api/odometry for actuator output: PX4 EKF2_PREDICT_US 4000,
-    # LOCAL_POSITION_NED + ODOMETRY streams at 250 Hz and a 4 ms world step (alien_gazebo_resources)
-    initial_state_estimator: "passthrough" # will be used as the first state estimator
+    # LOCAL_POSITION_NED + ODOMETRY streams at 250 Hz and a 4 ms world step (alien_gazebo_resources).
+    # Do not use ground_truth with RLGoto: it only updates every 12 ms (~83 Hz) and is republished
+    # stale at 250 Hz, which the policy (trained on fresh 100 Hz states) cannot handle.
+    initial_state_estimator: "ground_truth" # will be used as the first state estimator
     agl_height_estimator: "" # only slightly filtered height for checking min height (not used in control feedback)
 
   control_manager:
@@ -118,8 +119,9 @@ mrs_uav_managers:
 
     controllers : [
       "ActuatorsController",
-      "VelocityController",
-      "TestController",
+      # "VelocityController",
+      # "TestController",
+      "RLGoto"
     ]
 
   uav_manager:
@@ -130,12 +132,16 @@ mrs_uav_managers:
     takeoff:
 
       # gate height of the fig8 track
-      takeoff_height: 1.5
+      takeoff_height: 1.0
 
       during_takeoff:
         controller: "MpcController"
         tracker: "LandoffTracker"
 
+      # after_takeoff:
+      #   controller: "ActuatorsController" # stable hover, then switch to ActuatorsController manually
+      #   tracker: "MpcTracker"
+      
       after_takeoff:
-        controller: "ActuatorsController" # stable hover, then switch to ActuatorsController manually
+        controller: "RLGoto" # stable hover, then switch to ActuatorsController manually
         tracker: "MpcTracker"

@@ -2,4 +2,14 @@ mrs_uav_controllers:
 
   rl_goto:
 
-    policy: "/home/adamgb/phd/data/policies/rl_goto/policy.pt"
+    policy: "/home/adamgb/phd/genesis_ws/logs/goto/SRT_dr_hist/model_500_scripted.pt"
+
+    # must match the genesis env: policy_rate = 1 / env.dt
+    policy_rate: 125.0 # [Hz]
+    obs_history: 4     # frames stacked in the observation, genesis obs.history
+    hover_cmd: 0.3795  # -
+    action_scale: 0.5  # -
+
+    # true:  a in [-1, 1], u = hover_cmd * (1 + action_scale * a)   (genesis SRTHover)
+    # false: a in [0, 1],  u = a                                    (genesis SRT)
+    hover_center_throttle: true
