@@ -16,9 +16,13 @@ Run (from a shell with the same env as the tmux panes):
   ./random_goto.py --ros-args -p seed:=0
   ./random_goto.py --ros-args -p radius:=0.5 -p x_min:=-1.0 -p x_max:=1.0
   ./random_goto.py --ros-args -p relative:=false -p z_min:=4.0 -p z_max:=4.0
+  ./random_goto.py --ros-args -p ground_truth:=true   # simulation only
+
+The UAV position comes from the MRS estimate (/<uav>/estimation_manager/odom_main), which
+also exists on the real UAV; ground_truth:=true uses the simulator ground truth instead.
 
 The goal and threshold radius are shown as a green sphere (visual only, no
-collisions) in RViz (/<uav>/random_goto/goal_marker) and in Gazebo.
+collisions) in RViz (/<uav>/random_goto/goal_marker) and, with ground_truth:=true, in Gazebo.
 """
 
 import math
@@ -68,8 +72,8 @@ GZ_SPHERE_SDF = """<?xml version="1.0"?>
 </sdf>"""
 
 # default box, offsets from the starting position of the UAV: 1 x 1 m square in its plane
-X_RANGE = 0.5
-Y_RANGE = 0.5
+X_RANGE = 1.0
+Y_RANGE = 1.0
 Z_RANGE = 0.0
 
 class RandomGoto(Node):
@@ -95,15 +99,24 @@ class RandomGoto(Node):
         self.radius = self.declare_parameter("radius", 0.2).value            # [m] goal reached threshold
         self.timeout = self.declare_parameter("timeout", 10.0).value         # [s] resample if goal not reached
         self.random_heading = self.declare_parameter("random_heading", False).value
-        # position used for the "goal reached" check (simulator ground truth, not the estimator)
-        self.odom_topic = self.declare_parameter("odom_topic", f"/{self.uav_name}/hw_api/ground_truth").value
-        # frame of the goal. The Gazebo ground truth is stamped "<uav>/world_origin", but that is the
-        # Gazebo world, NOT MRS's GNSS-based world_origin (they differ by a drifting offset).
-        # MRS's ground_truth_origin coincides with the Gazebo world, so goals sent there match odom_topic.
-        self.frame_id = self.declare_parameter("frame_id", f"{self.uav_name}/ground_truth_origin").value
+        # position used for the start position and the "goal reached" check: by default the MRS estimate
+        # (works on the real UAV), ground_truth:=true uses the simulator ground truth instead
+        self.ground_truth = self.declare_parameter("ground_truth", False).value
+        if self.ground_truth:
+            default_odom_topic = f"/{self.uav_name}/hw_api/ground_truth"
+            # The Gazebo ground truth is stamped "<uav>/world_origin", but that is the Gazebo world,
+            # NOT MRS's GNSS-based world_origin (they differ by a drifting offset).
+            # MRS's ground_truth_origin coincides with the Gazebo world, so goals sent there match odom_topic.
+            default_frame_id = f"{self.uav_name}/ground_truth_origin"
+        else:
+            default_odom_topic = f"/{self.uav_name}/estimation_manager/odom_main"
+            default_frame_id = ""  # empty = the frame of odom_topic
+        self.odom_topic = self.declare_parameter("odom_topic", default_odom_topic).value
+        # frame of the goal
+        self.frame_id = self.declare_parameter("frame_id", default_frame_id).value
 
-        # visualization of the goal sphere
-        self.gz_marker = self.declare_parameter("gz_marker", True).value
+        # visualization of the goal sphere; the Gazebo one is only placed right in the ground truth frame
+        self.gz_marker = self.declare_parameter("gz_marker", self.ground_truth).value
         self.gz_world = self.declare_parameter("gz_world", "default").value
         self.gz_model = f"{self.uav_name}_goto_goal"
 
