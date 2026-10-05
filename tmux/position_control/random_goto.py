@@ -22,12 +22,16 @@ The UAV position comes from the MRS estimate (/<uav>/estimation_manager/odom_mai
 also exists on the real UAV; ground_truth:=true uses the simulator ground truth instead.
 
 The goal and threshold radius are shown as a green sphere (visual only, no
-collisions) in RViz (/<uav>/random_goto/goal_marker) and, with ground_truth:=true, in Gazebo.
+collisions) in RViz (/<uav>/random_goto/goal_marker) and in Gazebo (simulation only,
+shifted by the median ground truth - estimate offset).
 """
 
+import bisect
 import math
 import os
 import random
+import statistics
+from collections import deque
 
 import rclpy
 import rclpy.duration
@@ -115,8 +119,10 @@ class RandomGoto(Node):
         # frame of the goal
         self.frame_id = self.declare_parameter("frame_id", default_frame_id).value
 
-        # visualization of the goal sphere; the Gazebo one is only placed right in the ground truth frame
-        self.gz_marker = self.declare_parameter("gz_marker", self.ground_truth).value
+        # visualization of the goal sphere, in Gazebo only in simulation (RUN_TYPE is exported in the sessions)
+        self.gz_marker = self.declare_parameter("gz_marker", os.environ.get("RUN_TYPE", "") == "simulation").value
+        # the Gazebo ground truth, to place goals given in the estimator frame into the Gazebo world
+        self.gz_ground_truth_topic = self.declare_parameter("gz_ground_truth_topic", f"/{self.uav_name}/hw_api/ground_truth").value
         self.gz_world = self.declare_parameter("gz_world", "default").value
         self.gz_model = f"{self.uav_name}_goto_goal"
 
@@ -139,16 +145,25 @@ class RandomGoto(Node):
         self.client = self.create_client(ReferenceStampedSrv, f"/{self.uav_name}/control_manager/reference")
         self.goal_pub = self.create_publisher(ReferenceStamped, f"/{self.uav_name}/control_manager/rl_goto/goal", 10)
         self.marker_pub = self.create_publisher(Marker, f"/{self.uav_name}/random_goto/goal_marker", 1)
-        # republish so RViz picks up the marker even if it starts after this node
-        self.create_timer(1.0, self.publish_marker)
+        # republish so RViz picks up the marker even if it starts after this node,
+        # and retry the Gazebo sphere if the goal could not be transformed yet
+        self.create_timer(1.0, self.refresh_markers)
 
         self.gz = None
         self.gz_spawned = False
+        self.gz_placed = False
         if self.gz_marker:
             if GzNode is None:
                 self.get_logger().warn("gz python bindings not found, goal sphere only shown in RViz")
             else:
                 self.gz = GzNode()
+                if not self.ground_truth:
+                    # ground truth - estimate offsets of time-matched samples; their median places the sphere.
+                    # (The TF between the estimator and ground truth origins jitters by ~0.5 m in agile flight.)
+                    self.est_samples = deque(maxlen=200)
+                    self.gz_offsets = deque(maxlen=500)
+                    self.create_subscription(
+                        Odometry, self.gz_ground_truth_topic, self.gz_ground_truth_cb, qos_profile_sensor_data)
 
         self.create_timer(0.1, self.loop)
         self.get_logger().info(
@@ -164,6 +179,22 @@ class RandomGoto(Node):
                 self.center = (p.x, p.y, p.z)
                 self.get_logger().info(f"goals around the start position [{p.x:.2f}, {p.y:.2f}, {p.z:.2f}]")
         self.odom = msg
+        if self.gz is not None and not self.ground_truth:
+            p = msg.pose.pose.position
+            self.est_samples.append((stamp_ns(msg), (p.x, p.y, p.z)))
+
+    def gz_ground_truth_cb(self, msg):
+        # pair with the estimate of the closest stamp, at most 5 ms apart (the ground truth comes at ~83 Hz)
+        if not self.est_samples:
+            return
+        t = stamp_ns(msg)
+        stamps = [s[0] for s in self.est_samples]
+        i = bisect.bisect_left(stamps, t)
+        j = min((k for k in (i - 1, i) if 0 <= k < len(stamps)), key=lambda k: abs(stamps[k] - t))
+        if abs(stamps[j] - t) > 5e6:
+            return
+        p, e = msg.pose.pose.position, self.est_samples[j][1]
+        self.gz_offsets.append((p.x - e[0], p.y - e[1], p.z - e[2]))
 
     def loop(self):
         if self.odom is None:
@@ -220,6 +251,7 @@ class RandomGoto(Node):
             self.goal_frame = req.header.frame_id
             self.goal_time = self.get_clock().now()
             self.publish_goal()
+            self.gz_placed = False
             self.publish_marker()
             self.move_gz_marker()
             return
@@ -238,6 +270,7 @@ class RandomGoto(Node):
             self.goal = goal
             self.goal_frame = self.frame_id or self.odom.header.frame_id
             self.goal_time = self.get_clock().now()
+            self.gz_placed = False
             self.publish_marker()
             self.move_gz_marker()
         else:
@@ -263,27 +296,45 @@ class RandomGoto(Node):
         m.color.a = 0.4
         self.marker_pub.publish(m)
 
+    def goal_in_gz_frame(self):
+        # the goal in the Gazebo world, None until the estimate - ground truth offset is known
+        if self.ground_truth:
+            return self.goal
+        if len(self.gz_offsets) < 10:
+            self.get_logger().info("goal sphere waiting for ground truth to place it in gazebo", throttle_duration_sec=10.0)
+            return None
+        return tuple(g + statistics.median(o[i] for o in self.gz_offsets) for i, g in enumerate(self.goal))
+
+    def refresh_markers(self):
+        self.publish_marker()
+        if self.goal is not None and not self.gz_placed:
+            self.move_gz_marker()
+
     def move_gz_marker(self):
-        # the ground truth frame (world_origin) coincides with the Gazebo world frame
         if self.gz is None:
+            return
+        goal = self.goal_in_gz_frame()
+        if goal is None:
             return
         timeout_ms = 500
         if not self.gz_spawned:
             req = EntityFactory()
             req.sdf = GZ_SPHERE_SDF.format(name=self.gz_model, radius=self.radius)
-            req.pose.position.x, req.pose.position.y, req.pose.position.z = self.goal
+            req.pose.position.x, req.pose.position.y, req.pose.position.z = goal
             ok, rep = self.gz.request(f"/world/{self.gz_world}/create", req, EntityFactory, Boolean, timeout_ms)
             if ok and rep.data:
                 self.gz_spawned = True
+                self.gz_placed = True
                 return
             # already exists from a previous run, or gazebo unreachable: fall through to set_pose
             self.gz_spawned = True
         req = Pose()
         req.name = self.gz_model
-        req.position.x, req.position.y, req.position.z = self.goal
+        req.position.x, req.position.y, req.position.z = goal
         req.orientation.w = 1.0
         ok, rep = self.gz.request(f"/world/{self.gz_world}/set_pose", req, Pose, Boolean, timeout_ms)
-        if not (ok and rep.data):
+        self.gz_placed = ok and rep.data
+        if not self.gz_placed:
             self.get_logger().warn(
                 f"could not place goal sphere in gazebo world '{self.gz_world}'", throttle_duration_sec=10.0)
 
@@ -294,6 +345,10 @@ class RandomGoto(Node):
         req.name = self.gz_model
         req.type = Entity.MODEL
         self.gz.request(f"/world/{self.gz_world}/remove", req, Entity, Boolean, 500)
+
+
+def stamp_ns(msg):
+    return msg.header.stamp.sec * 10**9 + msg.header.stamp.nanosec
 
 
 def main():
