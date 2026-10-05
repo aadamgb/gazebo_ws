@@ -1,0 +1,66 @@
+# Platform config for the real x500 with actuator control.
+#
+# motor_params: the measured MRS x500 values (mrs_uav_deployment config/mrs_uav_system/x500.yaml).
+#   Check the flown drone's UAV_TYPE / motors: e.g. x500_mn5006_6S.yaml has different values.
+# model_params: required by control_manager as soon as the HW API accepts actuator commands
+#   (without them it segfaults/shuts down). Used by ActuatorsController for the allocation.
+#   ⚠️ They are still the SIMULATION x500 values (alien_gazebo_resources x500.yaml): measure and replace
+#   arm_length, inertia, force_constant, torque_constant and rpm.max for the flown drone before flying.
+# uav_mass is not set here on purpose: UAV_MASS from the drone's ~/.bashrc is used.
+
+motor_params:
+  n_motors: 4
+  a: 0.27665
+  b: -0.19642
+
+model_params:
+
+  enabled: true
+
+  # ⚠️ simulation values, see above
+  arm_length: 0.256 # [m]
+  body_height: 0.05 # [m]
+
+  inertia_matrix:
+    enabled: true
+    # ⚠️ simulation values, see above
+    matrix: [0.0307, 0.0,    0.0,
+             0.0,    0.0307, 0.0,
+             0.0,    0.0,    0.0606]
+
+  propulsion:
+    # force [N] = force_constant * rpm^2
+    force_constant: 0.000000461 # ⚠️ simulation value
+
+    # torque [Nm] = torque_constant * force [N]
+    torque_constant: 0.06 # ⚠️ simulation value
+
+    prop_radius: 0.1751 # [m]
+
+    # PX4 quad X motor order (CA_ROTOR0..3); check on the flown drone that motors 0..3 of HwApiActuatorCmd
+    # spin the motors in this order (props off) before the first flight
+    allocation_matrix: [
+        -0.707, 0.707,  0.707, -0.707, # *= force_constant*arm_length
+        -0.707, 0.707, -0.707,  0.707, # *= force_constant*arm_length
+          -1  ,  -1  ,   1   ,    1  , # *= torque_constant*force_constant
+           1  ,   1  ,   1   ,    1  , # *= force_constant
+      ]
+
+    rpm:
+      min: 0 # [revolutions/minute]
+      max: 7448 # [revolutions/minute] ⚠️ simulation value
+
+mrs_uav_managers:
+
+  constraint_manager:
+
+    default_constraints:
+      gps_garmin: "medium"
+      gps_baro: "medium"
+      rtk: "medium"
+      aloam: "slow"
+      hector_garmin: "slow"
+      vio: "slow"
+      optflow: "slow"
+      other: "slow"
+      ground_truth: "medium"
