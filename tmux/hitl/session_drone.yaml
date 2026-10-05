@@ -34,7 +34,7 @@ windows:
         - waitForHwApi; ros2 launch mrs_uav_core core.launch.py
           platform_config:=$PLATFORM_CONFIG
           world_config:=../position_control/config/world_config.yaml
-          custom_config:=../position_control/config/custom_config.yaml
+          custom_config:=./config/custom_config.yaml
           network_config:=../position_control/config/network_config.yaml
   - status:
       layout: tiled
@@ -45,6 +45,13 @@ windows:
       panes:
         - ros2 launch mrs_uav_autostart automatic_start.launch.py custom_config:=./config/automatic_start.yaml
         - waitForCore; sleep 10; ../position_control/takeoff.sh
+  - controllers:
+      layout: tiled
+      panes:
+        # prepared in the history, press arrow-up + enter; switch in this order and back to MpcController to bail out
+        - history -s "ros2 service call /$UAV_NAME/control_manager/switch_controller mrs_msgs/srv/String \"{value: 'MpcController'}\""
+        - history -s "ros2 service call /$UAV_NAME/control_manager/switch_controller mrs_msgs/srv/String \"{value: 'ActuatorsController'}\""
+        - history -s "ros2 service call /$UAV_NAME/control_manager/switch_controller mrs_msgs/srv/String \"{value: 'RLGoto'}\""
   - load:
       layout: tiled
       panes:

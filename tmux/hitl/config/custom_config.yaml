@@ -1,0 +1,140 @@
+# HITL / deployment copy of ../position_control/config/custom_config.yaml, differs in uav_manager/takeoff/after_takeoff
+
+# GET ALL PARAMETERS USABLE FOR CUSTOM CONFIG BY RUNNING:
+## --------------------------------------------------------------
+## |          rosrun mrs_uav_core get_public_params.py          #
+## --------------------------------------------------------------
+
+mrs_uav_managers:
+
+  estimation_manager:
+
+    # loaded state estimator plugins
+    state_estimators: [
+      "gps_baro",
+      "ground_truth",
+      "passthrough",
+    ]
+
+    # passthrough needs >= 225 Hz hw_api/odometry for actuator output: PX4 EKF2_PREDICT_US 4000,
+    # LOCAL_POSITION_NED + ODOMETRY streams at 250 Hz and a 4 ms world step (alien_gazebo_resources).
+    # Do not use ground_truth with RLGoto: it only updates every 12 ms (~83 Hz) and is republished
+    # stale at 250 Hz, which the policy (trained on fresh 100 Hz states) cannot handle.
+    initial_state_estimator: "passthrough" # will be used as the first state estimator
+    agl_height_estimator: "" # only slightly filtered height for checking min height (not used in control feedback)
+
+  control_manager:
+
+    safety:
+      tilt_limit:
+        eland:
+          enabled: false
+        disarm:
+          enabled: false
+      tilt_error_disarm:
+        enabled: false
+      yaw_error_eland:
+        enabled: false
+
+    ActuatorsController:
+      address: "srt_controller::ActuatorsController"
+      namespace: "actuators_controller"
+      eland_threshold: 0.0 # [m]
+      failsafe_threshold: 0.0 # [m]
+      odometry_innovation_threshold: 0.0 # [m]
+      human_switchable: true
+
+      outputs:
+        actuators:             true
+        control_group:         false
+        attitude_rate:         false
+        attitude:              false
+        acceleration_hdg_rate: false
+        acceleration_hdg:      false
+        velocity_hdg_rate:     false
+        velocity_hdg:          false
+        position:              false
+
+    VelocityController:
+      address: "lvhr_controller::VelocityController"
+      namespace: "velocity_controller"
+      eland_threshold: 0.0 # [m]
+      failsafe_threshold: 0.0 # [m]
+      odometry_innovation_threshold: 0.0 # [m]
+      human_switchable: true
+
+      # HwApiAttitudeRateCmd (collective thrust + body rates)
+      outputs:
+        actuators:             false
+        control_group:         false
+        attitude_rate:         true
+        attitude:              false
+        acceleration_hdg_rate: false
+        acceleration_hdg:      false
+        velocity_hdg_rate:     false
+        velocity_hdg:          false
+        position:              false
+
+    RLGoto:
+      address: "rl_goto_controller::RLGoto"
+      namespace: "rl_goto"
+      eland_threshold: 0.0
+      failsafe_threshold: 0.0
+      odometry_innovation_threshold: 0.0
+      human_switchable: true
+      outputs:
+        actuators:             true
+        control_group:         false
+        attitude_rate:         false
+        attitude:              false
+        acceleration_hdg_rate: false
+        acceleration_hdg:      false
+        velocity_hdg_rate:     false
+        velocity_hdg:          false
+        position:              false
+
+    TestController:
+      address: "test_controller::TestController"
+      namespace: "test_controller"
+      eland_threshold: 0.0
+      failsafe_threshold: 0.0
+      odometry_innovation_threshold: 0.0
+      human_switchable: true
+      outputs:
+        actuators:             true
+        control_group:         false
+        attitude_rate:         false
+        attitude:              false
+        acceleration_hdg_rate: false
+        acceleration_hdg:      false
+        velocity_hdg_rate:     false
+        velocity_hdg:          false
+        position:              false
+
+
+    controllers : [
+      "ActuatorsController",
+      # "VelocityController",
+      # "TestController",
+      "RLGoto"
+    ]
+
+  uav_manager:
+
+    max_throttle:
+      enabled: false
+
+    takeoff:
+
+      # gate height of the fig8 track
+      takeoff_height: 4.0
+
+      during_takeoff:
+        controller: "MpcController"
+        tracker: "LandoffTracker"
+
+      # safe hover after takeoff; then switch manually (controllers window of session_drone.yaml):
+      # MpcController -> ActuatorsController (checks the actuator path) -> RLGoto
+      after_takeoff:
+        controller: "MpcController"
+        tracker: "MpcTracker"

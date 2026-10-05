@@ -39,6 +39,11 @@ public:
     next_policy_time_.reset();
     goal_.reset();
     history_.clear();
+    {
+      // drop goals received while inactive, the UAV must hold its position until a new goal arrives
+      std::scoped_lock lock(mutex_goal_msg_);
+      goal_msg_.reset();
+    }
     is_active_ = true;
     return true;
   }

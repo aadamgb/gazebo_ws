@@ -32,7 +32,9 @@ windows:
   - random_goto:
       layout: tiled
       panes:
-        - waitForCore; ../position_control/random_goto.py
+        # not started automatically: RLGoto flies to the goals as soon as it is active,
+        # start it (arrow-up + enter) only once RLGoto hovers fine; random_goto.py keeps the goals inside the box
+        - print -s "../position_control/random_goto.py"
   - rviz:
       layout: tiled
       panes:
