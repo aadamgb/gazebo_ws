@@ -1,0 +1,8 @@
+# for the newer mrs_uav_autostart on the drone (uav1), which renamed the parameters under 'mrs_uav_autostart/';
+# the laptop's older version still reads ../position_control/config/automatic_start.yaml (safety_timeout)
+mrs_uav_autostart:
+
+  # A timeout between the takeoff being triggered and the UAV actually taking off
+  # while the timeout is counting down, the takeoff can be aborted by switching off
+  # the offboard mode.
+  takeoff_countdown: 1.0 # [s]
