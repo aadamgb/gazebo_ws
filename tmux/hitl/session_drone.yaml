@@ -1,0 +1,51 @@
+# HITL split, DRONE side: px4_api + MRS core with the RLGoto / Actuators controllers
+# expects the workspace at ~/ws_adam with tmux/ next to src/; Gazebo runs on the laptop (session_laptop.yaml)
+# do not modify these
+root: ./
+name: hitl
+socket_name: mrs
+attach: false
+tmux_options: -f /etc/ctu-mrs/tmux.conf
+# you can modify these
+pre_window:
+  # drop the overlays from the drone's ~/.bashrc (e.g. ws_tomas) and use only jazzy + ws_adam
+  - unset AMENT_PREFIX_PATH CMAKE_PREFIX_PATH COLCON_PREFIX_PATH LD_LIBRARY_PATH PYTHONPATH
+  - source /opt/ros/jazzy/setup.bash && source ~/ws_adam/install/setup.bash
+  # the simulated drone is uav1, the drone's own UAV_NAME=uav5 is not used
+  - export UAV_NAME=uav1
+  - export RUN_TYPE=simulation
+  - export UAV_TYPE=x500
+  - export PLATFORM_CONFIG=~/ws_adam/platform/$UAV_TYPE.yaml
+  - export USE_SIM_TIME="true"
+  # must match session_laptop.yaml; DDS only on the ethernet link to the laptop
+  - export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+  - export ROS_DOMAIN_ID=42
+  - export CYCLONEDDS_URI='<CycloneDDS><Domain><General><Interfaces><NetworkInterface name="eth0"/></Interfaces></General></Domain></CycloneDDS>'
+startup_window: core
+windows:
+  - px4_api:
+      layout: tiled
+      panes:
+        # RUN_TYPE=simulation -> no mavros here, it runs on the laptop next to PX4 SITL
+        - waitForGazebo; ros2 launch mrs_uav_px4_api api.launch.py
+  - core:
+      layout: tiled
+      panes:
+        - waitForHwApi; ros2 launch mrs_uav_core core.launch.py
+          platform_config:=$PLATFORM_CONFIG
+          world_config:=../position_control/config/world_config.yaml
+          custom_config:=../position_control/config/custom_config.yaml
+          network_config:=../position_control/config/network_config.yaml
+  - status:
+      layout: tiled
+      panes:
+        - ros2 run mrs_uav_status status.sh
+  - autostart:
+      layout: tiled
+      panes:
+        - ros2 launch mrs_uav_autostart automatic_start.launch.py custom_config:=../position_control/config/automatic_start.yaml
+        - waitForCore; sleep 10; ../position_control/takeoff.sh
+  - load:
+      layout: tiled
+      panes:
+        - top -d 1

@@ -13,6 +13,7 @@
 
 #include <algorithm>
 #include <array>
+#include <cmath>
 #include <deque>
 #include <mutex>
 #include <optional>
@@ -21,8 +22,10 @@
 namespace rl_goto_controller
 {
 
-constexpr int OBS_SIZE = 17;
-constexpr int ACT_SIZE = 4;
+constexpr int OBS_SIZE    = 17;
+constexpr int ACT_SIZE    = 4;
+constexpr int PARAMS_SIZE = 17;  // drone parameters of the adapt_goto encoder policies
+constexpr int PARAMS_REF  = 12;  // reference values of their log ratios, stored in the policy file
 
 class RLGoto : public mrs_uav_managers::Controller {
 
@@ -78,6 +81,7 @@ private:
   };
 
   bool            loadPolicy(const std::string &path);
+  bool            loadDroneParams(mrs_lib::ParamLoader &param_loader);
   Eigen::VectorXf buildObservation(const mrs_msgs::msg::UavState &uav_state);
   Eigen::VectorXf runPolicy(Eigen::VectorXf x) const;
 
@@ -92,6 +96,13 @@ private:
   bool                        hover_center_throttle_ = true;
   float                       hover_cmd_             = 0.0f;
   float                       action_scale_          = 1.0f;
+
+  // adapt_goto encoder policies: the drone parameters are encoded into a latent appended to the observation
+  bool               adapt_encoder_ = false;
+  std::vector<Layer> encoder_layers_;
+  bool               latent_tanh_ = false;
+  Eigen::VectorXf    params_ref_;
+  Eigen::VectorXf    params_;
 
   rclcpp::Duration            policy_period_{0, 0};
   std::optional<rclcpp::Time> next_policy_time_;
@@ -125,6 +136,7 @@ bool RLGoto::initialize(const rclcpp::Node::SharedPtr &node, std::shared_ptr<mrs
   private_handlers->param_loader->loadParam("hover_center_throttle", hover_center_throttle_);
   private_handlers->param_loader->loadParam("hover_cmd", hover_cmd);
   private_handlers->param_loader->loadParam("action_scale", action_scale);
+  private_handlers->param_loader->loadParam("adapt_encoder", adapt_encoder_);
 
   if (!private_handlers->param_loader->loadedSuccessfully()) {
     RCLCPP_ERROR(node_->get_logger(), "could not load all parameters!");
@@ -136,6 +148,10 @@ bool RLGoto::initialize(const rclcpp::Node::SharedPtr &node, std::shared_ptr<mrs
   action_scale_  = static_cast<float>(action_scale);
 
   if (!loadPolicy(policy_path)) {
+    return false;
+  }
+
+  if (adapt_encoder_ && !loadDroneParams(*private_handlers->param_loader)) {
     return false;
   }
 
@@ -159,12 +175,18 @@ bool RLGoto::loadPolicy(const std::string &path) {
   try {
     torch::jit::Module policy = torch::jit::load(path, torch::kCPU);
     for (const auto &p : policy.named_parameters()) {
-      const torch::Tensor t = p.value.detach().contiguous();
+      const torch::Tensor t      = p.value.detach().contiguous();
+      std::vector<Layer> &layers = p.name.rfind("encoder.", 0) == 0 ? encoder_layers_ : layers_;
       if (p.name.find("weight") != std::string::npos) {
-        layers_.push_back({Eigen::Map<const Eigen::Matrix<float, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor>>(t.data_ptr<float>(), t.size(0), t.size(1)), {}});
+        layers.push_back({Eigen::Map<const Eigen::Matrix<float, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor>>(t.data_ptr<float>(), t.size(0), t.size(1)), {}});
       } else if (p.name.find("bias") != std::string::npos) {
-        layers_.back().b = Eigen::Map<const Eigen::VectorXf>(t.data_ptr<float>(), t.size(0));
+        layers.back().b = Eigen::Map<const Eigen::VectorXf>(t.data_ptr<float>(), t.size(0));
       }
+    }
+    if (!encoder_layers_.empty()) {
+      latent_tanh_            = policy.attr("latent_tanh").toBool();
+      const torch::Tensor ref = policy.attr("params_ref").toTensor().contiguous();
+      params_ref_             = Eigen::Map<const Eigen::VectorXf>(ref.data_ptr<float>(), ref.numel());
     }
   }
   catch (const c10::Error &e) {
@@ -172,8 +194,21 @@ bool RLGoto::loadPolicy(const std::string &path) {
     return false;
   }
 
-  if (layers_.empty() || layers_.front().W.cols() != OBS_SIZE * obs_history_) {
+  if (adapt_encoder_ != !encoder_layers_.empty()) {
+    RCLCPP_ERROR(node_->get_logger(), "policy '%s' %s an encoder but adapt_encoder is %s", path.c_str(), encoder_layers_.empty() ? "has no" : "has",
+                 adapt_encoder_ ? "true" : "false");
+    return false;
+  }
+
+  const int latent_dim = adapt_encoder_ ? encoder_layers_.back().W.rows() : 0;
+  if (layers_.empty() || layers_.front().W.cols() != OBS_SIZE * obs_history_ + latent_dim) {
     RCLCPP_ERROR(node_->get_logger(), "policy '%s' does not take %d x %d observations, check obs_history", path.c_str(), obs_history_, OBS_SIZE);
+    return false;
+  }
+
+  if (adapt_encoder_ && (encoder_layers_.front().W.cols() != PARAMS_SIZE || params_ref_.size() != PARAMS_REF)) {
+    RCLCPP_ERROR(node_->get_logger(), "policy '%s' does not take the %d drone parameters, or was exported without them (test.py export=true)",
+                 path.c_str(), PARAMS_SIZE);
     return false;
   }
 
@@ -181,13 +216,63 @@ bool RLGoto::loadPolicy(const std::string &path) {
 }
 
 /**
- * @brief evaluates the MLP
+ * @brief loads the parameters of the flown drone and normalizes them as the genesis env (env_adapt_goto.py _update_params)
+ *
+ * @return true on success
+ */
+bool RLGoto::loadDroneParams(mrs_lib::ParamLoader &param_loader) {
+
+  double              mass, arm, kf, max_rpm, action_delay;
+  std::vector<double> inertia, motor_tau, motor_eff;
+  param_loader.loadParam("drone/mass", mass);
+  param_loader.loadParam("drone/inertia", inertia);
+  param_loader.loadParam("drone/arm", arm);
+  param_loader.loadParam("drone/kf", kf);
+  param_loader.loadParam("drone/max_rpm", max_rpm);
+  param_loader.loadParam("drone/motor_tau", motor_tau);
+  param_loader.loadParam("drone/motor_eff", motor_eff);
+  param_loader.loadParam("drone/action_delay", action_delay);
+
+  if (!param_loader.loadedSuccessfully() || inertia.size() != 3 || motor_tau.size() != 2 || motor_eff.size() != ACT_SIZE) {
+    RCLCPP_ERROR(node_->get_logger(), "could not load the drone parameters (inertia: 3 values, motor_tau: 2, motor_eff: 4)");
+    return false;
+  }
+
+  // physical parameters as log ratios to params_ref: mass, inertia (3), arm (4), kf, max_rpm, motor_tau (2)
+  const std::array<double, PARAMS_REF> physical = {mass, inertia[0], inertia[1], inertia[2], arm, arm, arm, arm, kf, max_rpm, motor_tau[0], motor_tau[1]};
+
+  params_.resize(PARAMS_SIZE);
+  for (int i = 0; i < PARAMS_REF; i++) {
+    params_[i] = static_cast<float>(std::log(physical[i] / params_ref_[i]));
+  }
+  for (int i = 0; i < ACT_SIZE; i++) {
+    params_[PARAMS_REF + i] = static_cast<float>((motor_eff[i] - 1.0) * 10.0);
+  }
+  params_[PARAMS_SIZE - 1] = static_cast<float>(action_delay / 0.02);
+
+  return true;
+}
+
+/**
+ * @brief evaluates the MLP, with adapt_encoder first the encoder on the drone parameters, whose latent is appended to x
  *
  * @param x the observation
  *
  * @return the unclipped action, one per motor
  */
 Eigen::VectorXf RLGoto::runPolicy(Eigen::VectorXf x) const {
+
+  if (adapt_encoder_) {
+    Eigen::VectorXf z = params_;
+    for (size_t i = 0; i < encoder_layers_.size(); i++) {
+      z = encoder_layers_[i].W * z + encoder_layers_[i].b;
+      if (i + 1 < encoder_layers_.size() || latent_tanh_) {
+        z = z.array().tanh();
+      }
+    }
+    x.conservativeResize(x.size() + z.size());
+    x.tail(z.size()) = z;
+  }
 
   for (size_t i = 0; i < layers_.size(); i++) {
     x = layers_[i].W * x + layers_[i].b;

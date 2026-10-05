@@ -8,7 +8,7 @@ tmux_options: -f /etc/ctu-mrs/tmux.conf
 pre_window:
   - export UAV_NAME=uav1
   - export RUN_TYPE=simulation
-  - export UAV_TYPE=x500
+  - export UAV_TYPE=robofly
   - export PLATFORM_CONFIG=`ros2 pkg prefix alien_gazebo_resources`/share/alien_gazebo_resources/config/mrs_uav_system/$UAV_TYPE.yaml
   - export GZ_SIM_RESOURCE_PATH=`ros2 pkg prefix alien_gazebo_resources`/share/alien_gazebo_resources/models:$GZ_SIM_RESOURCE_PATH
   - export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
@@ -24,7 +24,7 @@ windows:
           spawner_config:=./config/spawner_config.yaml
           gz_headless:=false gz_verbose:=true       
         - |
-          waitForGazebo; sleep 5; ros2 service call /mrs_drone_spawner/spawn mrs_msgs/srv/String "{value: '1 --${UAV_TYPE}_alien --enable-rangefinder --enable-ground-truth --pos 0 0 0.25 0.0'}"
+          waitForGazebo; sleep 5; ros2 service call /mrs_drone_spawner/spawn mrs_msgs/srv/String "{value: '1 --${UAV_TYPE}_alien --enable-ground-truth --pos 0 0 0.25 0.0'}"
   - px4_api:
       layout: tiled
       panes:

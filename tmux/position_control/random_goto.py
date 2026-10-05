@@ -63,7 +63,7 @@ GZ_SPHERE_SDF = """<?xml version="1.0"?>
 
 X_RANGE = 1.0
 Y_RANGE = 1.0
-Z_RANGE = 1.0
+Z_RANGE = 4.0
 
 class RandomGoto(Node):
 
@@ -81,7 +81,7 @@ class RandomGoto(Node):
         self.y_bounds = (self.declare_parameter("y_min", -Y_RANGE).value, self.declare_parameter("y_max", Y_RANGE).value)
         self.z_bounds = (self.declare_parameter("z_min", Z_RANGE).value, self.declare_parameter("z_max", Z_RANGE).value)
 
-        self.radius = self.declare_parameter("radius", 0.1).value            # [m] goal reached threshold
+        self.radius = self.declare_parameter("radius", 0.2).value            # [m] goal reached threshold
         self.timeout = self.declare_parameter("timeout", 10.0).value         # [s] resample if goal not reached
         self.random_heading = self.declare_parameter("random_heading", False).value
         # position used for the "goal reached" check (simulator ground truth, not the estimator)

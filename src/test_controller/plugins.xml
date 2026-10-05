@@ -1,5 +1,0 @@
-<library path="TestController_TestController">
-  <class name="test_controller::TestController" type="test_controller::TestController" base_class_type="mrs_uav_managers::Controller">
-    <description>Open-loop hover motor commands</description>
-  </class>
-</library>

@@ -3,13 +3,6 @@
 ## |          rosrun mrs_uav_core get_public_params.py          #
 ## --------------------------------------------------------------
 
-# In sim, PX4 maps u in [0,1] to rotor speed with SIM_GZ_EC_MIN=0 and the a300 sdf uses
-# motor_constant 20.21, so per-motor thrust F = 20.21 * u^2  ->  u = sqrt(F) / sqrt(20.21)
-motor_params:
-  n_motors: 4
-  a: 0.2224 # 1 / sqrt(20.21)
-  b: 0.0
-
 mrs_uav_managers:
 
   estimation_manager:
@@ -25,7 +18,7 @@ mrs_uav_managers:
     # LOCAL_POSITION_NED + ODOMETRY streams at 250 Hz and a 4 ms world step (alien_gazebo_resources).
     # Do not use ground_truth with RLGoto: it only updates every 12 ms (~83 Hz) and is republished
     # stale at 250 Hz, which the policy (trained on fresh 100 Hz states) cannot handle.
-    initial_state_estimator: "ground_truth" # will be used as the first state estimator
+    initial_state_estimator: "passthrough" # will be used as the first state estimator
     agl_height_estimator: "" # only slightly filtered height for checking min height (not used in control feedback)
 
   control_manager:
@@ -132,7 +125,7 @@ mrs_uav_managers:
     takeoff:
 
       # gate height of the fig8 track
-      takeoff_height: 1.0
+      takeoff_height: 4.0
 
       during_takeoff:
         controller: "MpcController"
