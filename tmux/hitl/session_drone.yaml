@@ -49,9 +49,12 @@ windows:
       layout: tiled
       panes:
         # prepared in the history, press arrow-up + enter; switch in this order and back to MpcController to bail out
-        - history -s "ros2 service call /$UAV_NAME/control_manager/switch_controller mrs_msgs/srv/String \"{value: 'MpcController'}\""
-        - history -s "ros2 service call /$UAV_NAME/control_manager/switch_controller mrs_msgs/srv/String \"{value: 'ActuatorsController'}\""
-        - history -s "ros2 service call /$UAV_NAME/control_manager/switch_controller mrs_msgs/srv/String \"{value: 'RLGoto'}\""
+        - |
+          history -s "ros2 service call /$UAV_NAME/control_manager/switch_controller mrs_msgs/srv/String \"{value: 'MpcController'}\""
+        - |
+          history -s "ros2 service call /$UAV_NAME/control_manager/switch_controller mrs_msgs/srv/String \"{value: 'ActuatorsController'}\""
+        - |
+          history -s "ros2 service call /$UAV_NAME/control_manager/switch_controller mrs_msgs/srv/String \"{value: 'RLGoto'}\""
   - load:
       layout: tiled
       panes:
