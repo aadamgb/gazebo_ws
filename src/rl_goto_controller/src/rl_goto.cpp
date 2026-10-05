@@ -9,12 +9,13 @@
 
 #include <Eigen/Dense>
 
-#include <torch/script.h>
-
 #include <algorithm>
 #include <array>
 #include <cmath>
+#include <cstdint>
 #include <deque>
+#include <fstream>
+#include <map>
 #include <mutex>
 #include <optional>
 #include <vector>
@@ -147,6 +148,11 @@ bool RLGoto::initialize(const rclcpp::Node::SharedPtr &node, std::shared_ptr<mrs
   hover_cmd_     = static_cast<float>(hover_cmd);
   action_scale_  = static_cast<float>(action_scale);
 
+  // relative paths point into the installed policies/ of this package
+  if (!policy_path.empty() && policy_path.front() != '/') {
+    policy_path = ament_index_cpp::get_package_share_directory("rl_goto_controller") + "/policies/" + policy_path;
+  }
+
   if (!loadPolicy(policy_path)) {
     return false;
   }
@@ -164,34 +170,74 @@ bool RLGoto::initialize(const rclcpp::Node::SharedPtr &node, std::shared_ptr<mrs
 }
 
 /**
- * @brief copies the weights of a TorchScript MLP (Linear -> tanh -> ... -> Linear) into layers_
+ * @brief copies the weights of an MLP (Linear -> tanh -> ... -> Linear) into layers_
  *
- * @param path the scripted policy (.pt)
+ * @param path the policy exported by utils/export_policy.py (.rlp): "RLP1", uint32 tensor count, then per tensor
+ *             uint32 name length, name, uint32 dims, uint32 shape[dims], float32 data (row-major), all little-endian
  *
  * @return true on success
  */
 bool RLGoto::loadPolicy(const std::string &path) {
 
-  try {
-    torch::jit::Module policy = torch::jit::load(path, torch::kCPU);
-    for (const auto &p : policy.named_parameters()) {
-      const torch::Tensor t      = p.value.detach().contiguous();
-      std::vector<Layer> &layers = p.name.rfind("encoder.", 0) == 0 ? encoder_layers_ : layers_;
-      if (p.name.find("weight") != std::string::npos) {
-        layers.push_back({Eigen::Map<const Eigen::Matrix<float, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor>>(t.data_ptr<float>(), t.size(0), t.size(1)), {}});
-      } else if (p.name.find("bias") != std::string::npos) {
-        layers.back().b = Eigen::Map<const Eigen::VectorXf>(t.data_ptr<float>(), t.size(0));
-      }
+  std::ifstream file(path, std::ios::binary);
+
+  const auto read_u32 = [&file]() {
+    uint32_t v = 0;
+    file.read(reinterpret_cast<char *>(&v), sizeof(v));
+    return v;
+  };
+
+  char magic[4] = {};
+  file.read(magic, sizeof(magic));
+  if (!file || std::string(magic, sizeof(magic)) != "RLP1") {
+    RCLCPP_ERROR(node_->get_logger(), "failed to load policy '%s': missing or not an .rlp file (utils/export_policy.py)", path.c_str());
+    return false;
+  }
+
+  std::map<std::string, Eigen::VectorXf> extras;
+
+  const uint32_t n_tensors = read_u32();
+  for (uint32_t i = 0; i < n_tensors && file; i++) {
+
+    std::string name(read_u32(), '\0');
+    file.read(name.data(), name.size());
+
+    std::vector<uint32_t> shape(read_u32());
+    for (auto &s : shape) {
+      s = read_u32();
     }
-    if (!encoder_layers_.empty()) {
-      latent_tanh_            = policy.attr("latent_tanh").toBool();
-      const torch::Tensor ref = policy.attr("params_ref").toTensor().contiguous();
-      params_ref_             = Eigen::Map<const Eigen::VectorXf>(ref.data_ptr<float>(), ref.numel());
+
+    if (!file || shape.empty() || shape.size() > 2) {
+      break;
+    }
+
+    const Eigen::Index rows = shape[0];
+    const Eigen::Index cols = shape.size() == 2 ? shape[1] : 1;
+    Eigen::Matrix<float, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor> t(rows, cols);
+    file.read(reinterpret_cast<char *>(t.data()), t.size() * sizeof(float));
+
+    std::vector<Layer> &layers = name.rfind("encoder.", 0) == 0 ? encoder_layers_ : layers_;
+    if (name.find("weight") != std::string::npos && shape.size() == 2) {
+      layers.push_back({t, {}});
+    } else if (name.find("bias") != std::string::npos && !layers.empty()) {
+      layers.back().b = t.reshaped();
+    } else {
+      extras[name] = t.reshaped();
     }
   }
-  catch (const c10::Error &e) {
-    RCLCPP_ERROR(node_->get_logger(), "failed to load policy '%s': %s", path.c_str(), e.what_without_backtrace());
+
+  if (!file) {
+    RCLCPP_ERROR(node_->get_logger(), "failed to load policy '%s': truncated or corrupted file", path.c_str());
     return false;
+  }
+
+  if (!encoder_layers_.empty()) {
+    if (!extras.count("latent_tanh") || !extras.count("params_ref")) {
+      RCLCPP_ERROR(node_->get_logger(), "policy '%s' has an encoder but no latent_tanh / params_ref", path.c_str());
+      return false;
+    }
+    latent_tanh_ = extras["latent_tanh"](0) != 0.0f;
+    params_ref_  = extras["params_ref"];
   }
 
   if (adapt_encoder_ != !encoder_layers_.empty()) {

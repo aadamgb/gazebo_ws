@@ -19,8 +19,6 @@
   <depend>mrs_msgs</depend>
   <depend>ament_index_cpp</depend>
 
-  <!-- libtorch is not a rosdep key; it is located via the LIBTORCH_DIR cmake variable -->
-
   <export>
     <build_type>ament_cmake</build_type>
   </export>

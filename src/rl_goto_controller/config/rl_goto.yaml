@@ -40,7 +40,8 @@ mrs_uav_controllers:
 
   rl_goto:
     # policy: "/home/adamgb/phd/genesis_ws/logs/robust_goto/SRT_general_R7_all/model_1999_scripted.pt"
-    policy: "/home/adamgb/phd/genesis_ws/logs/robust_goto/SRT_general_R5_rerand_upset/model_1999_scripted.pt"  # This one is safe with a300
+    # .rlp from utils/export_policy.py; a relative path is looked up in the policies/ of this package
+    policy: "SRT_general_R5_rerand_upset.rlp"  # This one is safe with a300
     # policy: "/home/adamgb/phd/genesis_ws/logs/robust_goto/SRT_general_R4_upset/model_1700_scripted.pt"
     # policy: "/home/adamgb/phd/genesis_ws/logs/robust_goto/SRT_general_R3_rerand/model_1600_scripted.pt"
     # policy: "/home/adamgb/phd/genesis_ws/logs/robust_goto/SRT_general_R1_B64k/model_1999_scripted.pt"
