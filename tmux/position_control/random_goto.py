@@ -19,7 +19,10 @@ Run (from a shell with the same env as the tmux panes):
   ./random_goto.py --ros-args -p ground_truth:=true   # simulation only
 
 Safety guard: a ⚠️ warning is printed while the UAV is further than max_distance (4 m)
-from the centre of the goal box, e.g. when the controller overshoots.
+from the centre of the goal box, e.g. when the controller overshoots. If RLGoto is the
+active controller at that moment, the UAV is switched to safety_controller
+(ActuatorsController, which holds the MRS tracker reference) and no more goals are sent;
+restart this script to continue. safety_controller:="" only warns.
 
 The UAV position comes from the MRS estimate (/<uav>/estimation_manager/odom_main), which
 also exists on the real UAV; ground_truth:=true uses the simulator ground truth instead.
@@ -45,8 +48,9 @@ from rclpy.qos import qos_profile_sensor_data
 
 from nav_msgs.msg import Odometry
 from visualization_msgs.msg import Marker
-from mrs_msgs.msg import ReferenceStamped
+from mrs_msgs.msg import ControlManagerDiagnostics, ReferenceStamped
 from mrs_msgs.srv import ReferenceStampedSrv
+from mrs_msgs.srv import String as StringSrv
 
 try:
     from gz.msgs10.boolean_pb2 import Boolean
@@ -108,6 +112,11 @@ class RandomGoto(Node):
         self.random_heading = self.declare_parameter("random_heading", False).value
         # [m] warn when the UAV is further than this from the centre of the goal box (the start position if relative)
         self.max_distance = self.declare_parameter("max_distance", 4.0).value
+        # ... and then switch from RLGoto to this controller ("" = only warn)
+        self.safety_controller = self.declare_parameter("safety_controller", "ActuatorsController").value
+        self.active_controller = None
+        self.safety_triggered = False  # goals stopped
+        self.safety_switch = None      # "pending" while a switch request is in flight
         # position used for the start position and the "goal reached" check: by default the MRS estimate
         # (works on the real UAV), ground_truth:=true uses the simulator ground truth instead
         self.ground_truth = self.declare_parameter("ground_truth", False).value
@@ -150,6 +159,9 @@ class RandomGoto(Node):
         self.client = self.create_client(ReferenceStampedSrv, f"/{self.uav_name}/control_manager/reference")
         self.goal_pub = self.create_publisher(ReferenceStamped, f"/{self.uav_name}/control_manager/rl_goto/goal", 10)
         self.marker_pub = self.create_publisher(Marker, f"/{self.uav_name}/random_goto/goal_marker", 1)
+        self.create_subscription(
+            ControlManagerDiagnostics, f"/{self.uav_name}/control_manager/diagnostics", self.diagnostics_cb, 10)
+        self.switch_client = self.create_client(StringSrv, f"/{self.uav_name}/control_manager/switch_controller")
         # republish so RViz picks up the marker even if it starts after this node,
         # and retry the Gazebo sphere if the goal could not be transformed yet
         self.create_timer(1.0, self.refresh_markers)
@@ -201,6 +213,9 @@ class RandomGoto(Node):
         p, e = msg.pose.pose.position, self.est_samples[j][1]
         self.gz_offsets.append((p.x - e[0], p.y - e[1], p.z - e[2]))
 
+    def diagnostics_cb(self, msg):
+        self.active_controller = msg.active_controller
+
     def check_distance(self):
         # safety guard: the goals stay inside the box, so being far from it means the UAV is overshooting
         if self.relative:
@@ -213,12 +228,40 @@ class RandomGoto(Node):
             self.get_logger().warn(
                 f"⚠️  UAV is {dist:.2f} m from the centre of the goal box [{center[0]:.2f}, {center[1]:.2f}, {center[2]:.2f}] "
                 f"(limit {self.max_distance:.1f} m), pos [{p.x:.2f}, {p.y:.2f}, {p.z:.2f}]", throttle_duration_sec=0.5)
+            if self.safety_controller and self.active_controller == "RLGoto":
+                self.trigger_safety()
+
+    def trigger_safety(self):
+        # stop the goals for good and switch away from RLGoto, retried until the control manager accepts it
+        if not self.safety_triggered:
+            self.safety_triggered = True
+            self.get_logger().error(f"⚠️  RLGoto too far from the goal box: switching to {self.safety_controller}, no more goals")
+        if self.safety_switch == "pending":
+            return
+        if not self.switch_client.service_is_ready():
+            self.get_logger().error("⚠️  control_manager/switch_controller not available", throttle_duration_sec=1.0)
+            return
+        self.safety_switch = "pending"
+        self.switch_client.call_async(StringSrv.Request(value=self.safety_controller)).add_done_callback(self.safety_switch_cb)
+
+    def safety_switch_cb(self, future):
+        res = future.result()
+        if res is not None and res.success:
+            self.safety_switch = "done"
+            self.get_logger().warn(f"⚠️  switched to {self.safety_controller}: {res.message}")
+        else:
+            self.safety_switch = None  # retried on the next check while RLGoto is still active
+            self.get_logger().error(f"⚠️  switching to {self.safety_controller} failed: {res.message if res else 'no response'}")
 
     def loop(self):
         if self.odom is None:
             self.get_logger().info(f"waiting for {self.odom_topic}", throttle_duration_sec=5.0)
             return
         self.check_distance()
+        if self.safety_triggered:
+            self.get_logger().warn("⚠️  goals stopped by the safety guard, restart random_goto.py to continue",
+                                   throttle_duration_sec=5.0)
+            return
         if self.pending:
             return
         if self.direct and self.goal is not None:
