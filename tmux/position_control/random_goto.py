@@ -18,6 +18,9 @@ Run (from a shell with the same env as the tmux panes):
   ./random_goto.py --ros-args -p relative:=false -p z_min:=4.0 -p z_max:=4.0
   ./random_goto.py --ros-args -p ground_truth:=true   # simulation only
 
+Safety guard: a ⚠️ warning is printed while the UAV is further than max_distance (4 m)
+from the centre of the goal box, e.g. when the controller overshoots.
+
 The UAV position comes from the MRS estimate (/<uav>/estimation_manager/odom_main), which
 also exists on the real UAV; ground_truth:=true uses the simulator ground truth instead.
 
@@ -103,6 +106,8 @@ class RandomGoto(Node):
         self.radius = self.declare_parameter("radius", 0.2).value            # [m] goal reached threshold
         self.timeout = self.declare_parameter("timeout", 10.0).value         # [s] resample if goal not reached
         self.random_heading = self.declare_parameter("random_heading", False).value
+        # [m] warn when the UAV is further than this from the centre of the goal box (the start position if relative)
+        self.max_distance = self.declare_parameter("max_distance", 4.0).value
         # position used for the start position and the "goal reached" check: by default the MRS estimate
         # (works on the real UAV), ground_truth:=true uses the simulator ground truth instead
         self.ground_truth = self.declare_parameter("ground_truth", False).value
@@ -196,10 +201,24 @@ class RandomGoto(Node):
         p, e = msg.pose.pose.position, self.est_samples[j][1]
         self.gz_offsets.append((p.x - e[0], p.y - e[1], p.z - e[2]))
 
+    def check_distance(self):
+        # safety guard: the goals stay inside the box, so being far from it means the UAV is overshooting
+        if self.relative:
+            center = self.center
+        else:
+            center = tuple(0.5 * (b[0] + b[1]) for b in (self.x_bounds, self.y_bounds, self.z_bounds))
+        p = self.odom.pose.pose.position
+        dist = math.dist((p.x, p.y, p.z), center)
+        if dist > self.max_distance:
+            self.get_logger().warn(
+                f"⚠️  UAV is {dist:.2f} m from the centre of the goal box [{center[0]:.2f}, {center[1]:.2f}, {center[2]:.2f}] "
+                f"(limit {self.max_distance:.1f} m), pos [{p.x:.2f}, {p.y:.2f}, {p.z:.2f}]", throttle_duration_sec=0.5)
+
     def loop(self):
         if self.odom is None:
             self.get_logger().info(f"waiting for {self.odom_topic}", throttle_duration_sec=5.0)
             return
+        self.check_distance()
         if self.pending:
             return
         if self.direct and self.goal is not None:
