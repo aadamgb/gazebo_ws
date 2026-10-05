@@ -6,10 +6,16 @@ Goals go straight to RLGoto (/<uav>/control_manager/rl_goto/goal), bypassing the
 MRS tracker like the genesis env; `-p direct:=false` sends them through the tracker.
 A fixed `seed` makes the goal sequence reproducible.
 
+By default (relative:=true) the box is centred on the position of the UAV when this
+script starts: a 1 x 1 m square in the plane of the UAV, so the goals stay close to
+wherever the UAV hovers when RLGoto is switched on. The x/y/z bounds are then offsets
+from that position; with relative:=false they are absolute positions as before.
+
 Run (from a shell with the same env as the tmux panes):
   ./random_goto.py
   ./random_goto.py --ros-args -p seed:=0
-  ./random_goto.py --ros-args -p radius:=0.5 -p x_min:=-5.0 -p x_max:=5.0
+  ./random_goto.py --ros-args -p radius:=0.5 -p x_min:=-1.0 -p x_max:=1.0
+  ./random_goto.py --ros-args -p relative:=false -p z_min:=4.0 -p z_max:=4.0
 
 The goal and threshold radius are shown as a green sphere (visual only, no
 collisions) in RViz (/<uav>/random_goto/goal_marker) and in Gazebo.
@@ -61,9 +67,10 @@ GZ_SPHERE_SDF = """<?xml version="1.0"?>
   </model>
 </sdf>"""
 
-X_RANGE = 1.0
-Y_RANGE = 1.0
-Z_RANGE = 4.0
+# default box, offsets from the starting position of the UAV: 1 x 1 m square in its plane
+X_RANGE = 0.5
+Y_RANGE = 0.5
+Z_RANGE = 0.0
 
 class RandomGoto(Node):
 
@@ -76,10 +83,14 @@ class RandomGoto(Node):
 
         self.uav_name = self.declare_parameter("uav_name", "uav1").value
 
-        # sampling bounds [m], must lie inside the safety area in world_config.yaml
+        # relative: the bounds are offsets from the UAV position when this node starts (taken from the first odometry)
+        self.relative = self.declare_parameter("relative", True).value
+        self.center = None
+
+        # sampling bounds [m], the goals must lie inside the safety area in world_config.yaml
         self.x_bounds = (self.declare_parameter("x_min", -X_RANGE).value, self.declare_parameter("x_max", X_RANGE).value)
         self.y_bounds = (self.declare_parameter("y_min", -Y_RANGE).value, self.declare_parameter("y_max", Y_RANGE).value)
-        self.z_bounds = (self.declare_parameter("z_min", Z_RANGE).value, self.declare_parameter("z_max", Z_RANGE).value)
+        self.z_bounds = (self.declare_parameter("z_min", -Z_RANGE).value, self.declare_parameter("z_max", Z_RANGE).value)
 
         self.radius = self.declare_parameter("radius", 0.2).value            # [m] goal reached threshold
         self.timeout = self.declare_parameter("timeout", 10.0).value         # [s] resample if goal not reached
@@ -128,12 +139,17 @@ class RandomGoto(Node):
 
         self.create_timer(0.1, self.loop)
         self.get_logger().info(
-            f"bounds x{self.x_bounds} y{self.y_bounds} z{self.z_bounds}, radius {self.radius} m, "
+            f"{'offsets from the start position' if self.relative else 'bounds'} "
+            f"x{self.x_bounds} y{self.y_bounds} z{self.z_bounds}, radius {self.radius} m, "
             f"position from {self.odom_topic}, goals {'direct to RLGoto' if self.direct else 'via the MRS tracker'}")
 
     def odom_cb(self, msg):
         if self.odom is None:
             self.get_logger().info(f"receiving {self.odom_topic} in frame '{msg.header.frame_id}'")
+            if self.relative:
+                p = msg.pose.pose.position
+                self.center = (p.x, p.y, p.z)
+                self.get_logger().info(f"goals around the start position [{p.x:.2f}, {p.y:.2f}, {p.z:.2f}]")
         self.odom = msg
 
     def loop(self):
@@ -169,6 +185,8 @@ class RandomGoto(Node):
 
     def send_new_goal(self):
         goal = tuple(random.uniform(*b) for b in (self.x_bounds, self.y_bounds, self.z_bounds))
+        if self.relative:
+            goal = tuple(c + g for c, g in zip(self.center, goal))
         p = self.odom.pose.pose.position
         # heading of the current odometry would need a quaternion->yaw conversion; 0 keeps it simple
         heading = random.uniform(-math.pi, math.pi) if self.random_heading else 0.0
