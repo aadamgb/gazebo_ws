@@ -1,6 +1,7 @@
-# random_goto.py settings of the flights, used by both the HITL session (hitl/session_laptop.yaml) and the real flight
-# (realworld/tmux.sh), so that Gazebo and the real UAV fly the same goal sequence:
-#   ./random_goto.py --ros-args --params-file ../position_control/config/random_goto.yaml -p uav_name:=$UAV_NAME
+# random_goto.py settings of the flights, used by both the HITL session (tmux/hitl/session_laptop.yaml) and the real
+# flight (tmux/realworld/tmux.sh), so that Gazebo and the real UAV fly the same goal sequence:
+#   ros2 run rl_goto_controller random_goto.py --ros-args \
+#     --params-file `ros2 pkg prefix --share rl_goto_controller`/config/random_goto.yaml -p uav_name:=$UAV_NAME
 # The goals are offsets from where the UAV hovers when the script starts; with the same seed the n-th goal has the
 # same offset in both runs (logged as "goal #n ... offset [...]").
 random_goto:

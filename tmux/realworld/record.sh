@@ -40,7 +40,7 @@ ws="$HOME/adam_ws"
 cp -rL ./config "$run_info/session_config"
 # the HITL session passes its platform config through PLATFORM_CONFIG instead of ./config
 [ -n "$PLATFORM_CONFIG" ] && cp -L "$PLATFORM_CONFIG" "$run_info/" 2>/dev/null
-cp -L ../position_control/config/random_goto.yaml "$run_info/" 2>/dev/null
+cp -L "$ws/src/rl_goto_controller/config/random_goto.yaml" "$run_info/" 2>/dev/null
 cp -L "$ws/src/rl_goto_controller/config/rl_goto.yaml" "$run_info/" 2>/dev/null
 cp -L "$ws/deployed_version.txt" "$run_info/" 2>/dev/null
 md5sum "$ws"/src/rl_goto_controller/policies/*.rlp > "$run_info/policies.md5" 2>/dev/null

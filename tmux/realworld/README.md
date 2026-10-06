@@ -54,7 +54,7 @@ ssh uavN
 1. Safety pilot: arm + offboard on the RC, `AutoStart` takes off into MpcController (2.5 m).
 2. `Actuators` window: <enter>, hover. `Mpc` window: <enter> to go back at any time.
 3. `RLGoto` window: <enter>, it holds the position where it was switched on.
-4. `RandomGoto` window: <enter>, goals from `position_control/config/random_goto.yaml` (seed 0, 2 x 2 m square around that position,
+4. `RandomGoto` window: <enter>, goals from `rl_goto_controller/config/random_goto.yaml` (seed 0, 2 x 2 m square around that position,
    the same sequence as in HITL);
    beyond 3 m it switches to ActuatorsController and stops the goals.
 5. Beyond 3.5 m position error, large tilt or tilt error, MRS hands control to the RC (`rc_emergency_handoff`).

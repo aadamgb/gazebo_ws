@@ -7,19 +7,21 @@ MRS tracker like the genesis env; `-p direct:=false` sends them through the trac
 A fixed `seed` makes the goal sequence reproducible.
 
 By default (relative:=true) the box is centred on the position of the UAV when this
-script starts: a 1 x 1 m square in the plane of the UAV, so the goals stay close to
+script starts: by default a 2 x 2 m square in the plane of the UAV, so the goals stay close to
 wherever the UAV hovers when RLGoto is switched on. The x/y/z bounds are then offsets
 from that position; with relative:=false they are absolute positions as before.
 
 Run (from a shell with the same env as the tmux panes):
-  ./random_goto.py
-  ./random_goto.py --ros-args -p seed:=0
-  ./random_goto.py --ros-args --params-file config/random_goto.yaml   # the flight settings (HITL and real)
-  ./random_goto.py --ros-args -p radius:=0.5 -p x_min:=-1.0 -p x_max:=1.0
-  ./random_goto.py --ros-args -p relative:=false -p z_min:=4.0 -p z_max:=4.0
-  ./random_goto.py --ros-args -p ground_truth:=true   # simulation only
+  ros2 run rl_goto_controller random_goto.py
+  ros2 run rl_goto_controller random_goto.py --ros-args -p seed:=0
+  ros2 run rl_goto_controller random_goto.py --ros-args -p radius:=0.5 -p x_min:=-1.0 -p x_max:=1.0
+  ros2 run rl_goto_controller random_goto.py --ros-args -p relative:=false -p z_min:=4.0 -p z_max:=4.0
+  ros2 run rl_goto_controller random_goto.py --ros-args -p ground_truth:=true   # simulation only
+The flight settings (HITL and real flight, same seed) are in config/random_goto.yaml of this package:
+  ros2 run rl_goto_controller random_goto.py --ros-args \
+    --params-file `ros2 pkg prefix --share rl_goto_controller`/config/random_goto.yaml -p uav_name:=$UAV_NAME
 
-Safety guard: a ⚠️ warning is printed while the UAV is further than max_distance (4 m)
+Safety guard: a ⚠️ warning is printed while the UAV is further than max_distance (default 4 m)
 from the centre of the goal box, e.g. when the controller overshoots. If RLGoto is the
 active controller at that moment, the UAV is switched to safety_controller
 (ActuatorsController, which holds the MRS tracker reference) and no more goals are sent;

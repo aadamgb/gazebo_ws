@@ -41,4 +41,7 @@ install(TARGETS RlGotoController_RLGoto
 
 install(DIRECTORY config policies DESTINATION share/${PROJECT_NAME})
 
+# goal generator for the flights: ros2 run rl_goto_controller random_goto.py
+install(PROGRAMS scripts/random_goto.py DESTINATION lib/${PROJECT_NAME})
+
 ament_package()

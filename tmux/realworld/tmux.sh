@@ -74,9 +74,9 @@ input=(
   'Mpc' 'ros2 service call /$UAV_NAME/control_manager/switch_controller mrs_msgs/srv/String "{value: MpcController}"'
   'Actuators' 'ros2 service call /$UAV_NAME/control_manager/switch_controller mrs_msgs/srv/String "{value: ActuatorsController}"'
   'RLGoto' 'ros2 service call /$UAV_NAME/control_manager/switch_controller mrs_msgs/srv/String "{value: RLGoto}"'
-  # same settings and seed as in HITL (position_control/config/random_goto.yaml): 2 x 2 m box around where
+  # same settings and seed as in HITL (rl_goto_controller config/random_goto.yaml): 2 x 2 m box around where
   # RLGoto hovers, beyond 3 m it switches to ActuatorsController and stops the goals
-  'RandomGoto' '../position_control/random_goto.py --ros-args --params-file ../position_control/config/random_goto.yaml -p uav_name:=$UAV_NAME'
+  'RandomGoto' 'ros2 run rl_goto_controller random_goto.py --ros-args --params-file `ros2 pkg prefix --share rl_goto_controller`/config/random_goto.yaml -p uav_name:=$UAV_NAME'
   'EstimDiag' 'waitForCore; ros2 topic echo /'"$UAV_NAME"'/estimation_manager/diagnostics --flow-style
 '
   'kernel_log' 'tail -f /var/log/kern.log -n 100

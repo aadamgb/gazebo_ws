@@ -44,7 +44,7 @@ windows:
   - random_goto:
       layout: tiled
       panes:
-        - waitForCore; ./random_goto.py
+        - waitForCore; ros2 run rl_goto_controller random_goto.py
   - autostart:
       layout: tiled
       panes:
