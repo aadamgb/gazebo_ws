@@ -44,7 +44,8 @@ windows:
   - random_goto:
       layout: tiled
       panes:
-        - waitForCore; ros2 run rl_goto_controller random_goto.py
+        # absolute 2 x 2 m square at z = 4 m, position from the simulator ground truth
+        - waitForCore; ros2 run rl_goto_controller random_goto.py --ros-args -p relative:=false -p ground_truth:=true -p x_min:=-1.0 -p x_max:=1.0 -p y_min:=-1.0 -p y_max:=1.0 -p z_min:=4.0 -p z_max:=4.0
   - autostart:
       layout: tiled
       panes:
