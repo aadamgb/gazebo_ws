@@ -34,7 +34,8 @@ windows:
       panes:
         # not started automatically: RLGoto flies to the goals as soon as it is active,
         # start it (arrow-up + enter) only once RLGoto hovers fine; random_goto.py keeps the goals inside the box
-        - print -s "../position_control/random_goto.py"
+        # same settings and seed as the real flight (rl_goto_controller config/random_goto.yaml)
+        - print -s "ros2 run rl_goto_controller random_goto.py --ros-args --params-file \`ros2 pkg prefix --share rl_goto_controller\`/config/random_goto.yaml -p uav_name:=\$UAV_NAME"
   - rviz:
       layout: tiled
       panes:

@@ -114,8 +114,6 @@ mrs_uav_managers:
 
     controllers : [
       "ActuatorsController",
-      # "VelocityController",
-      # "TestController",
       "RLGoto"
     ]
 
@@ -126,15 +124,12 @@ mrs_uav_managers:
 
     takeoff:
 
-      # gate height of the fig8 track
       takeoff_height: 4.0
 
       during_takeoff:
         controller: "MpcController"
         tracker: "LandoffTracker"
 
-      # safe hover after takeoff; then switch manually (controllers window of session_drone.yaml):
-      # MpcController -> ActuatorsController (checks the actuator path) -> RLGoto
       after_takeoff:
         controller: "MpcController"
         tracker: "MpcTracker"

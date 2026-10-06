@@ -88,7 +88,7 @@ GZ_SPHERE_SDF = """<?xml version="1.0"?>
 # default box, offsets from the starting position of the UAV: 1 x 1 m square in its plane
 X_RANGE = 1.0
 Y_RANGE = 1.0
-Z_RANGE = 0.0
+Z_RANGE = 4.0
 
 class RandomGoto(Node):
 
@@ -108,7 +108,7 @@ class RandomGoto(Node):
         # sampling bounds [m], the goals must lie inside the safety area in world_config.yaml
         self.x_bounds = (self.declare_parameter("x_min", -X_RANGE).value, self.declare_parameter("x_max", X_RANGE).value)
         self.y_bounds = (self.declare_parameter("y_min", -Y_RANGE).value, self.declare_parameter("y_max", Y_RANGE).value)
-        self.z_bounds = (self.declare_parameter("z_min", -Z_RANGE).value, self.declare_parameter("z_max", Z_RANGE).value)
+        self.z_bounds = (self.declare_parameter("z_min", Z_RANGE).value, self.declare_parameter("z_max", Z_RANGE).value)
 
         self.radius = self.declare_parameter("radius", 0.2).value            # [m] goal reached threshold
         self.timeout = self.declare_parameter("timeout", 10.0).value         # [s] resample if goal not reached

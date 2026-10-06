@@ -1,3 +1,0 @@
-mrs_drone_spawner:
-  ros__parameters:
-    extra_resource_paths: ["alien_gazebo_resources"]

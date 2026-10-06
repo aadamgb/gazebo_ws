@@ -59,16 +59,16 @@ mrs_uav_controllers:
     #========================
     #     robofly
     #========================
-    drone:
-      mass: 0.82                            # [kg]
-      inertia: [0.00837, 0.00837, 0.01638]  # [kg m^2] Jxx, Jyy, Jzz
-      arm: 0.135                            # [m] rotor distance from the COM
-      kf: 7.347372e-8                       # [N/rpm^2]
-      max_rpm: 21963.382                    # [rpm]
-      motor_tau: [0.0125, 0.025]            # [s] up, down
-      motor_eff: [1.0, 1.0, 1.0, 1.0]       # [-]
-      action_delay: 0.018                   # [s] odometry -> motors latency
-
+    # drone:
+    #   mass: 0.82                            # [kg]
+    #   inertia: [0.00837, 0.00837, 0.01638]  # [kg m^2] Jxx, Jyy, Jzz
+    #   arm: 0.135                            # [m] rotor distance from the COM
+    #   kf: 7.347372e-8                       # [N/rpm^2]
+    #   max_rpm: 21963.382                    # [rpm]
+    #   motor_tau: [0.0125, 0.025]            # [s] up, down
+    #   motor_eff: [1.0, 1.0, 1.0, 1.0]       # [-]
+    #   action_delay: 0.018                   # [s] odometry -> motors latency
+    #
     #========================
     #     a300
     #========================
@@ -120,6 +120,19 @@ mrs_uav_controllers:
     #   motor_tau: [0.0125, 0.025]            # [s] up, down
     #   motor_eff: [1.0, 1.0, 1.0, 1.0]       # [-]
     #   action_delay: 0.018                   # [s] odometry -> motors latency
+    #
+    #========================
+    #     X500  ⚠️ with uncaurate params, be carful !!! 
+    #========================
+    drone:
+      mass: 3.0043                          # [kg]
+      inertia: [0.03353, 0.03353, 0.08583]  # [kg m^2] Jxx, Jyy, Jzz
+      arm: 0.1563                           # [m] rotor distance from the COM
+      kf: 4.005815e-7                       # [N/rpm^2]
+      max_rpm: 7948.451                     # [rpm]
+      motor_tau: [0.0125, 0.029]            # [s] up, down
+      motor_eff: [1.0, 0.96, 1.0, 0.94]       # [-]
+      action_delay: 0.02                   # [s] odometry -> motors latency
 
     #========================
     #     t650
