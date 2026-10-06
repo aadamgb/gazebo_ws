@@ -1,7 +1,7 @@
 # Real-world copy of ../../hitl/config/custom_config.yaml, with the MRS safety measures back on.
 #
 # Layered safety, from the first to trigger:
-#   1. random_goto.py: UAV > 2 m from its goal box   -> switches RLGoto to ActuatorsController, stops the goals
+#   1. random_goto.py: UAV > 3 m from its goal box   -> switches RLGoto to ActuatorsController, stops the goals
 #   2. control_manager: position error > eland_threshold (3.5 m, w.r.t. the tracker reference), tilt > 75 deg,
 #      tilt error > 20 deg for 0.5 s, yaw error > 90 deg
 #      -> with rc_emergency_handoff the control goes back to the safety pilot's RC

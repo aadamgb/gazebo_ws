@@ -4,6 +4,7 @@
 #include <mrs_lib/param_loader.h>
 #include <mrs_lib/transformer.h>
 #include <mrs_msgs/msg/reference_stamped.hpp>
+#include <mrs_msgs/msg/float64_array_stamped.hpp>
 
 #include <ament_index_cpp/get_package_share_directory.hpp>
 
@@ -117,7 +118,24 @@ private:
   std::mutex                                                       mutex_goal_msg_;
   std::optional<mrs_msgs::msg::ReferenceStamped>                   goal_msg_;
   std::optional<Eigen::Vector3d>                                   goal_;
+
+  // what the policy saw and did, to compare simulation and real flights from the bags
+  rclcpp::Publisher<mrs_msgs::msg::Float64ArrayStamped>::SharedPtr pub_observation_;
+  rclcpp::Publisher<mrs_msgs::msg::Float64ArrayStamped>::SharedPtr pub_action_;
+  rclcpp::Publisher<mrs_msgs::msg::Float64ArrayStamped>::SharedPtr pub_goal_;
+  rclcpp::Publisher<mrs_msgs::msg::Float64ArrayStamped>::SharedPtr pub_drone_params_;
 };
+
+/**
+ * @brief an Eigen vector as a stamped array, stamped like the UAV state it was computed from
+ */
+template <typename Vector>
+mrs_msgs::msg::Float64ArrayStamped toArrayMsg(const std_msgs::msg::Header &header, const Vector &v) {
+  mrs_msgs::msg::Float64ArrayStamped msg;
+  msg.header = header;
+  msg.values.assign(v.data(), v.data() + v.size());
+  return msg;
+}
 
 // --------------------------------------------------------------------------------------------------- //
 
@@ -170,6 +188,22 @@ bool RLGoto::initialize(const rclcpp::Node::SharedPtr &node, std::shared_ptr<mrs
     std::scoped_lock lock(mutex_goal_msg_);
     goal_msg_ = *msg;
   });
+
+  // published at every policy step, stamped with the UAV state the step used:
+  //   observation: the policy input without the latent, obs_history frames (newest first) of OBS_SIZE values
+  //   action:      the raw policy output, before clipping and scaling to the motor commands (hw_api/actuator_cmd)
+  //   goal:        the goal position in the frame of the UAV state
+  pub_observation_ = node_->create_publisher<mrs_msgs::msg::Float64ArrayStamped>("~/rl_goto/observation", 100);
+  pub_action_      = node_->create_publisher<mrs_msgs::msg::Float64ArrayStamped>("~/rl_goto/action", 100);
+  pub_goal_        = node_->create_publisher<mrs_msgs::msg::Float64ArrayStamped>("~/rl_goto/goal_used", 100);
+
+  // the normalized drone parameters fed to the encoder, latched so a bag started later still gets them
+  pub_drone_params_ = node_->create_publisher<mrs_msgs::msg::Float64ArrayStamped>("~/rl_goto/drone_params", rclcpp::QoS(1).transient_local());
+  if (adapt_encoder_) {
+    std_msgs::msg::Header header;
+    header.stamp = node_->get_clock()->now();
+    pub_drone_params_->publish(toArrayMsg(header, params_));
+  }
 
   return true;
 }
@@ -409,7 +443,12 @@ RLGoto::ControlOutput RLGoto::updateActive(const mrs_msgs::msg::UavState &uav_st
 
     next_policy_time_ = (!next_policy_time_ || now - *next_policy_time_ >= policy_period_) ? now + policy_period_ : *next_policy_time_ + policy_period_;
 
-    const Eigen::VectorXf action = runPolicy(buildObservation(uav_state));
+    const Eigen::VectorXf observation = buildObservation(uav_state);
+    const Eigen::VectorXf action      = runPolicy(observation);
+
+    pub_observation_->publish(toArrayMsg(uav_state.header, observation));
+    pub_action_->publish(toArrayMsg(uav_state.header, action));
+    pub_goal_->publish(toArrayMsg(uav_state.header, *goal_));
 
     for (int i = 0; i < ACT_SIZE; i++) {
       last_action_[i] = std::clamp(action[i], hover_center_throttle_ ? -1.0f : 0.0f, 1.0f);

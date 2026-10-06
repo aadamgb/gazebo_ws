@@ -24,11 +24,27 @@ PACKAGES=(src/rl_goto_controller src/srt_controller src/mrs_uav_px4_api src/mrs_
 SESSIONS=(tmux/hitl tmux/realworld tmux/position_control)
 PLATFORM=src/alien_gazebo_resources/config/mrs_uav_system/x500.yaml
 
+# what is deployed, copied by record.sh into every recording's run_info/
+VERSION_DIR=$(mktemp -d)
+trap 'rm -rf "$VERSION_DIR"' EXIT
+VERSION_FILE="$VERSION_DIR/deployed_version.txt"
+{
+  echo "commit: $(git rev-parse HEAD) ($(git branch --show-current))"
+  for d in "${PACKAGES[@]}"; do
+    [ -d "$d/.git" ] && echo "$d: $(git -C "$d" rev-parse HEAD)"
+  done
+  # not copied, it is flashed separately: only the source the firmware would be built from
+  echo "src/px4_firmware (source, check what is flashed): $(git -C src/px4_firmware rev-parse HEAD 2>/dev/null)"
+  echo "uncommitted (diff md5 $(git diff HEAD -- "${PACKAGES[@]}" "${SESSIONS[@]}" | md5sum | cut -d' ' -f1)):"
+  git status --porcelain -- "${PACKAGES[@]}" "${SESSIONS[@]}" | grep -v __pycache__ || true
+} > "$VERSION_FILE"
+
 sync() {
   # $1: extra rsync flags
   rsync $1 --mkpath --exclude .git --exclude __pycache__ "${PACKAGES[@]}" "$HOST:adam_ws/src/"
   rsync $1 --mkpath --exclude __pycache__ "${SESSIONS[@]}" "$HOST:adam_ws/tmux/"
   rsync $1 --mkpath "$PLATFORM" "$HOST:adam_ws/platform/"
+  rsync $1 --mkpath "$VERSION_FILE" "$HOST:adam_ws/"
 }
 
 echo "branch: $(git branch --show-current)"

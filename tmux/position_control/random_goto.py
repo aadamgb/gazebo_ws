@@ -14,6 +14,7 @@ from that position; with relative:=false they are absolute positions as before.
 Run (from a shell with the same env as the tmux panes):
   ./random_goto.py
   ./random_goto.py --ros-args -p seed:=0
+  ./random_goto.py --ros-args --params-file config/random_goto.yaml   # the flight settings (HITL and real)
   ./random_goto.py --ros-args -p radius:=0.5 -p x_min:=-1.0 -p x_max:=1.0
   ./random_goto.py --ros-args -p relative:=false -p z_min:=4.0 -p z_max:=4.0
   ./random_goto.py --ros-args -p ground_truth:=true   # simulation only
@@ -144,9 +145,13 @@ class RandomGoto(Node):
         # otherwise send it to control_manager/reference and the tracker plans a trajectory to it
         self.direct = self.declare_parameter("direct", True).value
 
-        seed = self.declare_parameter("seed", -1).value
-        if seed >= 0:
-            random.seed(seed)
+        # own generator: the goal sequence depends only on the seed; without one a random seed is drawn and logged,
+        # so any run can be repeated (e.g. the same goals in Gazebo and on the real UAV)
+        self.seed = self.declare_parameter("seed", -1).value
+        if self.seed < 0:
+            self.seed = random.SystemRandom().randrange(2**31)
+        self.rng = random.Random(self.seed)
+        self.goal_count = 0
 
         self.odom = None
         self.goal = None
@@ -185,7 +190,7 @@ class RandomGoto(Node):
         self.create_timer(0.1, self.loop)
         self.get_logger().info(
             f"{'offsets from the start position' if self.relative else 'bounds'} "
-            f"x{self.x_bounds} y{self.y_bounds} z{self.z_bounds}, radius {self.radius} m, "
+            f"x{self.x_bounds} y{self.y_bounds} z{self.z_bounds}, radius {self.radius} m, seed {self.seed}, "
             f"position from {self.odom_topic}, goals {'direct to RLGoto' if self.direct else 'via the MRS tracker'}")
 
     def odom_cb(self, msg):
@@ -290,12 +295,14 @@ class RandomGoto(Node):
             self.send_new_goal()
 
     def send_new_goal(self):
-        goal = tuple(random.uniform(*b) for b in (self.x_bounds, self.y_bounds, self.z_bounds))
+        offset = tuple(self.rng.uniform(*b) for b in (self.x_bounds, self.y_bounds, self.z_bounds))
+        goal = offset
         if self.relative:
-            goal = tuple(c + g for c, g in zip(self.center, goal))
+            goal = tuple(c + o for c, o in zip(self.center, offset))
         p = self.odom.pose.pose.position
         # heading of the current odometry would need a quaternion->yaw conversion; 0 keeps it simple
-        heading = random.uniform(-math.pi, math.pi) if self.random_heading else 0.0
+        heading = self.rng.uniform(-math.pi, math.pi) if self.random_heading else 0.0
+        self.goal_count += 1
 
         req = ReferenceStampedSrv.Request()
         req.header.frame_id = self.frame_id or self.odom.header.frame_id
@@ -304,7 +311,8 @@ class RandomGoto(Node):
         req.reference.heading = heading
 
         self.get_logger().info(
-            f"new goal [{goal[0]:.2f}, {goal[1]:.2f}, {goal[2]:.2f}] hdg {heading:.2f} in '{req.header.frame_id}' "
+            f"goal #{self.goal_count} (seed {self.seed}) [{goal[0]:.2f}, {goal[1]:.2f}, {goal[2]:.2f}], "
+            f"offset [{offset[0]:.2f}, {offset[1]:.2f}, {offset[2]:.2f}], hdg {heading:.2f} in '{req.header.frame_id}' "
             f"({math.dist((p.x, p.y, p.z), goal):.2f} m away)")
 
         if self.direct:

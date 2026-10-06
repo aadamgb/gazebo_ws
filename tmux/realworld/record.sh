@@ -1,6 +1,12 @@
 #!/bin/bash
+# Copy of mrs_uav_deployment just_flying/record.sh, used by the real flight (realworld/tmux.sh) and HITL
+# (hitl/session_drone.yaml) so both are recorded the same way. Run it from the session folder (its ./config is
+# snapshotted). Besides the bag (all topics, incl. control_manager/rl_goto/{observation,action,goal_used,drone_params}),
+# it stores run_info/ next to it: what was deployed and how it was configured, to compare simulation and real flights.
+#
+# usage: record.sh [target folder], default ~/bag_files/latest (created by realworld/tmux.sh)
 
-target_path="$HOME/bag_files/latest"
+target_path="${1:-$HOME/bag_files/latest}"
 
 # By default, we record everything.
 # Except for this list of EXCLUDED topics:
@@ -26,6 +32,26 @@ exclude=(
 if [ ! -e "$target_path" ]; then
   mkdir -p "$target_path"
 fi
+
+# | ------------------- snapshot of the run ------------------- |
+run_info="$target_path/run_info"
+mkdir -p "$run_info"
+ws="$HOME/adam_ws"
+cp -rL ./config "$run_info/session_config"
+# the HITL session passes its platform config through PLATFORM_CONFIG instead of ./config
+[ -n "$PLATFORM_CONFIG" ] && cp -L "$PLATFORM_CONFIG" "$run_info/" 2>/dev/null
+cp -L ../position_control/config/random_goto.yaml "$run_info/" 2>/dev/null
+cp -L "$ws/src/rl_goto_controller/config/rl_goto.yaml" "$run_info/" 2>/dev/null
+cp -L "$ws/deployed_version.txt" "$run_info/" 2>/dev/null
+md5sum "$ws"/src/rl_goto_controller/policies/*.rlp > "$run_info/policies.md5" 2>/dev/null
+{
+  echo "date: $(date --iso-8601=seconds)"
+  echo "host: $(hostname)"
+  echo "session: $(pwd)"
+  env | grep -E '^(UAV_|RUN_TYPE|WORLD_NAME|RMW_|ROS_|CYCLONEDDS|PX4|PIXGARM|OLD_PX4|USE_SIM_TIME)' | sort
+} > "$run_info/environment.txt"
+dpkg-query -W -f '${Package} ${Version}\n' 'ros-jazzy-mrs-*' > "$run_info/mrs_packages.txt" 2>/dev/null
+echo "run info stored in $run_info"
 
 # file's header
 filename=$(mktemp)

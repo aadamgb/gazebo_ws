@@ -34,6 +34,16 @@ windows, and plain `;` instead of the literal `^M` of the MRS original (bash doe
   `allocation_matrix` order.
 - Rehearse the same safety limits in HITL (`config/custom_config.yaml` layers).
 
+## Recording
+
+`record.sh` (Rosbag window, from offboard on) records all topics into `~/bag_files/rl_goto/<n>_<date>/` with
+`run_info/`: session configs, `rl_goto.yaml`, `random_goto.yaml`, policy md5, the drone's environment, MRS package
+versions and `deployed_version.txt` (git commit + uncommitted files, written by `utils/sync_to_drone.sh`).
+HITL records the same way into `~/bag_files/hitl/<date>/` on the drone.
+RLGoto publishes what the policy saw and did, stamped with the UAV state it used:
+`control_manager/rl_goto/{observation,action,goal_used}` at the policy rate, `drone_params` latched.
+Also set the PX4 ULog to log at high rate (`SDLOG_PROFILE`) for the motor outputs / ESC data.
+
 ## Flight
 
 ```
@@ -44,6 +54,7 @@ ssh uavN
 1. Safety pilot: arm + offboard on the RC, `AutoStart` takes off into MpcController (2.5 m).
 2. `Actuators` window: <enter>, hover. `Mpc` window: <enter> to go back at any time.
 3. `RLGoto` window: <enter>, it holds the position where it was switched on.
-4. `RandomGoto` window: <enter>, goals in a 1 x 1 m square around that position;
-   beyond 2 m it switches to ActuatorsController and stops the goals.
+4. `RandomGoto` window: <enter>, goals from `position_control/config/random_goto.yaml` (seed 0, 2 x 2 m square around that position,
+   the same sequence as in HITL);
+   beyond 3 m it switches to ActuatorsController and stops the goals.
 5. Beyond 3.5 m position error, large tilt or tilt error, MRS hands control to the RC (`rc_emergency_handoff`).
