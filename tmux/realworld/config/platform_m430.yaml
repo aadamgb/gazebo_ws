@@ -1,0 +1,88 @@
+# Platform config of the M430 (uav58), motor_params taken from uav99's mrs_uav_deployment/config/mrs_uav_system/m430.yaml.
+# uav_mass is not set here on purpose: UAV_MASS from the drone's ~/.bashrc is used (uav58: 2.85 kg, weighed 2026-10-07,
+# same as the drone: block of rl_goto.yaml).
+
+# force to throttle: throttle = sqrt(force / motor_params.n_motors) * motor_params.a + motor_params.b
+# throttle 1 -> ((1 + 0.176962) / 0.181198)^2 = 42.19 N per motor
+# throttle 0 -> (0.176962 / 0.181198)^2      =  0.954 N per motor
+motor_params:
+  n_motors: 4
+  a: 0.181198
+  b: -0.176962
+
+# these model parameters can be used when
+# - 'attitude rate', and/or
+# - 'actuator control'
+# are done by the MRS system.
+# Same numbers as the m430 model in simulator.yaml (see the notes there).
+model_params:
+
+  # required by control_manager once the HW API accepts actuator commands (it shuts down/segfaults without)
+  enabled: true
+
+  arm_length: 0.1670 # [m] fitted for the inertia
+  body_height: 0.1859 # [m] fitted for the inertia
+
+  # measured uav58 inertia, same as the drone: block of rl_goto.yaml (otherwise computed from uav_mass, arm_length and body_height)
+  inertia_matrix:
+    enabled: true
+    matrix: [0.029, 0.0,   0.0,
+             0.0,   0.036, 0.0,
+             0.0,   0.0,   0.046] # [kg m^2]
+
+  propulsion:
+    # force [N] = force_constant * rpm^2
+    # 42.19 N per motor at 14420 rpm (rpm from the RpmToThrust fit in propulsion_module m430.yaml)
+    force_constant: 0.00000020290
+
+    # torque [Nm] = torque_constant * force [N]
+    torque_constant: 0.05993 # * 3 * prop_radius = 0.016, the NMPC ctau on uav99
+
+    prop_radius: 0.089 # [m] not known for the M430, kept from the A300
+
+    # allocation motors -> torques
+    # quadrotor X configuration with motors at x = +-0.27 m, y = +-0.33 m:
+    # roll 0.33 / 0.1670 = 1.976, pitch 0.27 / 0.1670 = 1.617
+    # [roll torque,      [            [RPM_1^2,
+    #  pitch torque,  =    Alloc    *  RPM_2^2,
+    #  yaw torque,         Matrix       ...
+    #  thrust force]              ]    RPM_n_motors^2]
+    allocation_matrix: [
+        -1.976, 1.976,  1.976, -1.976, # *= force_constant*arm_length
+        -1.617, 1.617, -1.617,  1.617, # *= force_constant*arm_length
+          -1  ,  -1  ,   1   ,    1  , # *= torque_constant*force_constant
+           1  ,   1  ,   1   ,    1  , # *= force_constant
+      ]
+
+    rpm:
+      min: 2168 # [revolutions/minute] throttle 0 -> 0.954 N
+      max: 14420 # [revolutions/minute] throttle 1 -> 42.19 N
+
+mrs_uav_managers:
+  constraint_manager:
+    default_constraints:
+      gps_garmin: "medium"
+      gps_baro: "medium"
+      rtk: "medium"
+      aloam: "slow"
+      hector_garmin: "slow"
+      vio: "slow"
+      optflow: "slow"
+      other: "slow"
+      ground_truth: "medium"
+
+  safety:
+    tilt_limit:
+      eland:
+        enabled: false
+
+      disarm:
+        enabled: false
+
+    tilt_error_disarm:
+      enabled: false
+      timeout: 0.5 # [s] # for how long the error has to be present to disarm
+      error_threshold: deg(20) # [rad]
+
+    yaw_error_eland:
+      enabled: false

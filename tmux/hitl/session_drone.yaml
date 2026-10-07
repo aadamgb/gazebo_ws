@@ -48,7 +48,9 @@ windows:
   - autostart:
       layout: tiled
       panes:
-        - ros2 launch mrs_uav_autostart automatic_start.launch.py custom_config:=./config/automatic_start.yaml
+        # older mrs_uav_autostart builds (e.g. uav58) read 'safety_timeout', newer ones (uav1) 'mrs_uav_autostart/takeoff_countdown' and each crashes on the other
+        - if grep -q safety_timeout $(ros2 pkg prefix mrs_uav_autostart)/share/mrs_uav_autostart/config/public/automatic_start.yaml; then AUTOSTART_CONFIG=../position_control/config/automatic_start.yaml; else AUTOSTART_CONFIG=./config/automatic_start.yaml; fi;
+          ros2 launch mrs_uav_autostart automatic_start.launch.py custom_config:=$AUTOSTART_CONFIG
         - waitForCore; sleep 10; ../position_control/takeoff.sh
   # - controllers:
   #     layout: tiled

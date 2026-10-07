@@ -24,7 +24,7 @@ The flight settings (HITL and real flight, same seed) are in config/random_goto.
 Safety guard: a ⚠️ warning is printed while the UAV is further than max_distance (default 4 m)
 from the centre of the goal box, e.g. when the controller overshoots. If RLGoto is the
 active controller at that moment, the UAV is switched to safety_controller
-(ActuatorsController, which holds the MRS tracker reference) and no more goals are sent;
+(ActuatorsController, which holds the MRS tracker reference; switching RLGoto straight to MpcController loses control) and no more goals are sent;
 restart this script to continue. safety_controller:="" only warns.
 
 The UAV position comes from the MRS estimate (/<uav>/estimation_manager/odom_main), which

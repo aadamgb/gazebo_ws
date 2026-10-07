@@ -370,7 +370,9 @@ ActuatorsController::ControlOutput ActuatorsController::updateActive(const mrs_m
   // current orientation
   const Eigen::Matrix3d R = mrs_lib::AttitudeConverter(uav_state.pose.orientation);
 
-  const double desired_thrust_force = desired_f.dot(R.col(2));
+  // >= 0: beyond 90 deg from the desired thrust direction the projection is negative and the
+  // quadratic throttle model returned NaN (uav58, 2026-10-07, at 65/78 deg roll/pitch)
+  const double desired_thrust_force = std::max(desired_f.dot(R.col(2)), 0.0);
 
   double throttle = mrs_lib::quadratic_throttle_model::forceToThrottle(common_handlers_->throttle_model, desired_thrust_force, *node_);
 
@@ -379,7 +381,9 @@ ActuatorsController::ControlOutput ActuatorsController::updateActive(const mrs_m
   // --------------------------------------------------------------
 
   Eigen::Vector3d attitude_rate_saturation(constraints.roll_rate, constraints.pitch_rate, constraints.yaw_rate);
-  Eigen::Vector3d attitude_p_gain(drs_params.gain_attitude * _uav_mass_, drs_params.gain_attitude * _uav_mass_, drs_params.gain_attitude * _uav_mass_);
+  // [rad/s per rad], not scaled by the mass: it was gain * mass, tuned on the 1.21 kg a300 (6.05) and
+  // 2.4x higher on the 2.85 kg m430, where the attitude loop oscillated at ~3-4 Hz and diverged in 2 s
+  Eigen::Vector3d attitude_p_gain(drs_params.gain_attitude, drs_params.gain_attitude, drs_params.gain_attitude);
   Eigen::Vector3d rate_feedforward(0, 0, 0);
 
   mrs_msgs::msg::HwApiAttitudeCmd attitude_cmd;
@@ -404,6 +408,13 @@ ActuatorsController::ControlOutput ActuatorsController::updateActive(const mrs_m
 
   mrs_msgs::msg::HwApiActuatorCmd actuator_cmd =
       actuatorMixer(node_, control_group_command.value(), common_handlers_->detailed_model_params->control_group_mixer);
+
+  for (const double motor : actuator_cmd.motors) {
+    if (!std::isfinite(motor)) {
+      RCLCPP_ERROR_THROTTLE(node_->get_logger(), *clock_, 1000, "non-finite motor command (throttle %.3f), returning an empty command", throttle);
+      return last_control_output_;
+    }
+  }
 
   // RCLCPP_INFO_THROTTLE(node_->get_logger(), *clock_, 100, "[ExampleController] 😀😀😀: motor output:\nmotor1: %.2f\nmotor2: %.2f\nmotor3: %.2f\nmotor4: %.2f", actuator_cmd.motors[0], actuator_cmd.motors[1],
   //                      actuator_cmd.motors[2], actuator_cmd.motors[3]);
@@ -758,6 +769,9 @@ mrs_msgs::msg::HwApiActuatorCmd ActuatorsController::actuatorMixer(const rclcpp:
       motors /= max;
     }
   }
+
+  // the desaturation above can still leave motors outside [0, 1]
+  motors = motors.cwiseMax(0.0).cwiseMin(1.0);
 
   // | --------------------- fill in the msg -------------------- |
 

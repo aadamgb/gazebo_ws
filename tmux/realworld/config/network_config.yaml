@@ -9,5 +9,5 @@
 network:
 
   robot_names: [
-    uav1,
+    uav58,
   ]

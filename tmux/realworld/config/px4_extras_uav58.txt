@@ -1,0 +1,21 @@
+# /fs/microsd/etc/extras.txt of uav58 (Pixhawk 6C, our PX4 fork): the lab's Jetson link on /dev/ttyS6 (GPS2 port) at 2 Mbaud,
+# changed: -r 180000 (default cap 100 KB/s) and LOCAL_POSITION_NED/ODOMETRY -r 500 (the streams send only on new data;
+# at -r 250 the limiter dropped the jittery ~268 Hz EKF output to ~205 Hz). The lab's original is extras_lab.txt on the SD card.
+mavlink start -d /dev/ttyS6 -b 2000000 -r 180000
+mavlink stream -d /dev/ttyS6 -s ATTITUDE -r 100
+mavlink stream -d /dev/ttyS6 -s ATTITUDE_TARGET -r 100
+mavlink stream -d /dev/ttyS6 -s ATTITUDE_QUATERNION -r 100
+mavlink stream -d /dev/ttyS6 -s HIGHRES_IMU -r 100
+mavlink stream -d /dev/ttyS6 -s SCALED_IMU -r 100
+mavlink stream -d /dev/ttyS6 -s RC_CHANNELS -r 10
+mavlink stream -d /dev/ttyS6 -s LOCAL_POSITION_NED -r 500
+mavlink stream -d /dev/ttyS6 -s GLOBAL_POSITION_INT -r 100
+mavlink stream -d /dev/ttyS6 -s SYS_STATUS -r 10
+mavlink stream -d /dev/ttyS6 -s DISTANCE_SENSOR -r 100
+mavlink stream -d /dev/ttyS6 -s HEARTBEAT -r 100
+mavlink stream -d /dev/ttyS6 -s ODOMETRY -r 500
+mavlink stream -d /dev/ttyS6 -s BATTERY_STATUS -r 100
+mavlink stream -d /dev/ttyS6 -s DEBUG_VECT -r 100
+mavlink stream -d /dev/ttyS6 -s ESC_STATUS -r 100
+mavlink stream -d /dev/ttyS6 -s UTM_GLOBAL_POSITION -r 1
+usleep 100000

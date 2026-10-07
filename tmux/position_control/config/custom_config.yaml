@@ -9,9 +9,10 @@ mrs_uav_managers:
 
     # loaded state estimator plugins
     state_estimators: [
-      "gps_baro",
+      # "gps_baro",
       "ground_truth",
       "passthrough",
+      "f9p",
     ]
 
     # passthrough needs >= 225 Hz hw_api/odometry for actuator output: PX4 EKF2_PREDICT_US 4000,

@@ -20,66 +20,39 @@ mrs_uav_managers:
   estimation_manager:
 
     # loaded state estimator plugins
-    # gps_garmin / gps_baro are fallbacks, the actuator controllers need passthrough (>= 225 Hz hw_api/odometry:
-    # PX4 EKF2_PREDICT_US 4000, IMU_INTEG_RATE >= 250, LOCAL_POSITION_NED + ODOMETRY streamed at 250 Hz)
+    # gps_baro is the fallback, the actuator controllers need passthrough (>= 225 Hz hw_api/odometry:
+    # PX4 EKF2_PREDICT_US 4000, IMU_INTEG_RATE >= 250, LOCAL_POSITION_NED + ODOMETRY at -r 500);
+    # no gps_garmin: uav58 has no rangefinder
     state_estimators: [
       "passthrough",
-      "gps_garmin",
-      "gps_baro",
+      "f9p",
     ]
 
     initial_state_estimator: "passthrough" # will be used as the first state estimator
-    agl_height_estimator: "garmin_agl" # only slightly filtered height for checking min height (not used in control feedback)
+    agl_height_estimator: "" # only slightly filtered height for checking min height (not used in control feedback)
 
   control_manager:
 
     # The following safety features should be carefully adjusted by the operator depending on the experimental conditions and setup
     safety:
-
-      # Disables safety measures that would "bring the UAV to the ground" (emergancy landing, failsafe landing, disarm)
-      # * true => any safety measure that would othewise lead to the ground will result in giving control back to the safety pilot's RC controller
-      # * false => the system will automatically eland, failsafe leanding or disarm to minimize damage during malfunction
       rc_emergency_handoff:
         enabled: true
-
-      # The escalating safety measure that occurs when pressing the RC emergency button.
-      escalating_failsafe:
-
-        # 1st press: the emergency hover is triggered (the user's input into the system is ignored, EmergencyController is activated)
-        ehover: true
-        # 2nd press: the emergency landing is triggered
-        eland: true
-        # 3rd press: the feedforward failsafe landing is triggered (semi-controlled fall)
-        failsafe: false
-
-      # safety measures that trigger when the absolute tilt is larger than certain threshold
       tilt_limit:
-
         eland:
-          enabled: true
-          limit: 75.0 # [deg]
-
+          enabled: false
         disarm:
-          enabled: true
-          limit: 90.0 # [deg]
-
-      # disarming safety measure which triggers with large tilt (orientation) error that is sustained over the set timeout threshold
+          enabled: false
       tilt_error_disarm:
-        enabled: true
-        timeout: 0.5 # [s] # for how long the error has to be present to disarm
-        error_threshold: 20.0 # [deg]
-
-      # safety measures that trigger when yaw control error grows over pre-set threshold
+        enabled: false
       yaw_error_eland:
-        enabled: true
-        limit: 90.0 # [deg]
+        enabled: false
 
     # eland_threshold: position error w.r.t. the tracker reference [m]; RLGoto does not follow the tracker, but its
     # goals stay within random_goto's box around the hover point where the tracker reference was left
     ActuatorsController:
       address: "srt_controller::ActuatorsController"
       namespace: "actuators_controller"
-      eland_threshold: 3.5 # [m]
+      eland_threshold: 0.0 # [m]
       failsafe_threshold: 0.0 # [m]
       odometry_innovation_threshold: 0.0 # [m]
       human_switchable: true
@@ -98,7 +71,7 @@ mrs_uav_managers:
     RLGoto:
       address: "rl_goto_controller::RLGoto"
       namespace: "rl_goto"
-      eland_threshold: 3.5 # [m]
+      eland_threshold: 0.0 # [m]
       failsafe_threshold: 0.0 # [m]
       odometry_innovation_threshold: 0.0 # [m]
       human_switchable: true
@@ -134,3 +107,18 @@ mrs_uav_managers:
       after_takeoff:
         controller: "MpcController"
         tracker: "MpcTracker"
+
+# ActuatorsController gains for the m430 (uav58), softer than the package defaults tuned on the a300 in simulation:
+# on 2026-10-07 the attitude loop oscillated at ~3-4 Hz (pitch first) and diverged within 2 s.
+# Tune live during flight: find the names with  ros2 param list /uav58/control_manager | grep gains/  and set with
+#   ros2 param set /uav58/control_manager <name> <value>
+mrs_uav_controllers:
+
+  actuators_controller:
+
+    gains:
+
+      position: 5.0
+      velocity: 3.0
+      attitude: 4.0      # [rad/s per rad]
+      attitude_rate: 1.0 # multiplied by the inertia

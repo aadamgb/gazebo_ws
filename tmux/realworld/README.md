@@ -17,7 +17,7 @@ windows, and plain `;` instead of the literal `^M` of the MRS original (bash doe
        ServerAliveInterval 30
    ```
    then `ssh-copy-id uavN`.
-2. On the drone, `~/.bashrc` must have `UAV_NAME`, `UAV_TYPE=x500`, `UAV_MASS`, `WORLD_NAME`, `RUN_TYPE=realworld`
+2. On the drone, `~/.bashrc` must have `UAV_NAME`, `UAV_TYPE` (with a `config/platform_$UAV_TYPE.yaml`), `UAV_MASS`, `WORLD_NAME`, `RUN_TYPE=realworld`
    (`tmux.sh` refuses to start otherwise). Put the UAV_NAME into `config/network_config.yaml`.
 3. `utils/sync_to_drone.sh uavN` from the laptop (dry run, asks before copying), then build as it prints.
 
@@ -25,7 +25,9 @@ windows, and plain `;` instead of the literal `^M` of the MRS original (bash doe
 
 - Flight controller: our PX4 fork (`SET_ACTUATOR_CONTROL_TARGET` handler) flashed, params backed up.
 - PX4: `EKF2_PREDICT_US 4000`, `IMU_INTEG_RATE >= 250`; `/fs/microsd/etc/extras.txt` streams
-  `LOCAL_POSITION_NED` and `ODOMETRY` at 250 Hz on the MAVROS link (`mavlink status streams`).
+  `LOCAL_POSITION_NED` and `ODOMETRY` at `-r 500` (not 250: the limiter drops the jittery EKF output to ~205 Hz)
+  on the MAVROS link, whose `mavlink start` needs `-r 180000`; uav58's is `config/px4_extras_uav58.txt`.
+  With a GPS safety switch, `CBRK_IO_SAFETY 22027` or the motor test is refused.
 - `config/platform_x500.yaml`: replace the ⚠️ simulation `model_params` with the flown drone's values;
   check `motor_params` against its motors.
 - `rl_goto.yaml` `drone:` block: the flown drone's measured parameters.
@@ -36,7 +38,7 @@ windows, and plain `;` instead of the literal `^M` of the MRS original (bash doe
 
 ## Recording
 
-`record.sh` (Rosbag window, from offboard on) records all topics into `~/bag_files/rl_goto/<n>_<date>/` with
+`record.sh` (Record window, starts automatically once the HwApi is up) records all topics into `~/bag_files/rl_goto/<n>_<date>/` with
 `run_info/`: session configs, `rl_goto.yaml`, `random_goto.yaml`, policy md5, the drone's environment, MRS package
 versions and `deployed_version.txt` (git commit + uncommitted files, written by `utils/sync_to_drone.sh`).
 HITL records the same way into `~/bag_files/hitl/<date>/` on the drone.
@@ -52,8 +54,9 @@ ssh uavN
 ```
 
 1. Safety pilot: arm + offboard on the RC, `AutoStart` takes off into MpcController (2.5 m).
-2. `Actuators` window: <enter>, hover. `Mpc` window: <enter> to go back at any time.
-3. `RLGoto` window: <enter>, it holds the position where it was switched on.
+2. `Actuators` window: <enter>, hover. `Mpc` window: <enter> to go back from ActuatorsController.
+3. `RLGoto` window: <enter>, it holds the position where it was switched on. To go back: `Actuators` first, then `Mpc`;
+   switching RLGoto straight to MpcController loses control.
 4. `RandomGoto` window: <enter>, goals from `rl_goto_controller/config/random_goto.yaml` (seed 0, 2 x 2 m square around that position,
    the same sequence as in HITL);
    beyond 3 m it switches to ActuatorsController and stops the goals.

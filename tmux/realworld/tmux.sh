@@ -21,8 +21,10 @@ if [ "$RUN_TYPE" != "realworld" ]; then
   echo "RUN_TYPE is '$RUN_TYPE', this session is for RUN_TYPE=realworld, not starting"
   exit 1
 fi
-if [ "$UAV_TYPE" != "x500" ]; then
-  echo "UAV_TYPE is '$UAV_TYPE', config/platform_x500.yaml is only for x500, not starting"
+# the platform config of this UAV_TYPE (model_params/motor_params of the flown drone), e.g. config/platform_m430.yaml
+PLATFORM_CONFIG=./config/platform_$UAV_TYPE.yaml
+if [ ! -f "$(dirname $(readlink -f $0))/$PLATFORM_CONFIG" ]; then
+  echo "UAV_TYPE is '$UAV_TYPE' but there is no $PLATFORM_CONFIG, not starting"
   exit 1
 fi
 if [ ! -f "$HOME/adam_ws/install/setup.bash" ]; then
@@ -59,15 +61,22 @@ pre_input="unset AMENT_PREFIX_PATH CMAKE_PREFIX_PATH COLCON_PREFIX_PATH LD_LIBRA
 # * NO "new line" after the command => the command will wait for user's <enter>
 #
 # Flight procedure: the safety pilot takes off (arm + offboard on the RC, AutoStart takes off into MpcController),
-# then press <enter> in the windows Actuators -> RLGoto -> RandomGoto, and Mpc to go back at any time.
+# then press <enter> in the windows Actuators -> RLGoto -> RandomGoto. To go back, step down the same chain:
+# RLGoto -> Actuators -> Mpc (switching RLGoto straight to MpcController loses control).
 input=(
-  'Rosbag' 'waitForOffboard; ./record.sh
+  # records automatically from when the HwApi is up (bag + run_info/ into ~/bag_files/latest), also when offboard
+  # never comes: on 2026-10-07 nothing was recorded because <enter> was never pressed here
+  'Record' 'waitForHwApi; ./record.sh
 '
   'HwApi' 'ros2 launch mrs_uav_px4_api api.launch.py
 '
+  # the transform_manager shuts the core down without a fcu -> garmin tf (mrs_uav_deployment x500_example.launch);
+  # uav58 has no rangefinder, so it only has to exist: pointing down below the fcu
+  # 'StaticTf' 'ros2 run tf2_ros static_transform_publisher --z -0.05 --pitch 1.5708 --frame-id $UAV_NAME/fcu --child-frame-id $UAV_NAME/garmin --ros-args -r __ns:=/$UAV_NAME -r __node:=fcu_to_garmin
+# '
   'Status' 'ros2 run mrs_uav_status status.sh
 '
-  'Core' 'ros2 launch mrs_uav_core core.launch.py platform_config:=./config/platform_x500.yaml world_config:=`ros2 pkg prefix mrs_uav_deployment --share`/config/worlds/world_$WORLD_NAME.yaml custom_config:=./config/custom_config.yaml network_config:=./config/network_config.yaml
+  'Core' 'ros2 launch mrs_uav_core core.launch.py platform_config:='"$PLATFORM_CONFIG"' world_config:=`ros2 pkg prefix mrs_uav_deployment --share`/config/worlds/world_$WORLD_NAME.yaml custom_config:=./config/custom_config.yaml network_config:=./config/network_config.yaml
 '
   'AutoStart' 'ros2 launch mrs_uav_autostart automatic_start.launch.py
 '
@@ -77,10 +86,9 @@ input=(
   # same settings and seed as in HITL (rl_goto_controller config/random_goto.yaml): 2 x 2 m box around where
   # RLGoto hovers, beyond 3 m it switches to ActuatorsController and stops the goals
   'RandomGoto' 'ros2 run rl_goto_controller random_goto.py --ros-args --params-file `ros2 pkg prefix --share rl_goto_controller`/config/random_goto.yaml -p uav_name:=$UAV_NAME'
-  'EstimDiag' 'waitForCore; ros2 topic echo /'"$UAV_NAME"'/estimation_manager/diagnostics --flow-style
-'
-  'kernel_log' 'tail -f /var/log/kern.log -n 100
-'
+  # 'EstimDiag' 'waitForCore; ros2 topic echo /'"$UAV_NAME"'/estimation_manager/diagnostics --flow-style'
+
+  # 'kernel_log' 'tail -f /var/log/kern.log -n 100'
 )
 
 # the name of the window to focus after start

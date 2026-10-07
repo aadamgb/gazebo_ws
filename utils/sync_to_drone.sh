@@ -14,6 +14,12 @@ if [ -z "$1" ]; then
 fi
 HOST=$1
 
+# otherwise the failing dry run below would report "up to date"
+if ! ssh -n -o ConnectTimeout=5 "$HOST" true; then
+  echo "cannot reach $HOST, nothing copied"
+  exit 1
+fi
+
 # Absolute path to this script. /home/user/bin/foo.sh
 SCRIPT=$(readlink -f $0)
 # the workspace root, one level above utils/

@@ -6,7 +6,7 @@ mrs_uav_controllers:
 
       position: 7.0
       velocity: 4.0
-      attitude: 5.0
-      attitude_rate: 2.0
+      attitude: 6.0       # [rad/s per rad], not scaled by the mass any more (was 5.0 * mass, tuned on the 1.21 kg a300)
+      attitude_rate: 2.0  # multiplied by the platform's inertia
       integral: 1.0       # [1/s^2] position error integral gain
       integral_limit: 3.0 # [m/s^2] max acceleration from the integral term (anti-windup)
